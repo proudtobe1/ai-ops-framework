@@ -25,3 +25,11 @@ The AI-Ops Framework provides a structured approach for integrating AI-driven au
 
 This repository will include:
 
+- `docs/` → Documentation and reference materials  
+- `workflows/` → AI-enabled operational workflows  
+- `templates/` → Reusable templates for briefs and reports  
+- `systems/` → System-level frameworks and architectures  
+
+## License
+
+This project is licensed under the MIT License.
