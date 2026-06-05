@@ -1,0 +1,34 @@
+name: CI Validation
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install linters
+        run: |
+          pip install markdownlint-cli jsonlint yamllint
+
+      - name: Lint Markdown
+        run: markdownlint "**/*.md" || true
+
+      - name: Lint JSON
+        run: |
+          find . -name "*.json" -print0 | xargs -0 -I {} jsonlint -q {}
+
+      - name: Lint YAML
+        run: yamllint .
