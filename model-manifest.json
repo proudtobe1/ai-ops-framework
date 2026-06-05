@@ -1,0 +1,13 @@
+{
+  "name": "ai-ops-framework",
+  "version": "1.0.0",
+  "description": "A modular AI-enabled operational framework for workflows, decisions, and execution systems.",
+  "license": "MIT",
+  "model_format": "framework",
+  "entrypoints": {
+    "workflows": "./workflows",
+    "templates": "./templates",
+    "systems": "./systems"
+  },
+  "documentation": "./docs"
+}
