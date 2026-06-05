@@ -1,4 +1,9 @@
 # AI‑Ops Framework  
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+![Status](https://img.shields.io/badge/Status-Active_Development-blue.svg)
+![Last Commit](https://img.shields.io/github/last-commit/proudtobe1/ai-ops-framework)
+![Docs](https://img.shields.io/badge/Docs-Available-purple.svg)
+
 *A modular, AI‑forward operational system for modern organizations*
 
 The **AI‑Ops Framework** provides a structured, modular approach for integrating AI into daily operations, decision‑making, and organizational workflows. It is designed for operators, Chiefs of Staff, founders, and cross‑functional leaders who want to run faster, clearer, and more consistent operations using AI as a force multiplier.
