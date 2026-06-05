@@ -4,6 +4,34 @@
 ![Last Commit](https://img.shields.io/github/last-commit/proudtobe1/ai-ops-framework)
 ![Docs](https://img.shields.io/badge/Docs-Available-purple.svg)
 
+## Quickstart
+
+Follow these steps to begin using the AI‑Ops Framework in your environment.
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/proudtobe1/ai-ops-framework.git
+cd ai-ops-framework
+```
+
+### 2. Explore the Core Components
+- `workflows/` — operational processes  
+- `templates/` — communication and reporting structures  
+- `systems/` — decision and operating models  
+- `docs/` — architecture diagrams and documentation  
+
+### 3. Load the Framework in Your AI Environment
+Use the usage example provided in `USAGE_EXAMPLE.md` to load workflows, templates, and systems into your LLM or automation layer.
+
+### 4. Generate Your First Output
+Start with:
+- A weekly status update  
+- A workflow‑guided operating cadence  
+- A structured decision model  
+
+### 5. Extend the Framework
+Add your own workflows, templates, or system models to customize the framework for your organization.
+
 *A modular, AI‑forward operational system for modern organizations*
 
 The **AI‑Ops Framework** provides a structured, modular approach for integrating AI into daily operations, decision‑making, and organizational workflows. It is designed for operators, Chiefs of Staff, founders, and cross‑functional leaders who want to run faster, clearer, and more consistent operations using AI as a force multiplier.
