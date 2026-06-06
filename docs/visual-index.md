@@ -91,6 +91,11 @@ Use this page when you want to:
 
 This index serves as the visual entry point into the entire AI‑Ops Framework.
 
+---
+
+# 📊 AI‑Ops Framework Architecture Map
+
+```mermaid
 flowchart TB
     %% Top Layer
     A[Purpose & Core Principles]
@@ -166,3 +171,4 @@ flowchart TB
     X <--> S
     X <--> W
     X <--> T
+```
