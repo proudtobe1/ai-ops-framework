@@ -1,4 +1,4 @@
-# Deep Contributing Guide
+# Detailed Contributing Guide
 
 This guide provides a detailed framework for contributing to the AI‑Ops Framework. It expands on the standard `CONTRIBUTING.md` and is intended for contributors who want to participate in a structured, high‑quality way.
 
@@ -46,19 +46,30 @@ Enhance CI, linting, or repository automation.
 ### 3.1 File Structure  
 All contributions must follow the existing folder structure:
 
-- `workflows/`  
-- `templates/`  
-- `systems/`  
-- `docs/`  
-- `.github/workflows/`  
+- `workflows/`
+- `templates/`
+- `systems/`
+- `use-cases/`
+- `docs/`
+- `.github/workflows/`
+
 
 ### 3.2 Naming Conventions  
-Use descriptive, lowercase, hyphen‑separated filenames.
+Use prefix-based, lowercase, hyphen-separated filenames aligned with the AI‑Ops naming conventions:
 
-Examples:  
-- `workflow-operational-cadence.md`  
-- `template-status-update.md`  
-- `system-operating-model.md`  
+- `ai-ops-system-[name].md`
+- `ai-ops-template-[name].md`
+- `ai-ops-workflow-[name].md`
+- `ai-ops-use-case-[name].md`
+
+---
+
+Examples:
+- `ai-ops-workflow-operational-cadence.md`
+- `ai-ops-template-status-update.md`
+- `ai-ops-system-operating-model.md`
+
+---
 
 ### 3.3 Formatting  
 - Use Markdown  
