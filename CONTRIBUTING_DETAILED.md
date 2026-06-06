@@ -1,6 +1,6 @@
 # Detailed Contributing Guide
 
-This guide provides a detailed framework for contributing to the AI‑Ops Framework. It expands on the standard `CONTRIBUTING.md` and is intended for contributors who want to participate in a structured, high‑quality way.
+This guide provides a detailed framework for contributing to the AI‑Ops Framework. It expands on the standard CONTRIBUTING.md and is intended for contributors who want to participate in a structured, high‑quality way.
 
 ---
 
@@ -8,116 +8,113 @@ This guide provides a detailed framework for contributing to the AI‑Ops Framew
 
 The AI‑Ops Framework is built on four principles:
 
-### Clarity  
+### Clarity
 Every contribution must improve clarity, reduce ambiguity, or strengthen structure.
 
-### Alignment  
+### Alignment
 Changes should align with the framework’s purpose and operating model.
 
-### Modularity  
+### Modularity
 All additions must be self‑contained, reusable, and easy to integrate.
 
-### Velocity  
+### Velocity
 Contributions should accelerate—not slow down—operational workflows.
 
 ---
 
 ## 2. Types of Contributions
 
-### Workflows  
+### Workflows
 Add or improve operational processes, cadences, or cross‑functional flows.
 
-### Templates  
+### Templates
 Enhance communication, reporting, or structured output formats.
 
-### Systems  
+### Systems
 Contribute decision models, operating structures, or governance patterns.
 
-### Documentation  
-Improve diagrams, explanations, or usage examples.
+### Documentation
+Improve diagrams, explanations, architecture overviews, or usage examples.
 
-### Automation  
-Enhance CI, linting, or repository automation.
+### Automation
+Enhance CI, linting, manifest validation, naming‑convention enforcement, or repository automation.
 
 ---
 
 ## 3. Contribution Requirements
 
-### 3.1 File Structure  
+### 3.1 File Structure
 All contributions must follow the existing folder structure:
 
-- `workflows/`
-- `templates/`
-- `systems/`
-- `use-cases/`
-- `docs/`
-- `.github/workflows/`
+- workflows/
+- templates/
+- systems/
+- use-cases/
+- starter-prompts/
+- docs/
+- .github/workflows/
 
+### 3.2 Naming Conventions
+Use prefix‑based, lowercase, hyphen‑separated filenames aligned with the AI‑Ops naming conventions:
 
-### 3.2 Naming Conventions  
-Use prefix-based, lowercase, hyphen-separated filenames aligned with the AI‑Ops naming conventions:
-
-- `ai-ops-system-[name].md`
-- `ai-ops-template-[name].md`
-- `ai-ops-workflow-[name].md`
-- `ai-ops-use-case-[name].md`
-- `ai-ops-agent-[name].md`
-
----
+- ai-ops-system-[name].md
+- ai-ops-template-[name].md
+- ai-ops-workflow-[name].md
+- ai-ops-use-case-[name].md
+- prompt-[name].md
 
 Examples:
-- `ai-ops-workflow-operational-cadence.md`
-- `ai-ops-template-status-update.md`
-- `ai-ops-system-operating-model.md`
+- ai-ops-workflow-operational-cadence.md
+- ai-ops-template-status-update.md
+- ai-ops-system-operating-model.md
+- ai-ops-use-case-weekly-ops-review.md
 
----
-
-### 3.3 Formatting  
-- Use Markdown  
-- Include clear headings  
-- Keep sections modular  
-- Avoid unnecessary prose  
+### 3.3 Formatting
+- Use Markdown
+- Include clear headings
+- Keep sections modular
+- Avoid unnecessary prose
 
 ---
 
 ## 4. Pull Request Standards
 
 ### Required in every PR:
-- Clear description of the change  
-- Reason for the change  
-- Link to related issues (if any)  
-- Summary of testing or validation  
+- Clear description of the change
+- Reason for the change
+- Link to related issues (if any)
+- Summary of testing or validation
 
 ### PRs will be rejected if:
-- They introduce ambiguity  
-- They break structure  
-- They duplicate existing content  
-- They add unnecessary complexity  
+- They introduce ambiguity
+- They break structure
+- They duplicate existing content
+- They add unnecessary complexity
 
 ---
 
 ## 5. Quality Standards
 
-### 5.1 Workflows  
-Must include:  
-- Purpose  
-- Steps  
-- Inputs  
-- Outputs  
-- AI‑assisted components  
+### 5.1 Workflows
+Must include:
+- Purpose
+- Steps
+- Inputs
+- Outputs
+- AI‑assisted components
 
-### 5.2 Templates  
-Must include:  
-- Clear sections  
-- Example usage  
-- AI‑friendly formatting  
+### 5.2 Templates
+Must include:
+- Clear sections
+- Example usage
+- AI‑friendly formatting
 
-### 5.3 Systems  
-Must include:  
-- Purpose  
-- Components  
-- Operating principles  
-- AI‑assisted components  
+### 5.3 Systems
+Must include:
+- Purpose
+- Components
+- Operating principles
+- AI‑assisted components
 
 ---
 
@@ -133,7 +130,7 @@ Must include:
 
 ## 7. Code of Conduct
 
-All contributors must follow the project’s `CODE_OF_CONDUCT.md`.
+All contributors must follow the project’s CODE_OF_CONDUCT.md.
 
 ---
 
