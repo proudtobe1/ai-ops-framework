@@ -15,13 +15,6 @@ Explains the full architectural model of the framework, including layers, data f
 
 ---
 
-### Framework Extension Guide  
-**File:** `ai-ops-framework-extension-guide.md`  
-**Description:**  
-Defines the official protocol for adding new workflows, templates, systems, documentation, and diagrams to the AI‑Ops Framework.
-
----
-
 ## 2. Dependency Mapping
 
 ### Dependency Map  
@@ -60,6 +53,11 @@ Outlines the measurement model for clarity, velocity, alignment, risk exposure, 
 **File:** `../systems/system-security-compliance.md`  
 **Description:**  
 Defines data handling rules, access control patterns, and AI‑assisted compliance checks.
+
+### Framework Extension Guide  
+**File:** `ai-ops-framework-extension-guide.md`  
+**Description:**  
+Defines the official protocol for adding new workflows, templates, systems, documentation, and diagrams to the AI‑Ops Framework.
 
 ---
 
@@ -178,4 +176,3 @@ flowchart TB
     X <--> S
     X <--> W
     X <--> T
-```
