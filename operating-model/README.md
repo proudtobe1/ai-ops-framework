@@ -1,100 +1,114 @@
 # AI‑Ops Operating Model — System Model Directory README
 
 ## Overview
-This directory contains the complete set of AI‑Ops System Models that define how AI agents operate, reason, communicate, collaborate, evolve, and remain safe, compliant, and aligned within the enterprise environment.
+This directory contains the complete set of AI‑Ops System Models, Engines, Frameworks, Guides, and Workflows that define how AI agents operate, reason, communicate, collaborate, evolve, and remain safe, compliant, and aligned within the enterprise environment.
 
-Each model is governed, versioned, auditable, interconnected, drift‑resistant, and designed for multi‑agent orchestration.
+All files are categorized automatically based on filename semantics.  
+A complete alphabetical index is included at the bottom.
 
-This README provides a directory map, a dependency overview, a purpose summary for each model, navigation guidance, and integration notes.
+---
 
-## Directory Structure
-operating-model/
-  ai-agent-governance-model.md
-  ai-agent-compliance-model.md
-  ai-agent-safety-model.md
-  ai-agent-audit-model.md
-  ai-agent-versioning-model.md
-  ai-agent-lifecycle-model.md
-  ai-agent-knowledge-model.md
-  ai-agent-knowledge-lifecycle-model.md
-  ai-agent-observability-model.md
-  ai-agent-drift-detection-model.md
-  ai-agent-failure-modes-protocol.md
-  ai-agent-incident-response-model.md
-  ai-agent-role-model.md
-  ai-agent-interaction-model.md
-  ai-agent-performance-model.md
-  ai-agent-reliability-model.md
-  ai-agent-security-model.md
-  ai-agent-data-handling-model.md
-  ai-agent-environment-model.md
-  ai-agent-escalation-model.md
-  ai-agent-certification-pathway.md
+# CATEGORIZED DIRECTORY
 
-## Model Index (A–Z)
-Audit Model — Logging, traceability, and audit governance  
-Alignment Engine — Alignment scoring and reasoning integrity  
-Architecture Model — High‑level agent architecture  
-Ethical Model — Ethical constraints and behavior rules  
-Environment Model — DEV, STAGE, PROD environment rules  
-Escalation Model — Escalation pathways and triggers  
-Certification Pathway — Certification gates for agents and models  
-Compliance Model — Classification, redaction, and policy enforcement  
-Data Handling Model — Data access, retention, and classification  
-Drift Detection Model — Drift detection across agents, knowledge, workflows  
-Failure Modes Protocol — Failure classification and containment  
-Governance Model — Top‑level governance for all models  
-Incident Response Model — Incident detection, containment, recovery  
-Interaction Model — Persona, tone, communication rules  
-Knowledge Model — Knowledge structure, validation, retrieval  
-Knowledge Lifecycle Model — Knowledge acquisition, versioning, retirement  
-Lifecycle Model — Agent lifecycle from ideation to retirement  
-Observability Model — Metrics, logs, traces, monitoring  
-Operating Model — Core operating structure  
-Performance Model — Latency, throughput, performance thresholds  
-Reliability Model — Reliability, redundancy, recovery  
-Role Model — Agent roles, boundaries, capabilities  
-Safety Model — Safety scoring, guardrails, safety drift  
-Security Model — Access control, integrity, threat prevention  
-Versioning Model — Versioning rules for agents, knowledge, workflows
+## 1. Governance, Compliance, Safety & Security Models
+ai-agent-governance-model.md  
+ai-agent-compliance-model.md  
+ai-agent-safety-model.md  
+ai-agent-security-model.md  
+ai-agent-ethical-model.md  
+ai-agent-escalation-model.md  
+ai-agent-certification-pathway.md  
 
-## Cross‑Model Dependency Overview
-Governance Model governs all other models and approves changes.  
-Compliance and Safety Models override all other models and enforce legal, ethical, and safety boundaries.  
-Audit and Observability Models provide traceability, monitoring, and evidence, feeding Drift Detection and Incident Response.  
-Drift Detection monitors agents, knowledge, workflows, templates, and system models, triggering Incident Response.  
-Lifecycle and Knowledge Lifecycle Models govern evolution of agents and knowledge, enforcing versioning, validation, and certification.  
-Failure Modes Protocol defines failure classification and containment.  
-Incident Response defines how agents respond to failures and recover.  
-Role and Interaction Models define how agents behave and communicate.
+## 2. Knowledge, Memory & Data Models
+ai-agent-knowledge-model.md  
+ai-agent-knowledge-lifecycle-model.md  
+ai-agent-memory-context-model.md  
+ai-agent-data-handling-model.md  
 
-## How to Use This Directory
-When building or updating an agent:
-  Governance Model  
-  Lifecycle Model  
-  Role Model  
-  Interaction Model  
-  Knowledge Model  
-  Knowledge Lifecycle Model  
+## 3. Reasoning, Decision & Behavior Models
+ai-agent-reasoning-framework.md  
+ai-agent-decision-model.md  
+ai-agent-behavior-rules.md  
+ai-agent-output-contract.md  
 
-When validating or certifying an agent:
-  Certification Pathway  
-  Compliance Model  
-  Safety Model  
-  Audit Model  
-  Versioning Model  
+## 4. Communication & Interaction Models
+ai-agent-communication-engine.md  
+ai-agent-communication-cadence-model.md  
+ai-agent-interaction-model.md  
 
-When monitoring or debugging:
-  Observability Model  
-  Drift Detection Model  
-  Failure Modes Protocol  
-  Incident Response Model  
+## 5. Lifecycle, Environment & Operating Models
+ai-agent-lifecycle-model.md  
+ai-agent-operating-model.md  
+ai-agent-operating-cadence-model.md  
+ai-agent-environment-model.md  
+ai-agent-sandbox.md  
 
-When updating system models:
-  Governance Model  
-  Versioning Model  
-  Audit Model  
-  Knowledge Lifecycle Model  
+## 6. Observability, Metrics, Drift & Reliability Models
+ai-agent-observability-model.md  
+ai-agent-metrics-framework.md  
+ai-agent-drift-detection-model.md  
+ai-agent-reliability-model.md  
+ai-agent-performance-model.md  
 
-## Summary
-This directory contains the complete, governed, versioned, and interconnected system model architecture for the AI‑Ops Framework. It defines how AI agents think, act, evolve, collaborate, and remain safe, compliant, and aligned across all environments.
+## 7. Failure, Incident & Recovery Models
+ai-agent-failure-modes-recovery.md  
+ai-agent-incident-response-model.md  
+ai-agent-test-suite.md  
+
+## 8. Engines & Frameworks
+ai-agent-alignment-engine.md  
+
+## 9. Integration & Workflow Files
+ai-agent-integration-guide.md  
+workflow-ai-agent-integration.md  
+
+## 10. Role & Audit Models
+ai-agent-role-model.md  
+ai-agent-audit-model.md  
+
+---
+
+# A–Z INDEX OF ALL FILES
+
+ai-agent-alignment-engine.md  
+ai-agent-audit-model.md  
+ai-agent-behavior-rules.md  
+ai-agent-certification-pathway.md  
+ai-agent-communication-cadence-model.md  
+ai-agent-communication-engine.md  
+ai-agent-compliance-model.md  
+ai-agent-data-handling-model.md  
+ai-agent-decision-model.md  
+ai-agent-drift-detection-model.md  
+ai-agent-environment-model.md  
+ai-agent-escalation-model.md  
+ai-agent-ethical-model.md  
+ai-agent-failure-modes-recovery.md  
+ai-agent-governance-model.md  
+ai-agent-incident-response-model.md  
+ai-agent-integration-guide.md  
+ai-agent-interaction-model.md  
+ai-agent-knowledge-lifecycle-model.md  
+ai-agent-knowledge-model.md  
+ai-agent-lifecycle-model.md  
+ai-agent-memory-context-model.md  
+ai-agent-metrics-framework.md  
+ai-agent-observability-model.md  
+ai-agent-operating-cadence-model.md  
+ai-agent-operating-model.md  
+ai-agent-output-contract.md  
+ai-agent-performance-model.md  
+ai-agent-reasoning-framework.md  
+ai-agent-reliability-model.md  
+ai-agent-role-model.md  
+ai-agent-safety-model.md  
+ai-agent-sandbox.md  
+ai-agent-security-model.md  
+ai-agent-test-suite.md  
+ai-agent-versioning-model.md  
+workflow-ai-agent-integration.md  
+
+---
+
+# Summary
+This README provides a complete, categorized, and alphabetized index of all system models, engines, frameworks, guides, and workflows within the AI‑Ops operating‑model directory. It is designed for clarity, navigation, and long‑term maintainability.
