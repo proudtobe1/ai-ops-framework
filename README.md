@@ -1,7 +1,7 @@
 # AI‑Ops Framework  
 ![Manifest Validation](https://github.com/proudtobe1/ai-ops-framework/actions/workflows/manifest-validation.yml/badge.svg)
 ![Structural Linter](https://github.com/proudtobe1/ai-ops-framework/actions/workflows/structural-linter.yml/badge.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Status](https://img.shields.io/badge/Status-Active_Development-blue.svg)
 ![Last Commit](https://img.shields.io/github/last-commit/proudtobe1/ai-ops-framework)
 ![Docs](https://img.shields.io/badge/Docs-Available-purple.svg)
