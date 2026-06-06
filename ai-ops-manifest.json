@@ -1,13 +1,83 @@
 {
   "name": "ai-ops-framework",
   "version": "1.0.0",
-  "description": "A modular AI-enabled operational framework for workflows, decisions, and execution systems.",
+  "description": "A modular AI-enabled operational framework for workflows, decisions, systems, prompts, and documentation.",
   "license": "MIT",
   "model_format": "framework",
+
+  "modules": {
+    "workflows": [
+      "workflows/ai-ops-workflow-operational-cadence.md",
+      "workflows/ai-ops-workflow-decision-making.md",
+      "workflows/ai-ops-workflow-issue-escalation.md",
+      "workflows/ai-ops-workflow-communication-cadence.md"
+    ],
+    "templates": [
+      "templates/ai-ops-template-status-update.md",
+      "templates/ai-ops-template-weekly-summary.md",
+      "templates/ai-ops-template-decision-record.md",
+      "templates/ai-ops-template-weekly-report.md"
+    ],
+    "systems": [
+      "systems/ai-ops-system-operating-model.md",
+      "systems/ai-ops-system-decision-model.md",
+      "systems/ai-ops-system-operational-metrics.md",
+      "systems/ai-ops-system-security-compliance.md"
+    ],
+    "use_cases": [
+      "use-cases/ai-ops-use-case-weekly-ops-review.md"
+    ],
+    "starter_prompts": [
+      "starter-prompts/prompt-weekly-summary.md",
+      "starter-prompts/prompt-alignment-check.md",
+      "starter-prompts/prompt-risk-review.md"
+    ],
+    "documentation": [
+      "docs/architecture-deep-dive.md",
+      "docs/ai-agent-integration.md",
+      "docs/ai-ops-system-overview.md",
+      "docs/ai-ops-data-flow.md"
+    ],
+    "governance": [
+      "PROJECT_GOVERNANCE.md",
+      "CONTRIBUTING.md",
+      "CONTRIBUTING_DETAILED.md",
+      "CODE_OF_CONDUCT.md"
+    ],
+    "root_files": [
+      "README.md",
+      "AI_OPS_MODEL_CARD.md",
+      "AI_OPS_MODULE_REGISTRY.md",
+      "EXAMPLES.md",
+      "FAQ.md",
+      "GLOSSARY.md",
+      "ROADMAP.md",
+      "LICENSE"
+    ]
+  },
+
   "entrypoints": {
     "workflows": "./workflows",
     "templates": "./templates",
-    "systems": "./systems"
+    "systems": "./systems",
+    "use_cases": "./use-cases",
+    "starter_prompts": "./starter-prompts",
+    "documentation": "./docs",
+    "governance": "./",
+    "root": "./"
   },
-  "documentation": "./docs"
+
+  "integrity_rules": {
+    "naming_conventions": "All files must follow ai-ops-[type]-[name].md or prompt-[name].md",
+    "alphabetical_ordering": true,
+    "no_deprecated_files": true,
+    "option_a_required": true
+  },
+
+  "ai_agent_governance": {
+    "alignment_required": true,
+    "drift_detection_enabled": true,
+    "audit_logging": true,
+    "human_in_the_loop_required": true
+  }
 }
