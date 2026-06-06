@@ -90,3 +90,79 @@ Use this page when you want to:
 - Explore the architecture without reading every file  
 
 This index serves as the visual entry point into the entire AI‑Ops Framework.
+
+flowchart TB
+    %% Top Layer
+    A[Purpose & Core Principles]
+
+    %% Systems Layer
+    subgraph S[Systems Layer]
+        S1[Alignment Engine]
+        S2[Reasoning Framework]
+        S3[Behavioral Guardrails]
+        S4[Communication Engine]
+        S5[Communication Cadence]
+        S6[Memory & Context]
+        S7[Knowledge Model]
+        S8[Security & Compliance]
+        S9[Drift Detection]
+        S10[Operational Metrics]
+    end
+
+    %% Workflows Layer
+    subgraph W[Workflows Layer]
+        W1[Operational Cadence Workflow]
+        W2[AI-Agent Integration Workflow]
+        W3[Decision Automation Workflow]
+    end
+
+    %% Templates Layer
+    subgraph T[Templates Layer]
+        T1[Communication Templates]
+        T2[Reporting Templates]
+        T3[Alignment Templates]
+        T4[Decision Templates]
+        T5[Risk Templates]
+        T6[Incident Templates]
+        T7[SLO Templates]
+        T8[Runbook Templates]
+    end
+
+    %% Docs Layer
+    subgraph D[Documentation Layer]
+        D1[Architecture Docs]
+        D2[Diagrams]
+        D3[Reference Docs]
+        D4[Playbooks]
+    end
+
+    %% Personas Layer
+    P[Personas]
+
+    %% Use Cases Layer
+    subgraph U[Use Cases]
+        U1[Incident Review]
+        U2[Roadmap Alignment]
+        U3[Sprint Planning]
+        U4[Weekly Ops Review]
+    end
+
+    %% Sandbox Layer
+    X[AI-Agent Sandbox]
+
+    %% Downward Flow
+    A --> S
+    S --> W
+    W --> T
+    T --> D
+    D --> P
+    P --> U
+    U --> X
+
+    %% Cross-links
+    S <--> W
+    S <--> T
+    W <--> T
+    X <--> S
+    X <--> W
+    X <--> T
