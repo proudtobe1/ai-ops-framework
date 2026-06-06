@@ -137,3 +137,4 @@ All contributors must follow the project’s CODE_OF_CONDUCT.md.
 ## 8. License
 
 By contributing, you agree that your contributions are licensed under the MIT License.
+
