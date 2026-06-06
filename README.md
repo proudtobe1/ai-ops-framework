@@ -9,7 +9,6 @@
 ![Last Commit](https://img.shields.io/github/last-commit/proudtobe1/ai-ops-framework)
 ![Docs](https://img.shields.io/badge/Docs-Available-purple.svg)
 
-
 The AI‑Ops Framework is a modular, extensible, and automation‑ready operating system for modern organizations.  
 It provides standardized systems, workflows, templates, prompts, and use‑cases designed to accelerate decision‑making, improve operational clarity, and enable AI‑assisted execution across teams.
 
