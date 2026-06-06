@@ -1,64 +1,82 @@
-# Governance Model
+# AI‑Ops Framework — Governance Model
 
-A structured governance system for maintaining clarity, quality, and alignment across the AI‑Ops Framework.
+A structured governance system for maintaining clarity, quality, alignment, and operational integrity across the AI‑Ops Framework.  
+This governance model applies to all contributors, maintainers, reviewers, and AI agents interacting with the framework.
 
 ---
 
 ## 1. Purpose
 
-To define how decisions are made, how contributions are evaluated, and how the framework evolves over time.
+To define how decisions are made, how contributions are evaluated, how AI agents operate within the framework, and how the system evolves over time while maintaining structural integrity, clarity, and alignment.
 
 ---
 
 ## 2. Governance Principles
 
-### Clarity  
+### Clarity
 All decisions must be explicit, documented, and easy to understand.
 
-### Alignment  
-Changes must align with the framework’s purpose, structure, and operating model.
+### Alignment
+Changes must align with the framework’s purpose, structure, naming conventions, and operating model.
 
-### Quality  
-Every addition must improve the framework’s clarity, modularity, or operational value.
+### Quality
+Every addition must improve clarity, modularity, or operational value.
 
-### Transparency  
+### Transparency
 All decisions, discussions, and changes must be visible to contributors.
+
+### Safety
+AI‑generated outputs must be reviewed, validated, and never used without human oversight for material decisions.
 
 ---
 
 ## 3. Roles and Responsibilities
 
-### Maintainers  
+### Maintainers
 - Approve or reject contributions  
 - Ensure structural consistency  
-- Manage releases  
+- Enforce naming conventions  
+- Manage releases and versioning  
 - Oversee governance decisions  
+- Validate manifest updates  
 
-### Contributors  
+### Contributors
 - Submit improvements  
 - Follow contribution standards  
 - Maintain clarity and modularity  
+- Ensure naming and structural compliance  
 
-### Reviewers  
+### Reviewers
 - Provide feedback  
 - Validate structure and quality  
 - Ensure alignment with governance principles  
+- Identify drift or inconsistencies  
+
+### AI Agents
+- Follow system instructions and naming conventions  
+- Produce structured, predictable outputs  
+- Log reasoning summaries when required  
+- Escalate ambiguous or high‑risk decisions  
+- Never make autonomous decisions with material impact  
 
 ---
 
 ## 4. Decision Types
 
-### Structural Decisions  
+### Structural Decisions
 Changes to folder structure, naming conventions, or core architecture.
 
-### Content Decisions  
-Additions or updates to workflows, templates, systems, or documentation.
+### Content Decisions
+Additions or updates to workflows, templates, systems, prompts, or documentation.
 
-### Automation Decisions  
-Changes to CI, linting, or automation workflows.
+### Automation Decisions
+Changes to CI, linting, manifest validation, or automation workflows.
 
-### Governance Decisions  
+### Governance Decisions
 Updates to this governance model or contribution standards.
+
+### AI‑Agent Decisions
+Rules governing agent behavior, escalation, drift detection, and audit logging.
 
 ---
 
@@ -69,39 +87,158 @@ Updates to this governance model or contribution standards.
 3. Discussion and refinement  
 4. Maintainer approval  
 5. Merge to main  
+6. Manifest updated (if applicable)  
 
 ---
 
-## 6. Release Management
+## 6. Structural Integrity Rules
 
-### Versioning  
+To maintain consistency across the framework:
+
+- All files must follow prefix‑based naming conventions  
+- All modules must reside in their correct folders  
+- No cross‑contamination between workflows, templates, systems, prompts, or use‑cases  
+- All registries must remain alphabetized  
+- All new modules must be added to `ai-ops-manifest.json`  
+- All large content blocks must use Option A formatting  
+- No deprecated filenames may be reintroduced  
+
+---
+
+## 7. Manifest Governance
+
+The `ai-ops-manifest.json` is the authoritative index of the framework.
+
+### Manifest Requirements
+- Every module must be listed  
+- Paths must be accurate  
+- Naming conventions must match the file system  
+- No broken or missing references  
+- Manifest must be updated in the same PR as new modules  
+
+### Manifest Validation
+- CI must validate manifest structure  
+- Maintainers must verify correctness before merging  
+
+---
+
+## 8. AI‑Agent Governance
+
+AI agents interacting with the framework must follow:
+
+### Alignment Requirements
+- Follow naming conventions  
+- Follow structural rules  
+- Produce predictable, structured outputs  
+- Avoid hallucination or fabrication  
+- Escalate ambiguous or high‑risk decisions  
+
+### Drift Detection
+Agents must be monitored for:
+- Deviation from naming conventions  
+- Incorrect file references  
+- Structural violations  
+- Misinterpretation of workflows or systems  
+
+### Audit Logging
+Agents must log:
+- Inputs  
+- Outputs  
+- Reasoning summaries (when required)  
+- Escalation triggers  
+
+### Human‑in‑the‑Loop Requirements
+Agents must never:
+- Approve PRs  
+- Modify governance  
+- Make decisions with material impact  
+
+Humans must review all agent‑generated outputs.
+
+---
+
+## 9. Contribution Enforcement
+
+All contributions must comply with:
+
+- CONTRIBUTING.md  
+- CONTRIBUTING_DETAILED.md  
+- Naming conventions  
+- Structural integrity rules  
+- Manifest governance  
+- Documentation standards  
+
+PRs must be rejected if they:
+- Introduce ambiguity  
+- Break structure  
+- Violate naming conventions  
+- Duplicate existing content  
+- Add unnecessary complexity  
+
+---
+
+## 10. Documentation Governance
+
+Documentation must remain:
+
+- Accurate  
+- Up‑to‑date  
+- Aligned with the current architecture  
+- Consistent with naming conventions  
+
+### Required Documentation Updates
+When systems, workflows, or templates change:
+- Architecture diagrams must be updated  
+- System overviews must be updated  
+- Data flow diagrams must be updated  
+- Integration guides must be updated  
+
+---
+
+## 11. Release Management
+
+### Versioning
 The framework follows semantic versioning:
 
 - MAJOR — structural or architectural changes  
-- MINOR — new workflows, templates, or systems  
+- MINOR — new workflows, templates, systems, prompts, or use‑cases  
 - PATCH — small fixes or documentation updates  
 
-### Release Cadence  
-Releases occur when meaningful changes accumulate.
+### Release Approval Criteria
+A release may occur when:
+- Manifest is valid  
+- Registries are updated  
+- Documentation is aligned  
+- Naming conventions are consistent  
+
+### Release Blockers
+A release cannot proceed if:
+- Manifest is broken  
+- Naming conventions are violated  
+- Structural integrity is compromised  
 
 ---
 
-## 7. Conflict Resolution
+## 12. Conflict Resolution
 
-If disagreements arise:  
+If disagreements arise:
 1. Discuss in the pull request  
 2. Seek reviewer input  
 3. Maintainer makes final decision  
 
 ---
 
-## 8. License and Compliance
+## 13. License and Compliance
 
-All contributions must comply with the MIT License and the project’s Code of Conduct.
+All contributions must comply with:
+- MIT License  
+- CODE_OF_CONDUCT.md  
+- Security and privacy guidelines  
 
 ---
 
-## 9. Evolution of Governance
+## 14. Evolution of Governance
 
 This governance model may evolve as the framework grows.  
 Changes must follow the same decision process defined above.
+
