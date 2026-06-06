@@ -1,0 +1,91 @@
+name: Manifest & Naming Validation
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  validate-manifest:
+    name: Validate Manifest and Naming Conventions
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install JSON Schema Validator
+        run: npm install -g ajv-cli
+
+      - name: Validate ai-ops-manifest.json
+        run: |
+          ajv validate \
+            -s schema/ai-ops-manifest.schema.json \
+            -d ai-ops-manifest.json
+
+      - name: Enforce naming conventions
+        run: |
+          invalid=$(find . -type f \
+            ! -path "./.git/*" \
+            ! -path "./schema/*" \
+            ! -name "ai-ops-*.md" \
+            ! -name "prompt-*.md" \
+            ! -name "*.json" \
+            ! -name "*.yml" \
+            ! -name "*.yaml" \
+            ! -name "*.md" \
+            | grep -vE "README.md|LICENSE|CONTRIBUTING.md|CONTRIBUTING_DETAILED.md|CODE_OF_CONDUCT.md|PROJECT_GOVERNANCE.md")
+
+          if [ ! -z "$invalid" ]; then
+            echo "❌ Invalid filenames detected:"
+            echo "$invalid"
+            exit 1
+          fi
+
+      - name: Enforce alphabetical ordering in module lists
+        run: |
+          node << 'EOF'
+          const fs = require('fs');
+          const manifest = JSON.parse(fs.readFileSync('ai-ops-manifest.json', 'utf8'));
+
+          const categories = Object.keys(manifest.modules);
+          let failed = false;
+
+          for (const category of categories) {
+            const list = manifest.modules[category];
+            const sorted = [...list].sort();
+            if (JSON.stringify(list) !== JSON.stringify(sorted)) {
+              console.error(`❌ ${category} is not alphabetized.`);
+              failed = true;
+            }
+          }
+
+          if (failed) process.exit(1);
+          EOF
+
+      - name: Enforce no deprecated filenames
+        run: |
+          deprecated=$(find . -type f -name "ai-ops-agent-*")
+          if [ ! -z "$deprecated" ]; then
+            echo "❌ Deprecated filenames detected:"
+            echo "$deprecated"
+            exit 1
+          fi
+
+      - name: Validate Option A formatting (structural check)
+        run: |
+          violations=$(grep -R "```" -n workflows templates systems use-cases starter-prompts docs || true)
+          if [ ! -z "$violations" ]; then
+            echo "❌ Option A violation: Backticks detected in content files."
+            echo "$violations"
+            exit 1
+          fi
+
+      - name: All checks passed
+        run: echo "✅ Manifest and naming validation passed."
