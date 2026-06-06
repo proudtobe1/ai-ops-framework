@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI-Ops Framework Manifest Schema",
+  "type": "object",
+  "required": [
+    "name",
+    "version",
+    "description",
+    "license",
+    "model_format",
+    "modules",
+    "entrypoints",
+    "integrity_rules",
+    "ai_agent_governance"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "const": "ai-ops-framework"
+    },
+    "version": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string",
+      "const": "MIT"
+    },
+    "model_format": {
+      "type": "string",
+      "const": "framework"
+    },
+    "modules": {
+      "type": "object",
+      "required": [
+        "workflows",
+        "templates",
+        "systems",
+        "use_cases",
+        "starter_prompts",
+        "documentation",
+        "governance",
+        "root_files"
+      ],
+      "properties": {
+        "workflows": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "templates": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "systems": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "use_cases": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "starter_prompts": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "documentation": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "governance": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "root_files": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "entrypoints": {
+      "type": "object",
+      "required": [
+        "workflows",
+        "templates",
+        "systems",
+        "use_cases",
+        "starter_prompts",
+        "documentation",
+        "governance",
+        "root"
+      ],
+      "properties": {
+        "workflows": { "type": "string" },
+        "templates": { "type": "string" },
+        "systems": { "type": "string" },
+        "use_cases": { "type": "string" },
+        "starter_prompts": { "type": "string" },
+        "documentation": { "type": "string" },
+        "governance": { "type": "string" },
+        "root": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "integrity_rules": {
+      "type": "object",
+      "required": [
+        "naming_conventions",
+        "alphabetical_ordering",
+        "no_deprecated_files",
+        "option_a_required"
+      ],
+      "properties": {
+        "naming_conventions": { "type": "string" },
+        "alphabetical_ordering": { "type": "boolean" },
+        "no_deprecated_files": { "type": "boolean" },
+        "option_a_required": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "ai_agent_governance": {
+      "type": "object",
+      "required": [
+        "alignment_required",
+        "drift_detection_enabled",
+        "audit_logging",
+        "human_in_the_loop_required"
+      ],
+      "properties": {
+        "alignment_required": { "type": "boolean" },
+        "drift_detection_enabled": { "type": "boolean" },
+        "audit_logging": { "type": "boolean" },
+        "human_in_the_loop_required": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
