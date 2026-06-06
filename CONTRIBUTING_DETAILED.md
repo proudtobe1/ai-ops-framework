@@ -61,6 +61,7 @@ Use prefix-based, lowercase, hyphen-separated filenames aligned with the AI‑Op
 - `ai-ops-template-[name].md`
 - `ai-ops-workflow-[name].md`
 - `ai-ops-use-case-[name].md`
+- 'ai-ops-agent-[name].md'
 
 ---
 
