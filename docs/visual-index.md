@@ -13,6 +13,12 @@ This page provides a visual entry point into the system for new users, contribut
 **Description:**  
 Explains the full architectural model of the framework, including layers, data flow, and AI consumption patterns.
 
+---
+
+### Framework Extension Guide  
+**File:** `ai-ops-framework-extension-guide.md`  
+**Description:**  
+Defines the official protocol for adding new workflows, templates, systems, documentation, and diagrams to the AI‑Ops Framework.
 
 ---
 
