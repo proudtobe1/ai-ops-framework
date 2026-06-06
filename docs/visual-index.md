@@ -9,7 +9,7 @@ This page provides a visual entry point into the system for new users, contribut
 ## 1. Architecture & Structure
 
 ### Architecture Deep Dive
-File: ai-ops-architecture-deep-dive.md
+File: 'ai-ops-architecture-deep-dive.md'
 **Description:**
 Explains the full architectural model of the framework, including layers, data flow, and AI consumption patterns.
 
