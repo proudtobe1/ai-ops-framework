@@ -9,10 +9,9 @@
 Follow these steps to begin using the AI‑Ops Framework in your environment.
 
 ### 1. Clone the Repository
-```bash
-git clone https://github.com/proudtobe1/ai-ops-framework.git
-cd ai-ops-framework
-```
+
+    git clone https://github.com/proudtobe1/ai-ops-framework.git
+    cd ai-ops-framework
 
 ### 2. Explore the Core Components
 - `workflows/` — operational processes  
@@ -114,3 +113,50 @@ Please review the contribution guidelines and code of conduct (coming soon).
 ## 📜 License
 
 This project is licensed under the MIT License.
+
+---
+
+# 📁 Root Directory Index (Option C — Categories + A–Z)
+
+## Governance, Conduct & Contribution
+- CODE_OF_CONDUCT.md  
+- CONTRIBUTING.md  
+- CONTRIBUTING_DEEP.md  
+- GOVERNANCE_MODEL.md  
+
+## Reference Documentation
+- FAQ.md  
+- GLOSSARY.md  
+- USAGE_EXAMPLE.md  
+
+## Model Metadata & Registry
+- MODEL_CARD.md  
+- MODULE_REGISTRY.md  
+- model-manifest.json  
+
+## Roadmap & Planning
+- ROADMAP.md  
+
+## Licensing
+- LICENSE  
+
+## Root README
+- README.md  
+
+---
+
+# A–Z Index of All Root Files
+
+- CODE_OF_CONDUCT.md  
+- CONTRIBUTING.md  
+- CONTRIBUTING_DEEP.md  
+- FAQ.md  
+- GLOSSARY.md  
+- GOVERNANCE_MODEL.md  
+- LICENSE  
+- MODEL_CARD.md  
+- MODULE_REGISTRY.md  
+- README.md  
+- ROADMAP.md  
+- USAGE_EXAMPLE.md  
+- model-manifest.json  
