@@ -35,6 +35,7 @@ jobs:
             ! -name "ai-ops-*.md" \
             ! -name "prompt-*.md" \
             ! -name "*.json" \
+            ! -name "README.md" \
             ! -name "*.yml" \
             ! -name "*.yaml" \
             2>/dev/null || true)
