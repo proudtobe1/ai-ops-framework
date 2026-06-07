@@ -1,3 +1,8 @@
 site_name: AI-Ops Framework
+strict: false
+
+plugins:
+  - awesome-pages
+
 nav:
   - Home: index.md
