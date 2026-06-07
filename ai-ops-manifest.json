@@ -50,10 +50,10 @@
     ],
     "use_cases": [
       "ai-ops-use-case-incident-review.md",
+      "README.md",
       "ai-ops-use-case-roadmap-alignment.md",
       "ai-ops-use-case-sprint-planning.md",
       "ai-ops-use-case-weekly-ops-review.md",
-      "README.md"
     ],
     "workflows": [
       "ai-ops-workflow-drift-detection.md",
