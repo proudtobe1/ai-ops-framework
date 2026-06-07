@@ -6,6 +6,9 @@ on:
       - main
   pull_request:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build-docs:
     runs-on: ubuntu-latest
@@ -19,9 +22,14 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install MkDocs
+      - name: Install MkDocs + plugins
         run: |
-          pip install mkdocs
+          pip install mkdocs \
+                     mkdocs-material \
+                     mkdocs-awesome-pages-plugin \
+                     mkdocs-mermaid2-plugin \
+                     mkdocs-literate-nav \
+                     mkdocs-redirects
 
       - name: Validate documentation build
         run: |
