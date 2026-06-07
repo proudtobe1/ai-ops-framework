@@ -1,0 +1,91 @@
+*** Begin Patch
+*** Update File: .github/workflows/ci.yml
+@@
++---
+ name: CI
+ on:
+   push:
+-    branches: [ main ]
++    branches: [main]
+@@
+ jobs:
+   build:
+-    runs-on: [ ubuntu-latest ]
++    runs-on: [ubuntu-latest]
+*** End Patch
+*** Begin Patch
+*** Update File: .github/workflows/manifest-validation.yml
+@@
++---
+ name: manifest-validation
+ on:
+   push:
+-    branches: [ main ]
++    branches: [main]
+@@
+-    - name: Run manifest validation
+-      run: some-command --option1 value1 --option2 value2 --option3 value3 --option4 value4
++    - name: Run manifest validation
++      run: >
++        some-command --option1 value1 --option2 value2
++        --option3 value3 --option4 value4
+*** End Patch
+*** Begin Patch
+*** Update File: .github/workflows/structural-linter.yml
+@@
++---
+ name: structural-linter
+ on:
+   push:
+-    branches: [ main ]
++    branches: [main]
+@@
+-    - name: Lint
+-      run: yamllint -c .yamllint.yml .
++    - name: Lint
++      run: yamllint -c .yamllint.yml .
+*** End Patch
+*** Begin Patch
+*** Update File: .github/workflows/docs-autobuild.yml
+@@
++---
+ name: docs-autobuild
+ on:
+-  workflow_dispatch: Yes
++  workflow_dispatch: true
+ jobs:
+   build:
+-    runs-on: [ ubuntu-latest ]
++    runs-on: [ubuntu-latest]
+*** End Patch
+*** Begin Patch
+*** Update File: .github/ISSUE_TEMPLATE/config.yml
+@@
++---
+ # Issue template configuration
+ blank_issues_enabled: false
+*** End Patch
+*** Begin Patch
+*** Update File: .github/ISSUE_TEMPLATE/feature_request.yml
+@@
++---
+ name: Feature request
+ about: Suggest an improvement
+ labels: enhancement
+*** End Patch
+*** Begin Patch
+*** Update File: .github/ISSUE_TEMPLATE/bug_report.yml
+@@
++---
+ name: Bug report
+ about: Create a report to help us improve
+ labels: bug
+*** End Patch
+*** Begin Patch
+*** Update File: mkdocs.yml
+@@
++---
+ site_name: My Docs
+ nav:
+   - Home: index.md
+*** End Patch
