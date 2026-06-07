@@ -24,10 +24,8 @@ jobs:
         run: npm install -g ajv-cli
 
       - name: Validate ai-ops-manifest.json
-        run: |
-          ajv validate \
-            -s schema/ai-ops-manifest.schema.json \
-            -d ai-ops-manifest.json
+        run: ajv validate -s schema/ai-ops-manifest.schema.json -d ai-ops-manifest.json
+
 
       - name: Enforce naming conventions in core module areas
         run: |
