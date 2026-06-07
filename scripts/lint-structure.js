@@ -55,6 +55,7 @@ const allowedPatterns = [
   /^.*\.json$/,
   /^.*\.ya?ml$/,
   /^.*\.md$/,
+  /^.*\.js$/,
 ];
 
 const governanceFiles = [
