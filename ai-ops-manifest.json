@@ -23,12 +23,13 @@
       "README.md"
     ],
     "starter_prompts": [
-      "prompt-agent-behavior.md",
-      "prompt-agent-communication.md",
-      "prompt-agent-decision-model.md",
-      "prompt-agent-operating-model.md"
+      "prompt-alignment-check.md",
+      "prompt-decision-tree.md",
+      "prompt-risk-review.md",
+      "prompt-weekly-summary.md"
     ],
     "systems": [
+      "ai-ops-architecture-operating-model.md",
       "ai-ops-system-alignment-engine.md",
       "ai-ops-system-behavioral-guardrails.md",
       "ai-ops-system-communication-cadence.md",
@@ -36,17 +37,30 @@
       "ai-ops-system-drift-detection.md",
       "ai-ops-system-knowledge-model.md",
       "ai-ops-system-memory-context.md",
-      "ai-ops-system-operational-metrics.md",
       "ai-ops-system-operating-model.md",
+      "ai-ops-system-operational-metrics.md",
       "ai-ops-system-overview.md",
       "ai-ops-system-reasoning-framework.md",
       "ai-ops-system-security-compliance.md"
     ],
     "templates": [
+      "ai-ops-template-alignment-check.md",
+      "ai-ops-template-change-request.md",
       "ai-ops-template-decision-record.md",
-      "ai-ops-template-escalation-record.md",
-      "ai-ops-template-metrics-report.md",
-      "ai-ops-template-status-update.md"
+      "ai-ops-template-dependency-review.md",
+      "ai-ops-template-escalation-report.md",
+      "ai-ops-template-executive-brief.md",
+      "ai-ops-template-incident-report.md",
+      "ai-ops-template-operational-readiness-review.md",
+      "ai-ops-template-post-mortem.md",
+      "ai-ops-template-qa-review.md",
+      "ai-ops-template-rca.md",
+      "ai-ops-template-risk-review.md",
+      "ai-ops-template-runbook.md",
+      "ai-ops-template-service-level-review.md",
+      "ai-ops-template-slo-definition.md",
+      "ai-ops-template-status-update.md",
+      "ai-ops-template-weekly-report.md"
     ],
     "use_cases": [
       "README.md",
@@ -56,11 +70,9 @@
       "ai-ops-use-case-weekly-ops-review.md"
     ],
     "workflows": [
-      "ai-ops-workflow-drift-detection.md",
-      "ai-ops-workflow-escalation.md",
-      "ai-ops-workflow-metrics-review.md",
-      "ai-ops-workflow-operating-rhythm.md",
-      "ai-ops-workflow-status-update.md"
+      "ai-ops-workflow-ai-agent-integration.md",
+      "ai-ops-workflow-decision-automation.md",
+      "ai-ops-workflow-operational-cadence.md"
     ]
   },
 
