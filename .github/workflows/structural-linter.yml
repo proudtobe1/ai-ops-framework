@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   structural-lint:
     name: Run Structural Integrity Linter
@@ -18,12 +21,15 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
 
       - name: Run structural integrity linter
         run: |
+          if [ ! -f scripts/lint-structure.js ]; then
+            echo "❌ Linter script not found at scripts/lint-structure.js"
+            exit 1
+          fi
           node scripts/lint-structure.js
 
       - name: Linter passed
         run: echo "✅ Structural integrity checks passed."
-
