@@ -48,6 +48,8 @@
       "ai-ops-template-metrics-report.md",
       "ai-ops-template-status-update.md"
     ],
+    "use_cases": [
+    ],
     "workflows": [
       "ai-ops-workflow-drift-detection.md",
       "ai-ops-workflow-escalation.md",
