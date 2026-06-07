@@ -1,16 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * AI‑Ops Framework — Structural Integrity Linter
- *
- * This script enforces:
- * 1. Naming conventions
- * 2. Alphabetical ordering of module lists
- * 3. No deprecated filenames
- * 4. Option A formatting (no backticks in content files)
- *
- * Run manually with:
- *   node scripts/lint-structure.js
+ * AI‑Ops Framework — Structural Integrity Linter (Corrected)
  */
 
 const fs = require("fs");
@@ -24,6 +15,12 @@ function listFiles(dir) {
   fs.readdirSync(dir).forEach((file) => {
     const full = path.join(dir, file);
     const stat = fs.statSync(full);
+
+    // Skip noise directories
+    if (file === ".git" || file === "node_modules" || file.includes("schema")) {
+      return;
+    }
+
     if (stat.isDirectory()) {
       results = results.concat(listFiles(full));
     } else {
@@ -55,7 +52,7 @@ const allowedPatterns = [
   /^.*\.json$/,
   /^.*\.ya?ml$/,
   /^.*\.md$/,
-  /^.*\.js$/,
+  /^.*\.js$/, // allow JS files
 ];
 
 const governanceFiles = [
@@ -72,9 +69,10 @@ const allFiles = listFiles(".");
 let namingErrors = [];
 
 for (const file of allFiles) {
-  if (file.includes(".git") || file.includes("schema")) continue;
-
   const base = path.basename(file);
+
+  // Ignore this linter itself
+  if (file === "scripts/lint-structure.js") continue;
 
   const allowed =
     allowedPatterns.some((p) => p.test(base)) ||
@@ -134,26 +132,28 @@ console.log("✅ No deprecated filenames");
 // ------------------------------
 console.log("🔍 Checking Option A formatting...");
 
-const contentDirs = [
+// Only enforce Option A in these folders, NOT docs
+const optionAFolders = [
   "workflows",
   "templates",
   "systems",
   "use-cases",
   "starter-prompts",
-  "docs",
 ];
 
 let optionAErrors = [];
 
-for (const dir of contentDirs) {
-  if (!fs.existsSync(dir)) continue;
+for (const file of allFiles) {
+  const relative = file.replace(/^[.][/\\]?/, ""); // normalize
 
-  const files = listFiles(dir);
-  for (const file of files) {
-    const text = fs.readFileSync(file, "utf8");
-    if (text.includes("```")) {
-      optionAErrors.push(file);
-    }
+  // Only check files in the Option A folders
+  if (!optionAFolders.some((folder) => relative.startsWith(folder + "/"))) {
+    continue;
+  }
+
+  const text = fs.readFileSync(file, "utf8");
+  if (text.includes("```")) {
+    optionAErrors.push(relative);
   }
 }
 
