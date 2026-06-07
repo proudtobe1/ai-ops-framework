@@ -86,7 +86,7 @@ jobs:
 
       - name: Enforce Option A only in workflows
         run: |
-          violations=$(grep -R "***" -n workflows || true)
+          violations=$(grep -R "\`\`\`" -n workflows || true)
           if [ ! -z "$violations" ]; then
             echo "❌ Option A violation: Backticks detected in workflows."
             echo "$violations"
