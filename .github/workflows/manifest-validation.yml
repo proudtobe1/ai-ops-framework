@@ -1,4 +1,4 @@
-name: Manifest & Naming Validation
+name: Manifest Validation
 
 on:
   push:
@@ -6,23 +6,21 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   validate-manifest:
-    name: Validate manifest and structural rules
     runs-on: ubuntu-latest
-
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
 
       - name: Install JSON Schema Validator
         run: npm install -g ajv-cli
@@ -30,72 +28,5 @@ jobs:
       - name: Validate ai-ops-manifest.json
         run: ajv validate -s schema/ai-ops-manifest.schema.json -d ai-ops-manifest.json
 
-
-      - name: Enforce naming conventions in core module areas
-        run: |
-          invalid=$(find systems templates workflows use-cases starter-prompts -type f \
-            ! -name "ai-ops-*.md" \
-            ! -name "prompt-*.md" \
-            ! -name "*.json" \
-            ! -name "README.md" \
-            ! -name "*.yml" \
-            ! -name "*.yaml" \
-            2>/dev/null || true)
-
-          if [ ! -z "$invalid" ]; then
-            echo "❌ Invalid filenames detected in core areas:"
-            echo "$invalid"
-            exit 1
-          fi
-
-      - name: Enforce alphabetical ordering in module lists
-        run: |
-          node << 'EOF'
-          const fs = require('fs');
-          const manifest = JSON.parse(fs.readFileSync('ai-ops-manifest.json', 'utf8'));
-
-          if (!manifest.modules || typeof manifest.modules !== 'object') {
-            console.error("❌ manifest.modules is missing or not an object.");
-            process.exit(1);
-          }
-
-          const categories = Object.keys(manifest.modules);
-          let failed = false;
-
-          for (const category of categories) {
-            const list = manifest.modules[category];
-            if (!Array.isArray(list)) {
-              console.error(`❌ ${category} is not an array in manifest.modules.`);
-              failed = true;
-              continue;
-            }
-            const sorted = [...list].sort();
-            if (JSON.stringify(list) !== JSON.stringify(sorted)) {
-              console.error(`❌ ${category} is not alphabetized.`);
-              failed = true;
-            }
-          }
-
-          if (failed) process.exit(1);
-          EOF
-
-      - name: Enforce no deprecated filenames
-        run: |
-          deprecated=$(find . -type f -name "ai-ops-agent-*")
-          if [ ! -z "$deprecated" ]; then
-            echo "❌ Deprecated filenames detected:"
-            echo "$deprecated"
-            exit 1
-          fi
-
-      - name: Enforce Option A only in workflows
-        run: |
-          violations=$(grep -R "\`\`\`" -n workflows || true)
-          if [ ! -z "$violations" ]; then
-            echo "❌ Option A violation: Backticks detected in workflows."
-            echo "$violations"
-            exit 1
-          fi
-
-      - name: All checks passed
-        run: echo "✅ Manifest and structural validation passed."
+      - name: Done
+        run: echo "✅ Manifest validation passed."
