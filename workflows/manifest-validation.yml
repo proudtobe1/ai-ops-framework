@@ -1,0 +1,15 @@
+---
+name: manifest-validation
+on:
+  push:
+    branches: [main]
+jobs:
+  validate:
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run manifest validation
+        run: >
+          some-command --option1 value1 --option2 value2
+          --option3 value3 --option4 value4
