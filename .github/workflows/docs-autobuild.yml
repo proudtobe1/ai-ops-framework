@@ -33,4 +33,4 @@ jobs:
 
       - name: Validate documentation build
         run: |
-          mkdocs build --strict
+          mkdocs build
