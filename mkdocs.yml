@@ -1,7 +1,9 @@
 site_name: AI-Ops Framework
+
 strict: false
 
 plugins:
+  - search
   - awesome-pages
 
 nav:
