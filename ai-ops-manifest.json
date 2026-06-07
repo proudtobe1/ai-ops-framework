@@ -49,11 +49,11 @@
       "ai-ops-template-status-update.md"
     ],
     "use_cases": [
-      "ai-ops-use-case-incident-review.md",
       "README.md",
+      "ai-ops-use-case-incident-review.md",
       "ai-ops-use-case-roadmap-alignment.md",
       "ai-ops-use-case-sprint-planning.md",
-      "ai-ops-use-case-weekly-ops-review.md",
+      "ai-ops-use-case-weekly-ops-review.md"
     ],
     "workflows": [
       "ai-ops-workflow-drift-detection.md",
