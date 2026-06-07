@@ -26,4 +26,4 @@ jobs:
 
       - name: Linter passed
         run: echo "✅ Structural integrity checks passed."
-structural-linter.yml
+
