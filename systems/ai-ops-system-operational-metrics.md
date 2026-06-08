@@ -61,7 +61,7 @@ The overall Alignment Score is calculated as a weighted average of individual ca
 ### A. Weighted Baseline Formula
 The standard baseline score calculation is:
 
-$$\text{Alignment\_Score} = (\text{Efficiency} \times 0.30) + (\text{Technical\_Feasibility} \times 0.20) + (\text{Risk\_\&\_Compliance} \times 0.50)$$
+$$\text{Alignment Score} = (\text{Efficiency} \times 0.30) + (\text{Technical Feasibility} \times 0.20) + (\text{Risk \& Compliance} \times 0.50)$$
 
 ### B. Governance "Kill‑Switch" Override Rules
 Regardless of high performance in efficiency or technical capability, the following conditional caps apply to the final score:
