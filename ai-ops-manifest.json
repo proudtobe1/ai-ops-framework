@@ -32,7 +32,9 @@
     "governance": [
       "CODE_OF_CONDUCT.md",
       "CONTRIBUTING.md",
-      "PROJECT_GOVERNANCE.md"
+      "PROJECT_GOVERNANCE.md",
+      "PULL_REQUEST_TEMPLATE.md",
+      "README.md"
     ],
     "root_files": [
       ".markdownlint.json",
@@ -48,7 +50,6 @@
       "prompt-weekly-summary.md"
     ],
     "systems": [
-      "README.md",
       "ai-ops-architecture-operating-model.md",
       "ai-ops-system-alignment-engine.md",
       "ai-ops-system-behavioral-guardrails.md",
@@ -96,14 +97,14 @@
   },
 
   "entrypoints": {
-    "workflows": "./workflows",
-    "templates": "./templates",
-    "systems": "./systems",
-    "use_cases": "./use-cases",
-    "starter_prompts": "./starter-prompts",
     "documentation": "./docs",
-    "governance": "./docs",
-    "root": "./"
+    "governance": "./.github",
+    "root": "./",
+    "starter_prompts": "./docs/starter-prompts",
+    "systems": "./systems",
+    "templates": "./docs/templates",
+    "use_cases": "./docs/use-cases",
+    "workflows": "./systems/workflows"
   },
 
   "integrity_rules": {
