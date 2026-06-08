@@ -58,6 +58,7 @@ nav:
       - Security Model: operating-model/ai-agent-security-model.md
       - Test Suite: operating-model/ai-agent-test-suite.md
       - Versioning Model: operating-model/ai-agent-versioning-model.md
+      - Workflow Integration: operating-model/ai-ops-workflow-ai-agent-integration.md
 
   - Framework Extensions:
       - Extension Guide: ai-ops-framework-extension-guide.md
