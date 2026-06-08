@@ -7,10 +7,20 @@
 
   "modules": {
     "documentation": [
-      "architecture-overview.md",
-      "framework-goals.md",
-      "glossary.md",
-      "system-boundaries.md"
+  "README.md",
+  "index.md",
+  "ai-ops-architecture-deep-dive.md",
+  "ai-ops-contribution-governance-model.md",
+  "ai-ops-data-flow.md",
+  "ai-ops-docs-dependency-map.md",
+  "ai-ops-docs-expanded-diagrams.md",
+  "ai-ops-docs-llm-loading-guide.md",
+  "ai-ops-docs-operating-playbook.md",
+  "ai-ops-docs-overview.md",
+  "ai-ops-docs-visual-index.md",
+  "ai-ops-framework-extension-guide.md",
+  "ai-ops-maturity-model.md",
+  "ai-ops-system-overview.md"
     ],
     "governance": [
       "ai-ops-governance-decision-rights.md",
