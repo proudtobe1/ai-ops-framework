@@ -30,10 +30,22 @@
   "ai-ops-contribution-governance-model.md"
 ],
     "root_files": [
-      "CONTRIBUTING.md",
-      "LICENSE",
-      "README.md"
-    ],
+  ".markdownlint.json",
+  "AI_OPS_MODEL_CARD.md",
+  "AI_OPS_MODULE_REGISTRY.md",
+  "CODE_OF_CONDUCT.md",
+  "CONTRIBUTING.md",
+  "CONTRIBUTING_DETAILED.md",
+  "EXAMPLES.md",
+  "FAQ.md",
+  "GLOSSARY.md",
+  "LICENSE",
+  "PROJECT_GOVERNANCE.md",
+  "README.md",
+  "ROADMAP.md",
+  "ai-ops-manifest.json",
+  "mkdocs.yml"
+],
     "starter_prompts": [
       "prompt-alignment-check.md",
       "prompt-decision-tree.md",
