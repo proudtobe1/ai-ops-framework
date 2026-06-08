@@ -13,8 +13,16 @@
       "EXAMPLES.md",
       "FAQ.md",
       "GLOSSARY.md",
+      "README.md",
       "ROADMAP.md",
+      "ai-agent-behavior-rules.md",
+      "ai-agent-certification-pathway.md",
       "ai-agent-evaluation-rubric.md",
+      "ai-agent-failure-modes-recovery.md",
+      "ai-agent-integration-guide.md",
+      "ai-agent-integration.md",
+      "ai-agent-output-contract.md",
+      "ai-agent-test-suite.md",
       "ai-ops-architecture-deep-dive.md",
       "ai-ops-contribution-governance-model.md",
       "ai-ops-data-flow.md",
@@ -27,6 +35,8 @@
       "ai-ops-framework-extension-guide.md",
       "ai-ops-maturity-model.md",
       "ai-ops-system-overview.md",
+      "ai-ops-template-alignment-check.md",
+      "ai-ops-template-decision-record.md",
       "index.md"
     ],
     "governance": [
@@ -44,12 +54,14 @@
       "mkdocs.yml"
     ],
     "starter_prompts": [
+      "README.md",
       "prompt-alignment-check.md",
       "prompt-decision-tree.md",
       "prompt-risk-review.md",
       "prompt-weekly-summary.md"
     ],
     "systems": [
+      "README.md",
       "ai-ops-architecture-operating-model.md",
       "ai-ops-system-alignment-engine.md",
       "ai-ops-system-behavioral-guardrails.md",
@@ -60,10 +72,12 @@
       "ai-ops-system-memory-context.md",
       "ai-ops-system-operating-model.md",
       "ai-ops-system-operational-metrics.md",
+      "ai-ops-system-overview.md",
       "ai-ops-system-reasoning-framework.md",
       "ai-ops-system-security-compliance.md"
     ],
     "templates": [
+      "README.md",
       "ai-ops-template-alignment-check.md",
       "ai-ops-template-change-request.md",
       "ai-ops-template-decision-record.md",
@@ -90,6 +104,7 @@
       "ai-ops-use-case-weekly-ops-review.md"
     ],
     "workflows": [
+      "README.md",
       "ai-ops-workflow-ai-agent-integration.md",
       "ai-ops-workflow-decision-automation.md",
       "ai-ops-workflow-operational-cadence.md"
