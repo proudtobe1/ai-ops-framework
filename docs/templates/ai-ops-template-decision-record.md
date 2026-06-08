@@ -99,7 +99,19 @@ Identify:
 
 ---
 
-## 10. Metrics Impact
+## 10. Autonomous Agent Impact Assessment
+*Fill out this section if the proposed solution includes autonomous workflows, LLM-driven actions, or automated decision-making.*
+
+* **[ ] Yes  [ ] No** | Does this agent interact directly with external third parties (vendors, clients, public interfaces)?
+* **[ ] Yes  [ ] No** | Will this agent have access to, or programmatically apply, corporate credentials, digital signatures, or financial authorization tokens?
+* **[ ] Yes  [ ] No** | Does the core logic rely on keyword/string matching to verify security, compliance, or identity?
+* **[ ] Yes  [ ] No** | What is the highest financial liability threshold this agent could theoretically execute in a single transaction? Write **$0** if it has no transactional capability: `_________________`
+
+> **Governance Routing Note:** If you checked **"Yes"** to any of the questions above, or if the financial liability field exceeds **$0**, this template must be routed directly to the **Legal, Risk, and InfoSec Teams** for an architecture review before prototyping begins.
+
+---
+
+## 11. Metrics Impact
 Update relevant metrics:
 - Alignment score  
 - Risk metrics  
@@ -108,22 +120,22 @@ Update relevant metrics:
 
 ---
 
-## 11. Recommended Actions
+## 12. Recommended Actions
 Provide clear, actionable next steps to implement the decision.
 
 ---
 
-## 12. Communication Summary
+## 13. Communication Summary
 Produce a concise summary suitable for stakeholders.
 
 ---
 
-## 13. Compliance Notes
+## 14. Compliance Notes
 Document any compliance‑relevant observations.
 
 ---
 
-## 14. Audit Log
+## 15. Audit Log
 Include:
 - Timestamp  
 - Actor  
