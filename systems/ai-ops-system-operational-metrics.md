@@ -61,7 +61,89 @@ The overall Alignment Score is calculated as a weighted average of individual ca
 ### A. Weighted Baseline Formula
 The standard baseline score calculation is:
 
-$$Alignment\ Score = (Efficiency \times 0.30) + (Technical\ Feasibility \times 0.20) + (Risk\ \&\ Compliance \times 0.50)$$
+$$Alignment\_Score = (Efficiency \times 0.30) + (Technical\_Feasibility \times 0.20) + (Risk\_\&\_Compliance \times 0.50)$$
 
 ### B. Governance "Kill‑Switch" Override Rules
 Regardless of high performance in efficiency or technical capability, the following conditional caps apply to the final score:
+
+> **IF** ($Risk\_and\_Compliance\_Score < 50\%$) **THEN**
+> * $Final\_Alignment\_Score = \min(Final\_Alignment\_Score, 50\%)$
+> * **Status:** CRITICAL_FAILURE
+> * **Action:** Immediate Architectural Review Required
+>
+> **IF** ($Signature\_Automation\_Violation == \text{TRUE}$) **THEN**
+> * $Final\_Alignment\_Score = \min(Final\_Alignment\_Score, 40\%)$
+> * **Status:** GOVERNANCE_BREACH
+> * **Action:** Halt Deployment / Strip Programmatic Credentials
+
+---
+
+## 4. AI‑Assisted Measurement Model
+
+AI systems can assist by:
+
+### 1. Summarizing  
+Extracting key signals from team updates.
+
+### 2. Scoring  
+Assigning clarity, alignment, and risk scores.
+
+### 3. Detecting  
+Identifying emerging risks or priority drift.
+
+### 4. Recommending  
+Suggesting actions to improve metrics.
+
+---
+
+## 5. Inputs
+
+- Weekly status updates  
+- Workflow outputs  
+- Risk logs  
+- Priority changes  
+- AI‑generated summaries  
+
+---
+
+## 6. Outputs
+
+- Weekly metric report  
+- Trend analysis  
+- Risk exposure summary  
+- Recommended actions  
+- Alignment scorecard  
+
+---
+
+## 7. Example Metric Summary (AI‑Generated)
+
+- **Velocity:** Moderate — cycle time improved 8%  
+- **Clarity:** High — 92% template adherence  
+- **Alignment:** Medium — 3 teams showing priority drift  
+- **Risk Exposure:** Elevated — 2 new high‑severity risks  
+- **Execution Reliability:** Strong — 88% on‑time delivery  
+
+---
+
+## 8. Usage
+
+This system model is used by:
+
+- Weekly summaries  
+- Operational reviews  
+- Risk assessments  
+- Cross‑team alignment sessions  
+- AI‑assisted decision workflows  
+
+---
+
+## 9. Summary
+
+The Operational Metrics Framework provides:
+
+- A consistent measurement model  
+- AI‑assisted scoring and detection  
+- Clear operational insights  
+- Actionable recommendations  
+- A foundation for continuous improvement  
