@@ -103,7 +103,7 @@ Based on:
 
 ---
 
-## 5. Decision Thresholds
+## 5. Decision Thresholds & Authority Limits
 
 ### **Fully Valid Decision**
 - All scores ≥ 0.8  
@@ -122,6 +122,19 @@ Based on:
 - Any score < 0.5  
 - Requires immediate escalation  
 - Decision must not be executed  
+
+### **AI-04: Autonomous Financial and Legal Authority Limits**
+To mitigate corporate liability and ensure regulatory compliance, autonomous AI agents are strictly prohibited from independently executing external legal commitments or financial expenditures.
+
+| Threshold (USD) | Permitted AI Action | Required Human-in-the-Loop (HITL) Role | Approval Authority |
+| :--- | :--- | :--- | :--- |
+| **$0 - $4,999** | Autonomous drafting & routing | Document review & manual submission | Operations Associate or higher |
+| **$5,000 - $49,999** | Structured drafting & policy cross-checking | Mandatory verification & cryptographic signature | Department Head / VP |
+| **$50,000+** | Multi-agent synthesis & compliance reporting | Full manual negotiation and executive sign-off | C-Suite / Board of Directors |
+
+#### Executive Signature Programmatic Lock
+- **Policy:** Programmatic hardcoding or automated application of a specific corporate officer's unique digital signature, cryptographic key, or biometric identifier within an autonomous agent's action loop is strictly prohibited.  
+- **Enforcement:** AI agents may generate, stage, or present a contract for signature within an approval dashboard, but the execution token must be applied via explicit, manual human interaction per transaction.  
 
 ---
 
@@ -174,6 +187,7 @@ Escalation is required when:
 - Evidence is insufficient  
 - Decision impacts multiple teams  
 - Decision impacts roadmap or architecture  
+- Financial or legal commitments breach the thresholds defined in section 5  
 
 Escalations must use the Escalation Report Template.
 
