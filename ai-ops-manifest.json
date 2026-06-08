@@ -23,10 +23,12 @@
   "ai-ops-system-overview.md"
     ],
     "governance": [
-      "ai-ops-governance-decision-rights.md",
-      "ai-ops-governance-operating-rules.md",
-      "ai-ops-governance-review-cadence.md"
-    ],
+  "PROJECT_GOVERNANCE.md",
+  "CODE_OF_CONDUCT.md",
+  "CONTRIBUTING.md",
+  "CONTRIBUTING_DETAILED.md",
+  "ai-ops-contribution-governance-model.md"
+],
     "root_files": [
       "CONTRIBUTING.md",
       "LICENSE",
