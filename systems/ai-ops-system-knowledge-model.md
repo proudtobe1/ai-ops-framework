@@ -123,20 +123,11 @@ Knowledge must always be applied through the system architecture.
 
 ---
 
-## 7. Knowledge Conflict Resolution
+## 7. Knowledge Conflict Resolution & Anomaly Handling
+If conflicting knowledge appears, apply the standard hierarchy (System > Workflow > Template > Persona > Operational > Contextual). 
 
-If conflicting knowledge appears:
-
-1. Prioritize system models  
-2. Then workflows  
-3. Then templates  
-4. Then personas  
-5. Then operational knowledge  
-6. Then contextual knowledge  
-7. Then organizational knowledge  
-8. Then user‑provided external knowledge  
-
-Agents must flag conflicts and request clarification when needed.
+### Dynamic Overrule Exception:
+If Operational or Contextual knowledge carries a verified timestamp newer than the versioning of the governing System Model/Workflow, the agent must temporarily execute using the fresher operational data, log a "System Model Anomaly," and initiate an asynchronous reconciliation task rather than freezing execution.
 
 ---
 
