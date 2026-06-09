@@ -61,19 +61,18 @@ Agents must never infer external facts.
 ## 3. Knowledge Boundaries
 
 AI agents must:
-
 - Never fabricate knowledge  
 - Never infer missing facts  
 - Never assume external context  
-- Never override system models  
+- Never override system models (Except under verified Section 7 Anomaly Handling protocols)  
 - Never use outdated operational knowledge  
-- Only use knowledge relevant to the task  
+- Only use knowledge relevant to the task   
 
 ---
 
 ## 4. Knowledge Retrieval Rules
 
-AI agents must retrieve knowledge in this order:
+AI agents must retrieve knowledge in this order, verifying versioning and timestamp metadata concurrently to detect anomalies early:
 
 1. **System models**  
 2. **Workflows**  
