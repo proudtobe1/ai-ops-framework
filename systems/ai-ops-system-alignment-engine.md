@@ -7,7 +7,6 @@ A structured model defining how AI agents evaluate, score, and enforce alignment
 ## 1. Purpose
 
 To ensure AI agents consistently evaluate alignment across:
-
 - Roadmap priorities  
 - Team execution  
 - Dependencies  
@@ -26,33 +25,27 @@ The Alignment Engine is the core logic that prevents priority drift and ensures 
 
 The Alignment Engine evaluates alignment across six dimensions:
 
-### **A. Strategic Alignment**  
-- Roadmap fit  
+### **A. Strategic Alignment** - Roadmap fit  
 - Priority match  
 - Long‑term value  
 
-### **B. Execution Alignment**  
-- Sprint goals  
+### **B. Execution Alignment** - Sprint goals  
 - Team capacity  
 - Delivery timelines  
 
-### **C. Dependency Alignment**  
-- Cross‑team coordination  
+### **C. Dependency Alignment** - Cross‑team coordination  
 - Upstream/downstream readiness  
 - Dependency health  
 
-### **D. Risk Alignment**  
-- Risk posture  
+### **D. Risk Alignment** - Risk posture  
 - Mitigation status  
 - Escalation needs  
 
-### **E. Metrics Alignment**  
-- Impact on operational metrics  
+### **E. Metrics Alignment** - Impact on operational metrics  
 - Trend consistency  
 - Metric health  
 
-### **F. Communication Alignment**  
-- Cadence compliance  
+### **F. Communication Alignment** - Cadence compliance  
 - Clarity  
 - Completeness  
 
@@ -72,7 +65,6 @@ Scores are calculated using weighted factors from each dimension. However, if an
 ## 4. Alignment Evaluation Rules
 
 AI agents must:
-
 - Evaluate alignment for every structured output  
 - Identify priority drift  
 - Flag misalignment early  
@@ -85,7 +77,6 @@ AI agents must:
 ## 5. Priority Drift Detection
 
 Priority drift occurs when:
-
 - Work does not match roadmap priorities  
 - Execution diverges from planned goals  
 - Dependencies block progress  
@@ -98,26 +89,22 @@ AI agents must detect drift and classify severity.
 
 ## 6. Alignment Correction Protocol
 
-### Step 1 — Identify Misalignment  
-Determine which alignment dimension is affected.
+### **Step 1 — Identify Misalignment** Determine which alignment dimension is affected.
 
-### Step 2 — Classify Severity  
-- **Low:** Minor deviation.
-- **Medium:** Requires localized adjustment.
-- **High / Circuit-Breaker Triggered:** Any dimension scoring below 0.40. Automatically classified as an operational emergency requiring immediate escalation.
+### **Step 2 — Classify Severity** - **Low:** Minor deviation.  
+- **Medium:** Requires localized adjustment.  
+- **High / Circuit-Breaker Triggered:** Any dimension scoring below 0.40. Automatically classified as an operational emergency.  
 
-### Step 3 — Recommend Corrections  
-- **For Low/Medium Severity:** Re‑prioritize work, adjust sprint scope, resolve dependencies, mitigate risks, or improve communication cadence.
-- **For High/Circuit-Breaker Severity:** Immediately bypass standard asynchronous workflows. Execute a hard-coded system alert directly to the human operator/system administrator and freeze downstream execution paths for the affected module until manual override or validation occurs.
+### **Step 3 — Recommend Corrections & Enforce Bounds** - **For Low/Medium Severity:** Recommend standard operational remedies (e.g., re‑prioritize work, adjust sprint scope, resolve dependencies, mitigate risks, or improve communication cadence).  
+- **For High/Circuit-Breaker Severity:** Immediately bypass standard asynchronous workflows. The agent must trigger a hard-coded system alert directly to the human operator, freeze downstream execution paths for the affected module, and halt automated processing until manual validation or a formal override is provided.  
 
-### Step 4 — Validate Alignment  
-Re‑score alignment after corrections.
+### **Step 4 — Validate Alignment** Re‑score alignment after corrections are implemented.
+
 ---
 
 ## 7. Integration Points
 
 The Alignment Engine integrates with:
-
 - Operating Model  
 - Decision Model  
 - Metrics Framework  
@@ -128,7 +115,6 @@ The Alignment Engine integrates with:
 - Personas  
 
 AI agents must use the Alignment Engine during:
-
 - Status updates  
 - Decision records  
 - Risk reviews  
@@ -143,13 +129,11 @@ AI agents must use the Alignment Engine during:
 
 **Input:** Feature X is delayed due to a dependency.  
 **Alignment Score:** 0.62 (partial alignment)  
-**Issues:**  
-- Dependency misalignment  
+**Issues:** - Dependency misalignment  
 - Risk misalignment  
 - Execution misalignment  
 
-**Recommended Actions:**  
-- Trigger dependency escalation  
+**Recommended Actions:** - Trigger dependency escalation  
 - Update risk metrics  
 - Adjust sprint scope  
 
