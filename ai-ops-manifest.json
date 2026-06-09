@@ -113,11 +113,11 @@
     "root": "./",
     "documentation": "./docs",
     "governance": "./.github",
-    "starter_prompts": "./starter-prompts",
+    "starter_prompts": "./docs/starter-prompts",
     "systems": "./systems",
-    "templates": "./templates",
-    "use_cases": "./use-cases",
-    "workflows": "./workflows"
+    "templates": "./docs/templates",
+    "use_cases": "./docs/use-cases",
+    "workflows": "./systems/workflows"
   },
   "integrity_rules": {
     "naming_conventions": "All files must follow ai-ops-[type]-[name].md or prompt-[name].md",
