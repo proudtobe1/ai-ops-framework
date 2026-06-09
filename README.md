@@ -1,49 +1,8 @@
 # AI‑Ops Framework  
-![Manifest Validation](https://github.com/proudtobe1/ai-ops-framework/actions/workflows/manifest-validation.yml/badge.svg)
-![Structural Linter](https://github.com/proudtobe1/ai-ops-framework/actions/workflows/structural-linter.yml/badge.svg)
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-![Semantic Versioning](https://img.shields.io/badge/semver-1.0.0-blue)
-![Docs Status](https://img.shields.io/badge/Docs-Complete-brightgreen)
-![Governance Compliance](https://img.shields.io/badge/Governance-Compliant-success)
-![Status](https://img.shields.io/badge/Status-Active_Development-blue.svg)
-![Last Commit](https://img.shields.io/github/last-commit/proudtobe1/ai-ops-framework)
-![Docs](https://img.shields.io/badge/Docs-Available-purple.svg)
 
-The AI‑Ops Framework is a modular, extensible, and automation‑ready operating system for modern organizations.  
-It provides standardized systems, workflows, templates, prompts, and use‑cases designed to accelerate decision‑making, improve operational clarity, and enable AI‑assisted execution across teams.
+![Manifest Validation](https://github.com/proudtobe1/ai-ops-framework/actions/workflows/manifest-validation.yml/badge.svg) ![Structural Linter](https://github.com/proudtobe1/ai-ops-framework/actions/workflows/structural-linter.yml/badge.svg) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) ![Semantic Versioning](https://img.shields.io/badge/semver-1.0.0-blue) ![Docs Status](https://img.shields.io/badge/Docs-Complete-brightgreen) ![Governance Compliance](https://img.shields.io/badge/Governance-Compliant-success) ![Status](https://img.shields.io/badge/Status-Active_Development-blue.svg) ![Last Commit](https://img.shields.io/github/last-commit/proudtobe1/ai-ops-framework) ![Docs](https://img.shields.io/badge/Docs-Available-purple.svg)
 
----
-
-## 🚀 Quickstart
-
-Follow these steps to begin using the AI‑Ops Framework in your environment.
-
-### 1. Clone the Repository
-
-    git clone https://github.com/proudtobe1/ai-ops-framework.git
-    cd ai-ops-framework
-
-### 2. Explore the Core Components
-- `systems/` — operating models, governance structures, decision systems  
-- `workflows/` — operational processes and cadences  
-- `templates/` — communication and reporting structures  
-- `use-cases/` — practical examples of applying the framework  
-- `starter-prompts/` — AI‑ready prompts for alignment, risk review, and summaries  
-- `docs/` — architecture diagrams and extended documentation  
-
-### 3. Load the Framework in Your AI Environment
-Use the examples in `EXAMPLES.md` to load systems, workflows, and templates into your LLM or automation layer.
-
-### 4. Generate Your First Output
-Start with:
-- A weekly status update  
-- A workflow‑guided operating cadence  
-- A structured decision model  
-
-### 5. Extend the Framework
-Add your own workflows, templates, or system models to customize the framework for your organization.
-
-*A modular, AI‑forward operational system for modern organizations.*
+The AI‑Ops Framework is a modular, extensible, and automation‑ready operating system for modern organizations. It provides standardized systems, workflows, templates, prompts, and use‑cases designed to accelerate decision‑making, improve operational clarity, and enable AI‑assisted execution across teams.
 
 ---
 
@@ -53,131 +12,98 @@ The framework exists to solve a simple problem:
 
 > Modern teams are drowning in information but starving for clarity.
 
-AI can fix that — but only if it’s applied through a **repeatable operating model**, not ad‑hoc prompts.
-
-This repository provides that model.
-
----
-
-## 📚 Repository Structure
-
-### **systems/**
-Foundational operating models, governance structures, and decision systems.  
-Files follow: `ai-ops-system-[name].md`
-
-### **workflows/**
-Repeatable, AI‑assisted workflows for decision‑making and operations.  
-Files follow: `ai-ops-workflow-[name].md`
-
-### **templates/**
-Reusable templates for communication, reporting, and alignment.  
-Files follow: `ai-ops-template-[name].md`
-
-### **use-cases/**
-Practical examples of how to apply the framework.  
-Files follow: `ai-ops-use-case-[name].md`
-
-### **starter-prompts/**
-AI‑ready prompts for alignment checks, decision trees, summaries, and risk reviews.  
-Files follow: `prompt-[name].md`
-
-### **docs/**
-High‑level explanations, conceptual models, and reference documentation.
+AI can fix that — but only if it’s applied through a **repeatable operating model**, not ad‑hoc prompts. This repository provides that model.
 
 ---
 
 ## 🧠 Core Principles
 
-1. **Clarity over complexity**  
-2. **Repeatability over improvisation**  
-3. **Human judgment + AI acceleration**  
-4. **Modularity**  
-5. **Scalability**
+1. **Clarity over complexity** — Systems must be immediately understandable.
+2. **Repeatability over improvisation** — Operations should follow reliable, scalable patterns.
+3. **Human judgment + AI acceleration** — AI augments and speeds up execution; humans remain the critical decision-makers.
+4. **Modularity** — Plug-and-play components tailored to organizational needs.
+5. **Scalability** — Built to grow seamlessly from seed-stage startups to enterprise operations.
+
+---
+
+## 🚀 Quickstart
+
+### 1. Prerequisites
+To get the most out of this framework, you will need access to a modern Large Language Model (LLM) environment (e.g., ChatGPT, Claude, Gemini) or an AI orchestration layer capable of parsing structured text/markdown.
+
+### 2. Clone the Repository
+
+    git clone [https://github.com/proudtobe1/ai-ops-framework.git](https://github.com/proudtobe1/ai-ops-framework.git)
+    cd ai-ops-framework
+
+### 3. Explore the Core Components
+* `systems/` — Foundational operating models, governance structures, and decision systems.
+* `workflows/` — Operational processes and cadences.
+* `templates/` — Communication and reporting structures.
+* `use-cases/` — Practical examples of applying the framework.
+* `starter-prompts/` — AI‑ready prompts for alignment, risk review, and summaries.
+* `docs/` — Architecture diagrams and extended documentation.
+
+### 4. Load the Framework
+Review the practical examples in `EXAMPLES.md` to see how to load these configurations, workflows, and templates directly into your LLM or automation layer to generate your first structured operational output.
 
 ---
 
 ## 🛠️ How to Use This Repository
 
-### For Operators & Chiefs of Staff  
-Start with the workflows folder.
-
-### For Founders  
-Use the systems folder to define how your organization operates.
-
-### For Teams  
-Use the templates folder to standardize communication and reporting.
-
-### For New Contributors  
-Read the docs folder to understand the philosophy behind the framework.
+* **For Operators & Chiefs of Staff:** Leverage the `workflows/` directory to build highly repeatable, automated operational rhythms.
+* **For Founders & Executives:** Use the `systems/` directory to formally define how your organization governs, aligns, and executes.
+* **For Cross-Functional Teams:** Use the `templates/` directory to standardize reporting, status updates, and clear documentation.
+* **For Contributors:** Review the `docs/` folder to understand the underlying architecture and philosophical design choices.
 
 ---
 
-## 🗺 Roadmap
+## 📚 Repository Structure & Naming Conventions
 
-See `ROADMAP.md` for planned enhancements, upcoming modules, and long‑term direction.
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome.  
-Please review:
-
-- `CONTRIBUTING.md`  
-- `CONTRIBUTING_DETAILED.md`  
-- `CODE_OF_CONDUCT.md`  
+* **`systems/`** -> Files follow: `ai-ops-system-[name].md`
+* **`workflows/`** -> Files follow: `ai-ops-workflow-[name].md`
+* **`templates/`** -> Files follow: `ai-ops-template-[name].md`
+* **`use-cases/`** -> Files follow: `ai-ops-use-case-[name].md`
+* **`starter-prompts/`** -> Files follow: `prompt-[name].md`
+* **`docs/`** -> Conceptual models and deep-dive reference documentation.
 
 ---
 
-## 📄 License
+## 🗺️ Roadmap
 
-This project is licensed under the MIT License.  
-See `LICENSE` for details.
-
----
-
-# 📁 Root Directory Index (Updated)
-
-## Governance, Conduct & Contribution
-- CODE_OF_CONDUCT.md  
-- CONTRIBUTING.md  
-- CONTRIBUTING_DETAILED.md  
-- PROJECT_GOVERNANCE.md  
-
-## Reference Documentation
-- FAQ.md  
-- GLOSSARY.md  
-- EXAMPLES.md  
-
-## Model Metadata & Registry
-- AI_OPS_MODEL_CARD.md  
-- AI_OPS_MODULE_REGISTRY.md  
-- ai-ops-manifest.json  
-
-## Roadmap & Planning
-- ROADMAP.md  
-
-## Licensing
-- LICENSE  
-
-## Root README
-- README.md  
+See [ROADMAP.md](./ROADMAP.md) for planned enhancements, upcoming functional modules, and long‑term technical direction.
 
 ---
 
-# A–Z Index of All Root Files
+## 🤝 Contributing & Governance
 
-- AI_OPS_MODEL_CARD.md  
-- AI_OPS_MODULE_REGISTRY.md  
-- CODE_OF_CONDUCT.md  
-- CONTRIBUTING.md  
-- CONTRIBUTING_DETAILED.md  
-- EXAMPLES.md  
-- FAQ.md  
-- GLOSSARY.md  
-- LICENSE  
-- PROJECT_GOVERNANCE.md  
-- README.md  
-- ROADMAP.md  
-- ai-ops-manifest.json
+Contributions are welcome. Please thoroughly review our operational guidelines before submitting a pull request:
 
+* [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) — Our standards for community engagement.
+* [CONTRIBUTING.md](./CONTRIBUTING.md) — Quickstart guide for contribution.
+* [CONTRIBUTING_DETAILED.md](./CONTRIBUTING_DETAILED.md) — Technical and stylistic requirements for files.
+* [PROJECT_GOVERNANCE.md](./PROJECT_GOVERNANCE.md) — How decisions regarding the framework are made.
+
+---
+
+## 📁 Root Directory Registry
+
+### Governance & Contribution
+* [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)
+* [CONTRIBUTING.md](./CONTRIBUTING.md)
+* [CONTRIBUTING_DETAILED.md](./CONTRIBUTING_DETAILED.md)
+* [PROJECT_GOVERNANCE.md](./PROJECT_GOVERNANCE.md)
+
+### Reference & Documentation
+* [FAQ.md](./FAQ.md)
+* [GLOSSARY.md](./GLOSSARY.md)
+* [EXAMPLES.md](./EXAMPLES.md)
+
+### Model Metadata & Registry
+* [AI_OPS_MODEL_CARD.md](./AI_OPS_MODEL_CARD.md)
+* [AI_OPS_MODULE_REGISTRY.md](./AI_OPS_MODULE_REGISTRY.md)
+* [ai-ops-manifest.json](./ai-ops-manifest.json)
+
+### Strategy & Licensing
+* [ROADMAP.md](./ROADMAP.md)
+* [LICENSE](./LICENSE) (MIT License)
