@@ -98,25 +98,20 @@ AI agents must detect drift and classify severity.
 
 ## 6. Alignment Correction Protocol
 
-### **Step 1 — Identify Misalignment**  
+### Step 1 — Identify Misalignment  
 Determine which alignment dimension is affected.
 
-### **Step 2 — Classify Severity**  
-- Low: Minor deviation  
-- Medium: Requires adjustment  
-- High: Requires escalation  
+### Step 2 — Classify Severity  
+- **Low:** Minor deviation.
+- **Medium:** Requires localized adjustment.
+- **High / Circuit-Breaker Triggered:** Any dimension scoring below 0.40. Automatically classified as an operational emergency requiring immediate escalation.
 
-### **Step 3 — Recommend Corrections**  
-Examples:  
-- Re‑prioritize work  
-- Adjust sprint scope  
-- Resolve dependencies  
-- Mitigate risks  
-- Improve communication cadence  
+### Step 3 — Recommend Corrections  
+- **For Low/Medium Severity:** Re‑prioritize work, adjust sprint scope, resolve dependencies, mitigate risks, or improve communication cadence.
+- **For High/Circuit-Breaker Severity:** Immediately bypass standard asynchronous workflows. Execute a hard-coded system alert directly to the human operator/system administrator and freeze downstream execution paths for the affected module until manual override or validation occurs.
 
-### **Step 4 — Validate Alignment**  
+### Step 4 — Validate Alignment  
 Re‑score alignment after corrections.
-
 ---
 
 ## 7. Integration Points
