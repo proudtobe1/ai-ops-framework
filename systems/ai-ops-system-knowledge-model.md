@@ -7,7 +7,6 @@ A structured model defining how AI agents acquire, validate, organize, and apply
 ## 1. Purpose
 
 To ensure AI agents use knowledge that is:
-
 - Accurate  
 - Relevant  
 - Validated  
@@ -24,36 +23,31 @@ The Knowledge Model prevents hallucinations, outdated reasoning, and misuse of i
 
 The framework defines five categories of knowledge:
 
-### **A. System Knowledge**  
-- System models  
+### **A. System Knowledge** - System models  
 - Workflows  
 - Templates  
 - Personas  
 - Metrics definitions  
 - Governance rules  
 
-### **B. Operational Knowledge**  
-- Roadmap priorities  
+### **B. Operational Knowledge** - Roadmap priorities  
 - Sprint goals  
 - Dependencies  
 - Risks  
 - Decisions  
 - Escalations  
 
-### **C. Contextual Knowledge**  
-- Inputs from the current task  
+### **C. Contextual Knowledge** - Inputs from the current task  
 - Team updates  
 - Stakeholder needs  
 - Communication cadence  
 
-### **D. Organizational Knowledge**  
-- Roles  
+### **D. Organizational Knowledge** - Roles  
 - Responsibilities  
 - Processes  
 - Policies  
 
-### **E. External Knowledge**  
-Used only when explicitly provided by the user.  
+### **E. External Knowledge** Used only when explicitly provided by the user.  
 Agents must never infer external facts.
 
 ---
@@ -66,31 +60,20 @@ AI agents must:
 - Never assume external context  
 - Never override system models (Except under verified Section 7 Anomaly Handling protocols)  
 - Never use outdated operational knowledge  
-- Only use knowledge relevant to the task   
+- Only use knowledge relevant to the task  
 
 ---
 
 ## 4. Knowledge Retrieval Rules
 
 AI agents must retrieve knowledge in this order, verifying versioning and timestamp metadata concurrently to detect anomalies early:
-
-1. **System models**  
-2. **Workflows**  
-3. **Templates**  
-4. **Personas**  
-5. **Operational knowledge**  
-6. **Contextual knowledge**  
-7. **Organizational knowledge**  
-8. **User‑provided external knowledge**  
-
-Agents must not retrieve knowledge outside this hierarchy.
+1. **System models** 2. **Workflows** 3. **Templates** 4. **Personas** 5. **Operational knowledge** 6. **Contextual knowledge** 7. **Organizational knowledge** 8. **User‑provided external knowledge** Agents must not retrieve knowledge outside this hierarchy.
 
 ---
 
 ## 5. Knowledge Validation Rules
 
 AI agents must validate knowledge by checking:
-
 - recency  
 - relevance  
 - consistency  
@@ -99,7 +82,6 @@ AI agents must validate knowledge by checking:
 - risk impact  
 
 If knowledge is outdated or inconsistent, agents must:
-
 - flag the issue  
 - request clarification  
 - avoid using invalid knowledge  
@@ -109,7 +91,6 @@ If knowledge is outdated or inconsistent, agents must:
 ## 6. Knowledge Application Rules
 
 When applying knowledge, agents must:
-
 - Use system models as constraints  
 - Use workflows as execution paths  
 - Use templates as structure  
@@ -133,7 +114,6 @@ If Operational or Contextual knowledge carries a verified timestamp newer than t
 ## 8. Knowledge Freshness Rules
 
 AI agents must:
-
 - Use the most recent sprint context  
 - Use the most recent roadmap context  
 - Use the most recent risk context  
@@ -146,7 +126,6 @@ AI agents must:
 ## 9. Hallucination Prevention
 
 AI agents must:
-
 - Never invent facts  
 - Never fill gaps with assumptions  
 - Never create missing context  
@@ -159,7 +138,6 @@ AI agents must:
 ## 10. Integration Points
 
 The Knowledge Model integrates with:
-
 - Memory & Context Model  
 - Reasoning Framework  
 - Alignment Engine  
