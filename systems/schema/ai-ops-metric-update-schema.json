@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AI-Ops Metric Update Schema",
+  "type": "object",
+  "required": [
+    "event_type",
+    "timestamp",
+    "agent_id",
+    "context",
+    "metric"
+  ],
+  "properties": {
+    "event_type": { "type": "string", "const": "metric_update" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "agent_id": { "type": "string" },
+    "context": {
+      "type": "object",
+      "required": ["module", "session_id"],
+      "properties": {
+        "module": { "type": "string", "enum": ["alignment", "risk", "compliance", "performance"] },
+        "session_id": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "metric": {
+      "type": "object",
+      "required": ["alignment_score", "drift_status", "compliance_violation_count", "risk_level"],
+      "properties": {
+        "alignment_score": { "type": "number", "minimum": 0, "maximum": 1 },
+        "drift_status": { "type": "boolean" },
+        "compliance_violation_count": { "type": "integer", "minimum": 0 },
+        "risk_level": { "type": "string", "enum": ["none", "low", "medium", "high", "critical"] },
+        "remediation_action": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
