@@ -89,16 +89,20 @@ AI agents must detect drift and classify severity.
 
 ## 6. Alignment Correction Protocol
 
-### **Step 1 — Identify Misalignment** Determine which alignment dimension is affected.
+### Step 1 — Identify Misalignment  
+Determine which alignment dimension is affected.
 
-### **Step 2 — Classify Severity** - **Low:** Minor deviation.  
-- **Medium:** Requires localized adjustment.  
-- **High / Circuit-Breaker Triggered:** Any dimension scoring below 0.40. Automatically classified as an operational emergency.  
+### Step 2 — Classify Severity  
+- **Low:** Minor deviation.
+- **Medium:** Requires localized adjustment.
+- **High / Circuit-Breaker Triggered:** Any dimension scoring below 0.40. Automatically classified as an operational emergency.
 
-### **Step 3 — Recommend Corrections & Enforce Bounds** - **For Low/Medium Severity:** Recommend standard operational remedies (e.g., re‑prioritize work, adjust sprint scope, resolve dependencies, mitigate risks, or improve communication cadence).  
-- **For High/Circuit-Breaker Severity:** Immediately bypass standard asynchronous workflows. The agent must trigger a hard-coded system alert directly to the human operator, freeze downstream execution paths for the affected module, and halt automated processing until manual validation or a formal override is provided.  
+### Step 3 — Recommend Corrections & Enforce Bounds  
+- **For Low/Medium Severity:** Recommend standard operational remedies (e.g., re‑prioritize work, adjust sprint scope, resolve dependencies, mitigate risks, or improve communication cadence).
+- **For High/Circuit-Breaker Severity:** Immediately bypass standard asynchronous workflows. The agent must trigger a hard-coded system alert directly to the human operator, freeze downstream execution paths for the affected module, and halt automated processing until manual validation or a formal override is provided.
 
-### **Step 4 — Validate Alignment** Re‑score alignment after corrections are implemented.
+### Step 4 — Validate Alignment  
+Re‑score alignment after corrections are implemented.
 
 ---
 
