@@ -24,12 +24,23 @@
     },
     "metric": {
       "type": "object",
-      "required": ["alignment_score", "drift_status", "compliance_violation_count", "risk_level"],
+      "required": [
+        "alignment_score",
+        "drift_status",
+        "compliance_violation_count",
+        "risk_level",
+        "escalation_triggered"
+      ],
       "properties": {
         "alignment_score": { "type": "number", "minimum": 0, "maximum": 1 },
         "drift_status": { "type": "boolean" },
+        "drift_dimension": { 
+          "type": "string", 
+          "enum": ["none", "dependency", "execution", "persona"] 
+        },
         "compliance_violation_count": { "type": "integer", "minimum": 0 },
         "risk_level": { "type": "string", "enum": ["none", "low", "medium", "high", "critical"] },
+        "escalation_triggered": { "type": "boolean" },
         "remediation_action": { "type": "string" }
       },
       "additionalProperties": false
