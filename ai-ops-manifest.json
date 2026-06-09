@@ -4,7 +4,6 @@
   "description": "A modular AI-enabled operational framework for workflows, decisions, systems, prompts, and documentation.",
   "license": "MIT",
   "model_format": "framework",
-
   "modules": {
     "documentation": [
       "AI_OPS_MODEL_CARD.md",
@@ -110,25 +109,22 @@
       "ai-ops-workflow-operational-cadence.md"
     ]
   },
-
   "entrypoints": {
+    "root": "./",
     "documentation": "./docs",
     "governance": "./.github",
-    "root": "./",
-    "starter_prompts": "./docs/starter-prompts",
+    "starter_prompts": "./starter-prompts",
     "systems": "./systems",
-    "templates": "./docs/templates",
-    "use_cases": "./docs/use-cases",
-    "workflows": "./systems/workflows"
+    "templates": "./templates",
+    "use_cases": "./use-cases",
+    "workflows": "./workflows"
   },
-
   "integrity_rules": {
     "naming_conventions": "All files must follow ai-ops-[type]-[name].md or prompt-[name].md",
     "alphabetical_ordering": true,
     "no_deprecated_files": true,
-    "option_a_required": true
+    "strict_manifest_sync": true
   },
-
   "ai_agent_governance": {
     "alignment_required": true,
     "drift_detection_enabled": true,
