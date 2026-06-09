@@ -1,11 +1,36 @@
 #!/usr/bin/env node
 
 /**
- * AI‑Ops Framework — Structural Integrity Linter (Corrected)
+ * AI‑Ops Framework — Structural Integrity Linter
+ * Optimized for robustness and cross-platform compatibility
  */
 
 const fs = require("fs");
 const path = require("path");
+
+// ------------------------------
+// Configuration
+// ------------------------------
+const ignoreList = [".git", "node_modules", "schema", "logs", "temp"];
+const manifestPath = "ai-ops-manifest.json";
+
+const allowedPatterns = [
+  /^ai-ops-[a-z0-9-]+\.md$/,
+  /^prompt-[a-z0-9-]+\.md$/,
+  /^.*\.json$/,
+  /^.*\.ya?ml$/,
+  /^.*\.md$/,
+  /^.*\.js$/,
+];
+
+const governanceFiles = [
+  "README.md", "LICENSE", "CONTRIBUTING.md",
+  "CONTRIBUTING_DETAILED.md", "CODE_OF_CONDUCT.md", "PROJECT_GOVERNANCE.md",
+];
+
+const optionAFolders = [
+  "workflows", "templates", "systems", "use-cases", "starter-prompts",
+];
 
 // ------------------------------
 // Helper: Recursively list files
@@ -13,13 +38,10 @@ const path = require("path");
 function listFiles(dir) {
   let results = [];
   fs.readdirSync(dir).forEach((file) => {
+    if (ignoreList.includes(file)) return;
+    
     const full = path.join(dir, file);
     const stat = fs.statSync(full);
-
-    // Skip noise directories
-    if (file === ".git" || file === "node_modules" || file.includes("schema")) {
-      return;
-    }
 
     if (stat.isDirectory()) {
       results = results.concat(listFiles(full));
@@ -31,141 +53,55 @@ function listFiles(dir) {
 }
 
 // ------------------------------
-// Load manifest
+// Execution Logic
 // ------------------------------
-const manifestPath = "ai-ops-manifest.json";
 if (!fs.existsSync(manifestPath)) {
-  console.error("❌ Manifest not found at ai-ops-manifest.json");
+  console.error("❌ Manifest not found.");
   process.exit(1);
 }
 
 const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
-
-// ------------------------------
-// 1. Naming Convention Enforcement
-// ------------------------------
-console.log("🔍 Checking naming conventions...");
-
-const allowedPatterns = [
-  /^ai-ops-[a-z0-9-]+\.md$/,
-  /^prompt-[a-z0-9-]+\.md$/,
-  /^.*\.json$/,
-  /^.*\.ya?ml$/,
-  /^.*\.md$/,
-  /^.*\.js$/, // allow JS files
-];
-
-const governanceFiles = [
-  "README.md",
-  "LICENSE",
-  "CONTRIBUTING.md",
-  "CONTRIBUTING_DETAILED.md",
-  "CODE_OF_CONDUCT.md",
-  "PROJECT_GOVERNANCE.md",
-];
-
 const allFiles = listFiles(".");
+let errorStack = [];
 
-let namingErrors = [];
+console.log("🔍 Running Structural Integrity Checks...");
 
-for (const file of allFiles) {
+// 1. Naming Convention Enforcement
+const namingErrors = allFiles.filter(file => {
   const base = path.basename(file);
+  if (file === "scripts/lint-structure.js") return false;
+  return !(allowedPatterns.some((p) => p.test(base)) || governanceFiles.includes(base));
+});
+if (namingErrors.length > 0) errorStack.push(`Naming Conventions: ${namingErrors.length} invalid filenames.`);
 
-  // Ignore this linter itself
-  if (file === "scripts/lint-structure.js") continue;
-
-  const allowed =
-    allowedPatterns.some((p) => p.test(base)) ||
-    governanceFiles.includes(base);
-
-  if (!allowed) namingErrors.push(file);
-}
-
-if (namingErrors.length > 0) {
-  console.error("❌ Invalid filenames detected:");
-  namingErrors.forEach((f) => console.error(" - " + f));
-  process.exit(1);
-}
-
-console.log("✅ Naming conventions OK");
-
-// ------------------------------
 // 2. Alphabetical Ordering
-// ------------------------------
-console.log("🔍 Checking alphabetical ordering...");
-
-let orderingFailed = false;
-
-for (const category of Object.keys(manifest.modules)) {
+Object.keys(manifest.modules).forEach(category => {
   const list = manifest.modules[category];
   const sorted = [...list].sort();
-
   if (JSON.stringify(list) !== JSON.stringify(sorted)) {
-    console.error(`❌ ${category} is not alphabetized.`);
-    orderingFailed = true;
+    errorStack.push(`Alphabetical Ordering: ${category} is not sorted.`);
   }
-}
+});
 
-if (orderingFailed) process.exit(1);
-
-console.log("✅ Alphabetical ordering OK");
-
-// ------------------------------
 // 3. Deprecated Filenames
+const deprecated = allFiles.filter((f) => path.basename(f).startsWith("ai-ops-agent-"));
+if (deprecated.length > 0) errorStack.push(`Deprecated Files: Found ${deprecated.length} files.`);
+
+// 4. Option A Formatting (No backticks)
+const optionAErrors = allFiles.filter(file => {
+  const normalized = file.split(path.sep).slice(0, 1).join(path.sep);
+  if (!optionAFolders.includes(normalized)) return false;
+  return fs.readFileSync(file, "utf8").includes("```");
+});
+if (optionAErrors.length > 0) errorStack.push(`Option A Violations: Backticks found in ${optionAErrors.length} files.`);
+
 // ------------------------------
-console.log("🔍 Checking for deprecated filenames...");
-
-const deprecated = allFiles.filter((f) =>
-  path.basename(f).startsWith("ai-ops-agent-")
-);
-
-if (deprecated.length > 0) {
-  console.error("❌ Deprecated filenames detected:");
-  deprecated.forEach((f) => console.error(" - " + f));
+// Final Report
+// ------------------------------
+if (errorStack.length > 0) {
+  console.error("\n❌ Structural Integrity Failed:");
+  errorStack.forEach(err => console.error(` - ${err}`));
   process.exit(1);
 }
 
-console.log("✅ No deprecated filenames");
-
-// ------------------------------
-// 4. Option A Formatting
-// ------------------------------
-console.log("🔍 Checking Option A formatting...");
-
-// Only enforce Option A in these folders, NOT docs
-const optionAFolders = [
-  "workflows",
-  "templates",
-  "systems",
-  "use-cases",
-  "starter-prompts",
-];
-
-let optionAErrors = [];
-
-for (const file of allFiles) {
-  const relative = file.replace(/^[.][/\\]?/, ""); // normalize
-
-  // Only check files in the Option A folders
-  if (!optionAFolders.some((folder) => relative.startsWith(folder + "/"))) {
-    continue;
-  }
-
-  const text = fs.readFileSync(file, "utf8");
-  if (text.includes("```")) {
-    optionAErrors.push(relative);
-  }
-}
-
-if (optionAErrors.length > 0) {
-  console.error("❌ Option A violations detected (backticks found):");
-  optionAErrors.forEach((f) => console.error(" - " + f));
-  process.exit(1);
-}
-
-console.log("✅ Option A formatting OK");
-
-// ------------------------------
-// Final
-// ------------------------------
-console.log("🎉 Structural integrity checks passed.");
+console.log("🎉 All structural integrity checks passed.");
