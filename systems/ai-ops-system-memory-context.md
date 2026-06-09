@@ -68,15 +68,14 @@ AI agents must:
 
 ---
 
-## 4. Context Retrieval Rules
+## 4. Context Retrieval & Validation Rules
+AI agents must retrieve context in the following order. During retrieval, all Short-Term and Mid-Term context must be cross-referenced against the Knowledge Model hierarchy to ensure operational consistency:
 
-AI agents must retrieve context in this order:
-
-1. **Short‑term context**  
-2. **Workflow context**  
-3. **Persona context**  
-4. **System models**  
-5. **Long‑term memory**  
+1. **Short‑term context** (Validated against Knowledge Model)
+2. **Workflow context**
+3. **Persona context**
+4. **System models**
+5. **Long‑term memory**
 
 Agents must not retrieve context outside the scope of the task.
 
@@ -110,18 +109,14 @@ When combining multiple inputs, agents must:
 
 ---
 
-## 7. Forgetting Rules
+## 7. Forgetting & Archiving Rules
+AI agents must:
+- Discard Ephemeral memory after output.
+- Move resolved risks and closed dependencies to Historical Archive (do not delete).
+- Forget outdated sprint/roadmap context from the Active Reasoning Window.
+- Clear persona context when persona is unloaded.
 
-AI agents must forget:
-
-- Ephemeral memory after output  
-- Outdated sprint context  
-- Resolved risks  
-- Closed dependencies  
-- Completed decisions  
-- Expired cadence windows  
-
-Forgetting prevents drift and hallucination.
+Archiving prevents Active Window drift while maintaining auditability.
 
 ---
 
