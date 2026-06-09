@@ -58,15 +58,14 @@ The Alignment Engine evaluates alignment across six dimensions:
 
 ---
 
-## 3. Alignment Scoring Model
-
+## 3. Alignment Scoring Model & Circuit-Breaker
 AI agents must score alignment using a standardized 0.0–1.0 scale:
+- **0.80 – 1.00:** Strong alignment  
+- **0.50 – 0.79:** Partial alignment  
+- **0.00 – 0.49:** Misalignment  
 
-- **0.8 – 1.0:** Strong alignment  
-- **0.5 – 0.79:** Partial alignment  
-- **0.0 – 0.49:** Misalignment  
-
-Scores are calculated using weighted factors from each alignment dimension.
+### Critical Circuit-Breaker Rule:
+Scores are calculated using weighted factors from each dimension. However, if any single dimension scores below 0.40, the global score is automatically capped at 0.49 (Misalignment), overriding all weighted averages to prevent catastrophic blind spots.
 
 ---
 
