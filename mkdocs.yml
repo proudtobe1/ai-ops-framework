@@ -1,14 +1,48 @@
 site_name: AI-Ops Framework
+site_description: An automation‑ready operating system and governance framework for modern organizations.
+site_author: Mary Jane and Company, LLC
+site_url: https://proudtobe1.github.io/ai-ops-framework
 
-strict: false
+strict: true
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
 
 plugins:
   - search
   - awesome-pages
 
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - tables
+  - admonition
+
 nav:
   - Home: index.md
-
+  
   - Overview:
       - Documentation Overview: ai-ops-docs-overview.md
       - Visual Index: ai-ops-docs-visual-index.md
@@ -21,59 +55,20 @@ nav:
       - Dependency Map: ai-ops-docs-dependency-map.md
       - LLM Loading Guide: ai-ops-docs-llm-loading-guide.md
 
-  - Operating Model:
-      - Operating Model Overview: operating-model/README.md
-      - Alignment Engine: operating-model/ai-agent-alignment-engine.md
-      - Audit Model: operating-model/ai-agent-audit-model.md
-      - Behavior Rules: operating-model/ai-agent-behavior-rules.md
-      - Certification Pathway: operating-model/ai-agent-certification-pathway.md
-      - Communication Cadence: operating-model/ai-agent-communication-cadence-model.md
-      - Communication Engine: operating-model/ai-agent-communication-engine.md
-      - Compliance Model: operating-model/ai-agent-compliance-model.md
-      - Data Handling Model: operating-model/ai-agent-data-handling-model.md
-      - Decision Model: operating-model/ai-agent-decision-model.md
-      - Drift Detection Model: operating-model/ai-agent-drift-detection-model.md
-      - Environment Model: operating-model/ai-agent-environment-model.md
-      - Escalation Model: operating-model/ai-agent-escalation-model.md
-      - Ethical Model: operating-model/ai-agent-ethical-model.md
-      - Failure Modes & Recovery: operating-model/ai-agent-failure-modes-recovery.md
-      - Governance Model: operating-model/ai-agent-governance-model.md
-      - Incident Response Model: operating-model/ai-agent-incident-response-model.md
-      - Integration Guide: operating-model/ai-agent-integration-guide.md
-      - Interaction Model: operating-model/ai-agent-interaction-model.md
-      - Knowledge Lifecycle: operating-model/ai-agent-knowledge-lifecycle-model.md
-      - Knowledge Model: operating-model/ai-agent-knowledge-model.md
-      - Lifecycle Model: operating-model/ai-agent-lifecycle-model.md
-      - Memory Context Model: operating-model/ai-agent-memory-context-model.md
-      - Metrics Framework: operating-model/ai-agent-metrics-framework.md
-      - Observability Model: operating-model/ai-agent-observability-model.md
-      - Operating Cadence Model: operating-model/ai-agent-operating-cadence-model.md
-      - Operating Model: operating-model/ai-agent-operating-model.md
-      - Output Contract: operating-model/ai-agent-output-contract.md
-      - Performance Model: operating-model/ai-agent-performance-model.md
-      - Reasoning Framework: operating-model/ai-agent-reasoning-framework.md
-      - Reliability Model: operating-model/ai-agent-reliability-model.md
-      - Role Model: operating-model/ai-agent-role-model.md
-      - Safety Model: operating-model/ai-agent-safety-model.md
-      - Security Model: operating-model/ai-agent-security-model.md
-      - Test Suite: operating-model/ai-agent-test-suite.md
-      - Versioning Model: operating-model/ai-agent-versioning-model.md
-      - Workflow Integration: operating-model/ai-ops-workflow-ai-agent-integration.md
-
-  - Framework Extensions:
-      - Extension Guide: ai-ops-framework-extension-guide.md
-
-  - Maturity & Governance:
-      - Maturity Model: ai-ops-maturity-model.md
-      - Contribution Governance Model: ai-ops-contribution-governance-model.md
-
-  - System Overview:
+  - Core Systems:
       - System Overview: ai-ops-system-overview.md
+      - Alignment Engine: ai-ops-template-alignment-check.md
+      - Decision Record: ai-ops-template-decision-record.md
 
-  - Persona Library:
-      - Persona Library Overview: persona-library/README.md
-      - Persona Library Docs: persona-library/ai-ops-docs-persona-library.md
-
-  - Sandbox:
-      - Sandbox Overview: sandbox/README.md
-      - Agent Sandbox: sandbox/ai-agent-sandbox.md
+  - Agent Lifecycle & Governance:
+      - Behavior Rules: ai-agent-behavior-rules.md
+      - Certification Pathway: ai-agent-certification-pathway.md
+      - Evaluation Rubric: ai-agent-evaluation-rubric.md
+      - Failure Modes & Recovery: ai-agent-failure-modes-recovery.md
+      - Integration Guide: ai-agent-integration-guide.md
+      - Integration Model: ai-agent-integration.md
+      - Output Contract: ai-agent-output-contract.md
+      - Test Suite: ai-agent-test-suite.md
+      - Contribution Governance: ai-ops-contribution-governance-model.md
+      - Maturity Model: ai-ops-maturity-model.md
+      - Framework Extensions: ai-ops-framework-extension-guide.md
