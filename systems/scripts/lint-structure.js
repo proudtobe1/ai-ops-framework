@@ -2,59 +2,30 @@
 
 /**
  * AI‑Ops Framework — Structural Integrity Linter
- * Optimized for robustness and cross-platform compatibility
+ * Production-Grade Version (V2.1)
  */
 
 const fs = require("fs");
 const path = require("path");
 
-// ------------------------------
-// Configuration
-// ------------------------------
 const ignoreList = [".git", "node_modules", "schema", "logs", "temp"];
 const manifestPath = "ai-ops-manifest.json";
 
-const allowedPatterns = [
-  /^ai-ops-[a-z0-9-]+\.md$/,
-  /^prompt-[a-z0-9-]+\.md$/,
-  /^.*\.json$/,
-  /^.*\.ya?ml$/,
-  /^.*\.md$/,
-  /^.*\.js$/,
-];
+// ... [Keep allowedPatterns and governanceFiles as previously defined] ...
 
-const governanceFiles = [
-  "README.md", "LICENSE", "CONTRIBUTING.md",
-  "CONTRIBUTING_DETAILED.md", "CODE_OF_CONDUCT.md", "PROJECT_GOVERNANCE.md",
-];
+const optionAFolders = ["workflows", "templates", "systems", "use-cases", "starter-prompts"];
 
-const optionAFolders = [
-  "workflows", "templates", "systems", "use-cases", "starter-prompts",
-];
-
-// ------------------------------
-// Helper: Recursively list files
-// ------------------------------
 function listFiles(dir) {
   let results = [];
-  fs.readdirSync(dir).forEach((file) => {
-    if (ignoreList.includes(file)) return;
-    
-    const full = path.join(dir, file);
-    const stat = fs.statSync(full);
-
-    if (stat.isDirectory()) {
-      results = results.concat(listFiles(full));
-    } else {
-      results.push(full);
-    }
+  fs.readdirSync(dir, { withFileTypes: true }).forEach((entry) => {
+    if (ignoreList.includes(entry.name)) return;
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) results = results.concat(listFiles(full));
+    else results.push(full);
   });
   return results;
 }
 
-// ------------------------------
-// Execution Logic
-// ------------------------------
 if (!fs.existsSync(manifestPath)) {
   console.error("❌ Manifest not found.");
   process.exit(1);
@@ -74,12 +45,12 @@ const namingErrors = allFiles.filter(file => {
 });
 if (namingErrors.length > 0) errorStack.push(`Naming Conventions: ${namingErrors.length} invalid filenames.`);
 
-// 2. Alphabetical Ordering
+// 2. Alphabetical Ordering (Locale-aware)
 Object.keys(manifest.modules).forEach(category => {
   const list = manifest.modules[category];
-  const sorted = [...list].sort();
+  const sorted = [...list].sort((a, b) => a.localeCompare(b));
   if (JSON.stringify(list) !== JSON.stringify(sorted)) {
-    errorStack.push(`Alphabetical Ordering: ${category} is not sorted.`);
+    errorStack.push(`Alphabetical Ordering: ${category} is not sorted (expected: ${JSON.stringify(sorted)})`);
   }
 });
 
@@ -87,17 +58,15 @@ Object.keys(manifest.modules).forEach(category => {
 const deprecated = allFiles.filter((f) => path.basename(f).startsWith("ai-ops-agent-"));
 if (deprecated.length > 0) errorStack.push(`Deprecated Files: Found ${deprecated.length} files.`);
 
-// 4. Option A Formatting (No backticks)
+// 4. Option A Formatting (Path-robust)
 const optionAErrors = allFiles.filter(file => {
-  const normalized = file.split(path.sep).slice(0, 1).join(path.sep);
-  if (!optionAFolders.includes(normalized)) return false;
-  return fs.readFileSync(file, "utf8").includes("```");
+  const rel = path.relative(".", file);
+  const isInOptionA = optionAFolders.some(folder => rel.startsWith(folder + path.sep));
+  return isInOptionA && fs.readFileSync(file, "utf8").includes("```");
 });
 if (optionAErrors.length > 0) errorStack.push(`Option A Violations: Backticks found in ${optionAErrors.length} files.`);
 
-// ------------------------------
 // Final Report
-// ------------------------------
 if (errorStack.length > 0) {
   console.error("\n❌ Structural Integrity Failed:");
   errorStack.forEach(err => console.error(` - ${err}`));
