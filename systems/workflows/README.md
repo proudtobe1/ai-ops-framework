@@ -16,25 +16,25 @@ A complete alphabetical index is included at the bottom.
 ## 1. Automation & Decision Workflows
 Workflows that define automated or semi‑automated decision processes driven by AI agents.
 
-ai-ops-workflow-decision-automation.md  
+* [ai-ops-workflow-decision-automation.md](ai-ops-workflow-decision-automation.md)
 
 ## 2. AI Agent Integration Workflows
 Workflows that define how AI agents integrate with systems, processes, and operational environments.
 
-ai-ops-workflow-ai-agent-integration.md  
+* [ai-ops-workflow-ai-agent-integration.md](ai-ops-workflow-ai-agent-integration.md)
 
 ## 3. Operational Cadence Workflows
 Workflows that define recurring operational rhythms, checkpoints, and structured review cycles.
 
-ai-ops-workflow-operational-cadence.md  
+* [ai-ops-workflow-operational-cadence.md](ai-ops-workflow-operational-cadence.md)
 
 ---
 
 # A–Z INDEX OF ALL FILES
 
-ai-ops-workflow-ai-agent-integration.md  
-ai-ops-workflow-decision-automation.md  
-ai-ops-workflow-operational-cadence.md  
+* [ai-ops-workflow-ai-agent-integration.md](ai-ops-workflow-ai-agent-integration.md)
+* [ai-ops-workflow-decision-automation.md](ai-ops-workflow-decision-automation.md)
+* [ai-ops-workflow-operational-cadence.md](ai-ops-workflow-operational-cadence.md)
 
 ---
 
