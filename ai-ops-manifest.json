@@ -52,6 +52,10 @@
       "ai-ops-manifest.json",
       "mkdocs.yml"
     ],
+    "schemas": [
+      "ai-ops-system-schema-manifest.json",
+      "ai-ops-system-schema-metric-update.json"
+    ],
     "starter_prompts": [
       "README.md",
       "prompt-alignment-check.md",
@@ -114,6 +118,7 @@
     "root": "./",
     "documentation": "./docs",
     "governance": "./.github",
+    "schemas": "./systems/schema",
     "starter_prompts": "./docs/starter-prompts",
     "systems": "./systems",
     "templates": "./docs/templates",
