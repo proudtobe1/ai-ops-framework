@@ -68,6 +68,7 @@
       "ai-ops-system-communication-engine.md",
       "ai-ops-system-drift-detection.md",
       "ai-ops-system-knowledge-model.md",
+      "ai-ops-system-linter.js",
       "ai-ops-system-memory-context.md",
       "ai-ops-system-operating-model.md",
       "ai-ops-system-operational-metrics.md",
@@ -117,18 +118,4 @@
     "systems": "./systems",
     "templates": "./docs/templates",
     "use_cases": "./docs/use-cases",
-    "workflows": "./systems/workflows"
-  },
-  "integrity_rules": {
-    "naming_conventions": "All files must follow ai-ops-[type]-[name].md or prompt-[name].md",
-    "alphabetical_ordering": true,
-    "no_deprecated_files": true,
-    "strict_manifest_sync": true
-  },
-  "ai_agent_governance": {
-    "alignment_required": true,
-    "drift_detection_enabled": true,
-    "audit_logging": true,
-    "human_in_the_loop_required": true
-  }
-}
+    "workflows":
