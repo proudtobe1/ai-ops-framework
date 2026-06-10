@@ -28,10 +28,8 @@ jobs:
           pip install mkdocs \
                      mkdocs-material \
                      mkdocs-awesome-pages-plugin \
-                     mkdocs-mermaid2-plugin \
-                     mkdocs-literate-nav \
-                     mkdocs-redirects
+                     mkdocs-mermaid2-plugin
 
       - name: Validate documentation build
         run: |
-          mkdocs build
+          mkdocs build --clean

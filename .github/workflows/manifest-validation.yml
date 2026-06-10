@@ -20,13 +20,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "24"
+          node-version: "22"
 
       - name: Install JSON Schema Validator
         run: npm install -g ajv-cli
 
       - name: Validate ai-ops-manifest.json
-        run: ajv validate -s schema/ai-ops-manifest.schema.json -d ai-ops-manifest.json
+        run: ajv validate -s systems/schema/ai-ops-manifest.schema.json -d ai-ops-manifest.json
 
       - name: Done
         run: echo "✅ Manifest validation passed."

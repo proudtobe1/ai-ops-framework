@@ -16,57 +16,57 @@ A complete alphabetical index is included at the bottom.
 ## 1. System Overview & Operating Models
 High‑level descriptions of the system’s purpose, structure, and operational behavior.
 
-operating-model.md  
-system-operating-model.md  
-system-overview.md  
+ai-ops-architecture-operating-model.md  
+ai-ops-system-operating-model.md  
+ai-ops-system-overview.md  
 
 ## 2. System Engines
 Core engines that drive alignment, communication, and reasoning across the system.
 
-system-alignment-engine.md  
-system-communication-engine.md  
-system-reasoning-framework.md  
+ai-ops-system-alignment-engine.md  
+ai-ops-system-communication-engine.md  
+ai-ops-system-reasoning-framework.md  
 
 ## 3. Behavioral Guardrails & Communication Standards
 Documents defining system‑wide behavioral rules, communication cadence, and interaction patterns.
 
-system-behavioral-guardrails.md  
-system-communication-cadence.md  
+ai-ops-system-behavioral-guardrails.md  
+ai-ops-system-communication-cadence.md  
 
 ## 4. Knowledge, Memory & Context Models
 System‑level models governing knowledge structures, memory handling, and contextual awareness.
 
-system-knowledge-model.md  
-system-memory-context.md  
+ai-ops-system-knowledge-model.md  
+ai-ops-system-memory-context.md  
 
 ## 5. Drift Detection, Metrics & Observability
 Documents defining system drift detection, operational metrics, and performance monitoring.
 
-system-drift-detection.md  
-system-operational-metrics.md  
+ai-ops-system-drift-detection.md  
+ai-ops-system-operational-metrics.md  
 
 ## 6. Security & Compliance
 System‑level security, compliance, and governance requirements.
 
-system-security-compliance.md  
+ai-ops-system-security-compliance.md  
 
 ---
 
 # A–Z INDEX OF ALL FILES
 
-operating-model.md  
-system-alignment-engine.md  
-system-behavioral-guardrails.md  
-system-communication-cadence.md  
-system-communication-engine.md  
-system-drift-detection.md  
-system-knowledge-model.md  
-system-memory-context.md  
-system-operating-model.md  
-system-operational-metrics.md  
-system-overview.md  
-system-reasoning-framework.md  
-system-security-compliance.md  
+ai-ops-architecture-operating-model.md  
+ai-ops-system-alignment-engine.md  
+ai-ops-system-behavioral-guardrails.md  
+ai-ops-system-communication-cadence.md  
+ai-ops-system-communication-engine.md  
+ai-ops-system-drift-detection.md  
+ai-ops-system-knowledge-model.md  
+ai-ops-system-memory-context.md  
+ai-ops-system-operating-model.md  
+ai-ops-system-operational-metrics.md  
+ai-ops-system-overview.md  
+ai-ops-system-reasoning-framework.md  
+ai-ops-system-security-compliance.md  
 
 ---
 
