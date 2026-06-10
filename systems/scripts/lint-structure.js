@@ -15,7 +15,7 @@ const manifestPath = path.join(ROOT_DIR, "ai-ops-manifest.json");
 const ignoreList = [".git", "node_modules", "schema", "logs", "temp"];
 
 // Explicitly defined to prevent ReferenceErrors and maintain zero-hallucination tracking
-const allowedPatterns = [/^ai-ops-system-.*\.md$/, /^README\.md$/]; 
+const allowedPatterns = [/^ai-ops-system-.*\.md$/, /^ai-ops-system-.*\.js$/, /^README\.md$/]; 
 const governanceFiles = ["ai-ops-manifest.json", "package.json"];
 const optionAFolders = ["workflows", "templates", "systems", "use-cases", "starter-prompts"];
 
