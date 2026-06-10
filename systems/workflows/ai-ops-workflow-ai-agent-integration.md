@@ -87,7 +87,7 @@ AI agent generates a concise summary for stakeholders.
 
 If the agent detects high‑severity risks, compliance violations, critical misalignment, or missing decision records:
 
-Action Required: Trigger the formal [ai-ops-template-escalation-report.md](./../templates/ai-ops-template-escalation-report.md) workflow process immediately.
+Action Required: Trigger the formal [ai-ops-template-escalation-report.md](../templates/ai-ops-template-escalation-report.md) workflow process immediately.
 
 ---
 
