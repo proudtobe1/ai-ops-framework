@@ -53,10 +53,11 @@ const namingErrors = allFiles.filter(file => {
   const relPath = path.relative(ROOT_DIR, file);
   
   // Whitelist the script itself regardless of location
-  if (relPath === path.join("systems", "scripts", "lint-structure.js") || relPath === "lint-structure.js") return false;
+  if (relPath === path.join("systems", "scripts", "ai-ops-system-linter.js") || relPath === "ai-ops-system-linter.js") return false;
   
   return !(allowedPatterns.some((p) => p.test(base)) || governanceFiles.includes(base));
 });
+
 if (namingErrors.length > 0) {
   errorStack.push(`Naming Conventions: ${namingErrors.length} invalid filenames detected.`);
 }
