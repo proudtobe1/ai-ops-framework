@@ -31,6 +31,141 @@ theme:
 
 plugins:
   - search
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - tables
+  - admonition
+
+nav:
+  - Home: index.md
+  
+  - Documentation Overview:
+      - Overview: docs/ai-ops-docs-overview.md
+      - Visual Index: docs/ai-ops-docs-visual-index.md
+      - Operating Playbook: docs/ai-ops-docs-operating-playbook.md
+
+  - Core Architecture:
+      - System Overview: docs/ai-ops-system-overview.md
+      - Deep Dive: docs/ai-ops-architecture-deep-dive.md
+      - Data Flow: docs/ai-ops-data-flow.md
+      - Expanded Diagrams: docs/ai-ops-docs-expanded-diagrams.md
+      - Dependency Map: docs/ai-ops-docs-dependency-map.md
+      - LLM Loading Guide: docs/ai-ops-docs-llm-loading-guide.md
+
+  - Foundational Systems:
+      - Architecture Operating Model: systems/ai-ops-architecture-operating-model.md
+      - Alignment Engine: systems/ai-ops-system-alignment-engine.md
+      - Behavioral Guardrails: systems/ai-ops-system-behavioral-guardrails.md
+      - Communication Cadence: systems/ai-ops-system-communication-cadence.md
+      - Communication Engine: systems/ai-ops-system-communication-engine.md
+      - Drift Detection: systems/ai-ops-system-drift-detection.md
+      - Knowledge Model: systems/ai-ops-system-knowledge-model.md
+      - Memory Context: systems/ai-ops-system-memory-context.md
+      - Operating Model: systems/ai-ops-system-operating-model.md
+      - Operational Metrics: systems/ai-ops-system-operational-metrics.md
+      - Reasoning Framework: systems/ai-ops-system-reasoning-framework.md
+      - Security & Compliance: systems/ai-ops-system-security-compliance.md
+
+  - Operational Workflows:
+      - Overview: workflows/README.md
+      - AI Agent Integration: workflows/ai-ops-workflow-ai-agent-integration.md
+      - Decision Automation: workflows/ai-ops-workflow-decision-automation.md
+      - Operational Cadence: workflows/ai-ops-workflow-operational-cadence.md
+
+  - Enterprise Templates:
+      - Overview: templates/README.md
+      - Alignment Check: templates/ai-ops-template-alignment-check.md
+      - Change Request: templates/ai-ops-template-change-request.md
+      - Decision Record: templates/ai-ops-template-decision-record.md
+      - Dependency Review: templates/ai-ops-template-dependency-review.md
+      - Escalation Report: templates/ai-ops-template-escalation-report.md
+      - Executive Brief: templates/ai-ops-template-executive-brief.md
+      - Incident Report: templates/ai-ops-template-incident-report.md
+      - Operational Readiness: templates/ai-ops-template-operational-readiness-review.md
+      - Post Mortem: templates/ai-ops-template-post-mortem.md
+      - QA Review: templates/ai-ops-template-qa-review.md
+      - Root Cause Analysis: templates/ai-ops-template-rca.md
+      - Risk Review: templates/ai-ops-template-risk-review.md
+      - Runbook: templates/ai-ops-template-runbook.md
+      - Service Level Review: templates/ai-ops-template-service-level-review.md
+      - SLO Definition: templates/ai-ops-template-slo-definition.md
+      - Status Update: templates/ai-ops-template-status-update.md
+      - Weekly Report: templates/ai-ops-template-weekly-report.md
+
+  - Tactical Use Cases:
+      - Overview: use-cases/README.md
+      - Incident Review: use-cases/ai-ops-use-case-incident-review.md
+      - Roadmap Alignment: use-cases/ai-ops-use-case-roadmap-alignment.md
+      - Sprint Planning: use-cases/ai-ops-use-case-sprint-planning.md
+      - Weekly Ops Review: use-cases/ai-ops-use-case-weekly-ops-review.md
+
+  - Starter Prompts:
+      - Overview: starter-prompts/README.md
+      - Alignment Check: starter-prompts/prompt-alignment-check.md
+      - Decision Tree: starter-prompts/prompt-decision-tree.md
+      - Risk Review: starter-prompts/prompt-risk-review.md
+      - Weekly Summary: starter-prompts/prompt-weekly-summary.md
+
+  - Agent Governance & Lifecycle:
+      - Behavior Rules: docs/ai-agent-behavior-rules.md
+      - Certification Pathway: docs/ai-agent-certification-pathway.md
+      - Evaluation Rubric: docs/ai-agent-evaluation-rubric.md
+      - Failure Modes & Recovery: docs/ai-agent-failure-modes-recovery.md
+      - Integration Guide: docs/ai-agent-integration-guide.md
+      - Integration Model: docs/ai-agent-integration.md
+      - Output Contract: docs/ai-agent-output-contract.md
+      - Test Suite: docs/ai-agent-test-suite.md
+      - Contribution Governance: docs/ai-ops-contribution-governance-model.md
+      - Maturity Model: docs/ai-ops-maturity-model.md
+      - Framework Extensions: docs/ai-ops-framework-extension-guide.md
+
+  - Framework Reference:
+      - Model Card: docs/AI_OPS_MODEL_CARD.md
+      - Module Registry: docs/AI_OPS_MODULE_REGISTRY.md
+      - Glossary: docs/GLOSSARY.md
+      - FAQ: docs/FAQ.md
+      - Examples: docs/EXAMPLES.md
+      - Roadmap: docs/ROADMAP.md
+
+  - Legal & Governance:
+      - Code of Conduct: .github/CODE_OF_CONDUCT.md
+      - Contributing Guide: .github/CONTRIBUTING.md
+      - Project Governance: .github/PROJECT_GOVERNANCE.mdsite_name: AI-Ops Framework
+site_description: An automation‑ready operating system and governance framework for modern organizations.
+site_author: Mary Jane and Company, LLC
+site_url: https://proudtobe1.github.io/ai-ops-framework
+
+strict: true
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+
+plugins:
+  - search
   - awesome-pages
 
 markdown_extensions:
