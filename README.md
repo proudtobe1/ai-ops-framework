@@ -77,13 +77,7 @@ See [ROADMAP.md](./ROADMAP.md) for planned enhancements, upcoming functional mod
 
 ## 🤝 Contributing & Governance
 
-Contributions are welcome. Please thoroughly review our operational guidelines before submitting a pull request:
-
-* [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) — Our standards for community engagement.
-* [CONTRIBUTING.md](./CONTRIBUTING.md) — Quickstart guide for contribution.
-* [CONTRIBUTING_DETAILED.md](./CONTRIBUTING_DETAILED.md) — Technical and stylistic requirements for files.
-* [PROJECT_GOVERNANCE.md](./PROJECT_GOVERNANCE.md) — How decisions regarding the framework are made.
-
+We welcome community contributions! To get started, please read our [CONTRIBUTING.md](./CONTRIBUTING.md) quickstart guide for setup instructions and review [PROJECT_GOVERNANCE.md](./PROJECT_GOVERNANCE.md) to understand our architectural validation review process.
 ---
 
 ## 📁 Root Directory Registry
