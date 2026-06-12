@@ -88,22 +88,24 @@ Contributions are welcome. Please thoroughly review our operational guidelines b
 
 ## 📁 Root Directory Registry
 
+### Physical Core Baseline
+* [.markdownlint.json](./.markdownlint.json) — Formatting and validation engine configuration.
+* [LICENSE](./LICENSE) — MIT legal perimeter and compliance boundary.
+* [README.md](./README.md) — Framework entry point and system registry map.
+* [ai-ops-manifest.json](./ai-ops-manifest.json) — Automated machine-readable operational manifest.
+* [mkdocs.yml](./mkdocs.yml) — Documentation deployment pipeline schema.
+
 ### Governance & Contribution
-* [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)
-* [CONTRIBUTING.md](./CONTRIBUTING.md)
-* [CONTRIBUTING_DETAILED.md](./CONTRIBUTING_DETAILED.md)
-* [PROJECT_GOVERNANCE.md](./PROJECT_GOVERNANCE.md)
+* [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) — Our standards for community engagement.
+* [CONTRIBUTING.md](./CONTRIBUTING.md) — Quickstart guide for contribution.
+* [CONTRIBUTING_DETAILED.md](./CONTRIBUTING_DETAILED.md) — Technical and stylistic requirements for files.
+* [PROJECT_GOVERNANCE.md](./PROJECT_GOVERNANCE.md) — How decisions regarding the framework are made.
 
 ### Reference & Documentation
-* [FAQ.md](./FAQ.md)
-* [GLOSSARY.md](./GLOSSARY.md)
-* [EXAMPLES.md](./EXAMPLES.md)
+* [FAQ.md](./FAQ.md) — Frequently asked structural questions.
+* [GLOSSARY.md](./GLOSSARY.md) — Standardized operating taxonomy definitions.
+* [EXAMPLES.md](./EXAMPLES.md) — Practical execution runs and loading scripts.
 
 ### Model Metadata & Registry
-* [AI_OPS_MODEL_CARD.md](./AI_OPS_MODEL_CARD.md)
-* [AI_OPS_MODULE_REGISTRY.md](./AI_OPS_MODULE_REGISTRY.md)
-* [ai-ops-manifest.json](./ai-ops-manifest.json)
-
-### Strategy & Licensing
-* [ROADMAP.md](./ROADMAP.md)
-* [LICENSE](./LICENSE) (MIT License)
+* [AI_OPS_MODEL_CARD.md](./AI_OPS_MODEL_CARD.md) — Framework capability and orientation parameters.
+* [AI_OPS_MODULE_REGISTRY.md](./AI_OPS_MODULE_REGISTRY.md) — Extended sub-module system registration index.
