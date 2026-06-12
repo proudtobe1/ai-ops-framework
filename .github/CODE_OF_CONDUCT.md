@@ -31,7 +31,7 @@ Project maintainers may take appropriate action in response to unacceptable beha
 
 ## Reporting Issues
 
-If you experience or witness a violation of this Code of Conduct, please open an issue or contact the maintainers directly.
+If you experience or witness a violation of this Code of Conduct, please report it confidentially by contacting the governance board directly at governance@maryjaneandcompany.com. All reports will be reviewed promptly and handled with strict confidentiality.
 
 ## Attribution
 
