@@ -15,9 +15,11 @@ Before submitting a major change, open an issue describing:
 All contributions must align with the existing structure:
 
 - `docs/` — conceptual explanations and reference documentation  
+- `systems/` — operating models and system‑level frameworks  
 - `workflows/` — repeatable AI‑assisted workflows  
 - `templates/` — reusable communication and reporting templates  
-- `systems/` — operating models and system‑level frameworks  
+- `use-cases/` — practical examples and reference scenarios of the framework in action  
+- `starter-prompts/` — pre-configured, AI-ready engineering prompts  
 
 ### 3. Keep It Modular
 Each file should stand on its own and not depend on hidden context.
