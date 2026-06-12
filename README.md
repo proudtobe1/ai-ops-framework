@@ -32,9 +32,9 @@ AI can fix that — but only if it’s applied through a **repeatable operating 
 To get the most out of this framework, you will need access to a modern Large Language Model (LLM) environment (e.g., ChatGPT, Claude, Gemini) or an AI orchestration layer capable of parsing structured text/markdown.
 
 ### 2. Clone the Repository
-
-    git clone https://github.com/proudtobe1/ai-ops-framework.git
-    cd ai-ops-framework
+Run the following commands to set up the framework locally:
+git clone https://github.com/proudtobe1/ai-ops-framework.git
+cd ai-ops-framework
 
 ### 3. Explore the Core Components
 * `systems/` — Foundational operating models, governance structures, and decision systems.
@@ -77,7 +77,8 @@ See [ROADMAP.md](./ROADMAP.md) for planned enhancements, upcoming functional mod
 
 ## 🤝 Contributing & Governance
 
-We welcome community contributions! To get started, please read our [CONTRIBUTING.md](./CONTRIBUTING.md) quickstart guide for setup instructions and review [PROJECT_GOVERNANCE.md](./PROJECT_GOVERNANCE.md) to understand our architectural validation review process.
+We welcome community contributions! To get started, please read our quickstart guide in [CONTRIBUTING.md](./CONTRIBUTING.md). For detailed technical rules, stylistic guidelines, and how architectural decisions are validated by the governance board, see [CONTRIBUTING_DETAILED.md](./CONTRIBUTING_DETAILED.md) and [PROJECT_GOVERNANCE.md](./PROJECT_GOVERNANCE.md). All contributors are expected to adhere to our standards outlined in [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md).
+
 ---
 
 ## 📁 Root Directory Registry
@@ -90,10 +91,10 @@ We welcome community contributions! To get started, please read our [CONTRIBUTIN
 * [mkdocs.yml](./mkdocs.yml) — Documentation deployment pipeline schema.
 
 ### Governance & Contribution
-* [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) — Our standards for community engagement.
-* [CONTRIBUTING.md](./CONTRIBUTING.md) — Quickstart guide for contribution.
-* [CONTRIBUTING_DETAILED.md](./CONTRIBUTING_DETAILED.md) — Technical and stylistic requirements for files.
-* [PROJECT_GOVERNANCE.md](./PROJECT_GOVERNANCE.md) — How decisions regarding the framework are made.
+* [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)
+* [CONTRIBUTING.md](./CONTRIBUTING.md)
+* [CONTRIBUTING_DETAILED.md](./CONTRIBUTING_DETAILED.md)
+* [PROJECT_GOVERNANCE.md](./PROJECT_GOVERNANCE.md)
 
 ### Reference & Documentation
 * [FAQ.md](./FAQ.md) — Frequently asked structural questions.
