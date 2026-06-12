@@ -38,7 +38,7 @@ AI‑generated outputs must be reviewed, validated, and never used without human
 - Enforce naming conventions  
 - Manage releases and versioning  
 - Oversee governance decisions  
-- Validate manifest updates  
+- Validate manifest and registry updates  
 
 ### Contributors
 - Submit improvements  
@@ -87,7 +87,7 @@ Rules governing agent behavior, escalation, drift detection, and audit logging.
 3. Discussion and refinement  
 4. Maintainer approval  
 5. Merge to main  
-6. Manifest updated (if applicable)  
+6. Manifest and README registries updated  
 
 ---
 
@@ -99,26 +99,26 @@ To maintain consistency across the framework:
 - All modules must reside in their correct folders  
 - No cross‑contamination between workflows, templates, systems, prompts, or use‑cases  
 - All registries must remain alphabetized  
-- All new modules must be added to `ai-ops-manifest.json`  
+- All new modules must be added to `ai-ops-manifest.json` and synchronized with the root `README.md` directory registries  
 - All large content blocks must use Option A formatting  
 - No deprecated filenames may be reintroduced  
 
 ---
 
-## 7. Manifest Governance
+## 7. Manifest & Registry Governance
 
-The `ai-ops-manifest.json` is the authoritative index of the framework.
+The `ai-ops-manifest.json` and the root `README.md` registries serve as the authoritative co-indexes of the framework.
 
-### Manifest Requirements
-- Every module must be listed  
+### Manifest & Registry Requirements
+- Every module must be listed in both the machine-readable manifest and human-readable directories  
 - Paths must be accurate  
 - Naming conventions must match the file system  
 - No broken or missing references  
-- Manifest must be updated in the same PR as new modules  
+- Manifest and README.md updates must be executed in the same PR as new modules  
 
 ### Manifest Validation
 - CI must validate manifest structure  
-- Maintainers must verify correctness before merging  
+- Maintainers must verify configuration and human-readable index correctness before merging  
 
 ---
 
@@ -165,7 +165,7 @@ All contributions must comply with:
 - CONTRIBUTING_DETAILED.md  
 - Naming conventions  
 - Structural integrity rules  
-- Manifest governance  
+- Manifest and registry governance  
 - Documentation standards  
 
 PRs must be rejected if they:
@@ -241,4 +241,3 @@ All contributions must comply with:
 
 This governance model may evolve as the framework grows.  
 Changes must follow the same decision process defined above.
-
