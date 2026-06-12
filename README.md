@@ -33,7 +33,7 @@ To get the most out of this framework, you will need access to a modern Large La
 
 ### 2. Clone the Repository
 
-    git clone [https://github.com/proudtobe1/ai-ops-framework.git](https://github.com/proudtobe1/ai-ops-framework.git)
+    git clone https://github.com/proudtobe1/ai-ops-framework.git
     cd ai-ops-framework
 
 ### 3. Explore the Core Components
