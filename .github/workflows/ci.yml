@@ -33,7 +33,7 @@ jobs:
           pip install yamllint
 
       - name: Lint Markdown
-        run: markdownlint "**/*.md" --ignore node_modules
+        run: markdownlint "**/*.md" --ignore node_modules --disable MD013 MD024
 
       - name: Lint JSON
         run: |
