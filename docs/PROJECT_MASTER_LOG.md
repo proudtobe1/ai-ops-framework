@@ -8,5 +8,5 @@
 | **Cleanup** | Removal of all legacy `docs/` root and subdir clutter | Complete | 
 | **Sync** | Alignment of `mkdocs.yml` with current filesystem | Complete | 
 | **Audit** | `verify-steady-state.sh` execution | PASS | 
-| **Verification** | Functional Tier 2 Drift Audit | COMPLETE (Passed) | 
-| **Automation** | CI/CD Linter Enforcement | COMPLETE | 
+| **Verification** | Functional Tier 2 Drift Audit | Complete | 
+| **Automation** | CI/CD Linter Enforcement | Complete | 
