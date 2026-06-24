@@ -1,5 +1,6 @@
 site_name: AI-Ops Framework
-theme: readthedocs
+theme:
+  name: material
 nav:
   - Home: index.md
   - Project Master Log: PROJECT_MASTER_LOG.md
