@@ -1,0 +1,20 @@
+name: build-docs
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Diagnostic Audit
+        run: |
+          echo "Current working directory: $(pwd)"
+          echo "Files in root:"
+          ls -F
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install MkDocs
+        run: pip install mkdocs
+      - name: Validate documentation build
+        run: mkdocs build --strict
