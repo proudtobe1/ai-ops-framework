@@ -1,88 +1,56 @@
-# docs Directory — AI‑Ops Documentation, Architecture & Reference Materials
+# Docs Directory — AI‑Ops Documentation & System Registry
 
 ## Overview
-The `docs` directory contains all high‑level documentation, architectural diagrams, reference guides, evaluation tools, templates, and expanded materials that support the AI‑Ops Operating Model.  
-These documents provide conceptual clarity, visual structure, integration guidance, and deep technical explanations for how AI agents operate within the system.
-
-All contents are categorized automatically based on filename semantics.  
-A complete alphabetical index is included at the bottom.
+The docs/ directory houses the authoritative technical blueprints, operational playbooks, evaluation rubrics, and structural templates that define the AI‑Ops ecosystem.
 
 ---
 
-# CATEGORIZED DIRECTORY
+# CATEGORIZED SYSTEM REGISTRY
 
-## 1. Core System Documentation
-Foundational documents that describe the AI‑Ops system, its purpose, and its high‑level structure.
+## 1. System Overviews & Operational Playbooks
+* [ai-ops-docs-overview.md](./ai-ops-docs-overview.md) — Main entry point documentation summary.
+* [ai-ops-system-overview.md](./ai-ops-system-overview.md) — High-level architecture summary.
+* [ai-ops-docs-operating-playbook.md](./ai-ops-docs-operating-playbook.md) — Practical guide for human operators.
+* [ai-ops-docs-llm-loading-guide.md](./ai-ops-docs-llm-loading-guide.md) — Structural prompt boundaries for LLMs.
 
-overview.md  
-ai-ops-system-overview.md  
-operating-playbook.md  
+## 2. Technical Architecture & Data Diagrams
+* [ai-ops-architecture-deep-dive.md](./ai-ops-architecture-deep-dive.md) — Technical architecture specification.
+* [ai-ops-data-flow.md](./ai-ops-data-flow.md) — Input processing and output piping paths.
+* [ai-ops-docs-dependency-map.md](./ai-ops-docs-dependency-map.md) — Upstream and downstream module connection schemas.
+* [ai-ops-docs-expanded-diagrams.md](./ai-ops-docs-expanded-diagrams.md) — Extended visual logic matrices.
+* [ai-ops-docs-visual-index.md](./ai-ops-docs-visual-index.md) — Graphical navigation map for system assets.
 
-## 2. Architecture & Diagrams
-Visual and structural documentation describing system architecture, data flow, dependencies, and expanded diagrams.
+## 3. Governance, Strategy & Growth Models
+* [ai-ops-contribution-governance-model.md](./ai-ops-contribution-governance-model.md) — Rules for peer-review and framework edits.
+* [ai-ops-maturity-model.md](./ai-ops-maturity-model.md) — Step-by-step capability evolution tracking.
+* [ai-ops-framework-extension-guide.md](./ai-ops-framework-extension-guide.md) — Playbook for scaling submodules.
+* [ROADMAP.md](./ROADMAP.md) — Long-term framework feature tracking.
 
-ai-ops-data-flow.md  
-architecture-deep-dive.md  
-dependency-map.md  
-expanded-diagrams.md  
-visual-index.md  
+## 4. Legacy AI Agent Profiles (Pending Refactoring)
+* [ai-agent-behavior-rules.md](./ai-agent-behavior-rules.md)
+* [ai-agent-certification-pathway.md](./ai-agent-certification-pathway.md)
+* [ai-agent-evaluation-rubric.md](./ai-agent-evaluation-rubric.md)
+* [ai-agent-failure-modes-recovery.md](./ai-agent-failure-modes-recovery.md)
+* [ai-agent-integration-guide.md](./ai-agent-integration-guide.md)
+* [ai-agent-integration.md](./ai-agent-integration.md)
+* [ai-agent-output-contract.md](./ai-agent-output-contract.md)
+* [ai-agent-test-suite.md](./ai-agent-test-suite.md)
 
-## 3. Integration & Interaction Guides
-Documents that define how AI agents integrate with systems, workflows, and operational environments.
+## 5. Architectural Profile Specs
+* [AI_OPS_MODEL_CARD.md](./AI_OPS_MODEL_CARD.md) — Model capability constraints.
+* [AI_OPS_MODULE_REGISTRY.md](./AI_OPS_MODULE_REGISTRY.md) — Submodule indexing mapping.
 
-ai-agent-integration-guide.md  
-ai-agent-integration.md  
-
-## 4. Behavior, Output & Evaluation Standards
-Documents that define behavior rules, output contracts, evaluation rubrics, and test suites.
-
-ai-agent-behavior-rules.md  
-ai-agent-output-contract.md  
-ai-agent-evaluation-rubric.md  
-ai-agent-test-suite.md  
-
-## 5. Failure, Recovery & Risk Documentation
-Documents that define failure modes, recovery protocols, and risk mitigation strategies.
-
-ai-agent-failure-modes-recovery.md  
-
-## 6. Maturity Models & Frameworks
-Documents that define capability maturity, operational evolution, and system growth.
-
-ai-ops-maturity-model.md  
-
-## 7. Templates & Decision Records
-Reusable templates and structured decision‑making tools.
-
-template-alignment-check.md  
-template-decision-record.md  
+## 6. Standalone Reference Materials
+* [EXAMPLES.md](./EXAMPLES.md) — Real-world prompt execution scripts.
+* [FAQ.md](./FAQ.md) — Frequently asked architectural questions.
+* [GLOSSARY.md](./GLOSSARY.md) — Standardized framework taxonomy.
 
 ---
 
-# A–Z INDEX OF ALL FILES
-
-ai-agent-behavior-rules.md  
-ai-agent-certification-pathway.md  
-ai-agent-evaluation-rubric.md  
-ai-agent-failure-modes-recovery.md  
-ai-agent-integration-guide.md  
-ai-agent-integration.md  
-ai-agent-output-contract.md  
-ai-agent-test-suite.md  
-ai-ops-data-flow.md  
-ai-ops-maturity-model.md  
-ai-ops-system-overview.md  
-architecture-deep-dive.md  
-dependency-map.md  
-expanded-diagrams.md  
-operating-playbook.md  
-overview.md  
-template-alignment-check.md  
-template-decision-record.md  
-visual-index.md  
-
----
-
-# Summary
-The `docs` directory centralizes all system documentation, architecture diagrams, evaluation tools, and reference materials that support the AI‑Ops Operating Model.  
-It provides the conceptual, visual, and procedural foundation for understanding, maintaining, and extending the system.
+## 📁 SYSTEM SUBDIRECTORIES
+* [operating-model/](./operating-model/)
+* [persona-library/](./persona-library/)
+* [sandbox/](./sandbox/)
+* [starter-prompts/](./starter-prompts/)
+* [templates/](./templates/)
+* [use-cases/](./use-cases/)

@@ -1,122 +1,119 @@
-# Template: Alignment Check
+# AI Agent Alignment Check Template
 
-A structured template used by AI agents to evaluate alignment across roadmap priorities, execution goals, dependencies, risks, metrics, and communication cadence.
-
----
-
-## 1. Summary
-Provide a concise overview of the alignment status.
+A mandatory pre‑execution alignment verification template used by all AI agents before producing any structured output within the AI‑Ops Framework.
 
 ---
 
-## 2. Context / Inputs
-List all inputs used for the alignment evaluation, including:
-- Team updates  
-- Roadmap priorities  
-- Sprint goals  
+## 1. Alignment Summary
+
+**Overall Alignment Score:**  
+**Alignment Status:** Pass / Fail  
+**Reasoning Summary:**  
+(2–4 sentences explaining alignment evaluation)
+
+---
+
+## 2. Inputs Evaluated
+
+- User request  
+- Relevant system models  
+- Relevant workflows  
+- Relevant templates  
 - Dependencies  
-- Risks  
-- Decisions  
-- Metrics  
-- Missing information  
+- Constraints  
+- Compliance requirements  
 
 ---
 
-## 3. Alignment Evaluation
-Evaluate alignment across all six dimensions:
+## 3. Alignment Dimensions
 
-### **A. Strategic Alignment**
-- Roadmap fit  
-- Priority match  
-- Long‑term value  
+### **A. Roadmap Alignment**
+- Roadmap priority:  
+- Alignment score (0.0–1.0):  
+- Notes:  
 
-### **B. Execution Alignment**
-- Sprint goals  
-- Team capacity  
-- Delivery timelines  
+### **B. Sprint Alignment**
+- Sprint objective:  
+- Alignment score (0.0–1.0):  
+- Notes:  
 
 ### **C. Dependency Alignment**
-- Upstream/downstream readiness  
-- Dependency health  
+- Upstream dependencies:  
+- Downstream dependencies:  
+- Dependency risk score:  
+- Notes:  
 
 ### **D. Risk Alignment**
-- Risk posture  
-- Mitigation status  
-- Escalation needs  
+- Identified risks:  
+- Severity:  
+- Risk alignment score:  
+- Notes:  
 
-### **E. Metrics Alignment**
-- Impact on operational metrics  
-- Trend consistency  
+### **E. Workflow Alignment**
+- Workflow required:  
+- Workflow loaded: Yes / No  
+- Workflow fidelity score:  
+- Notes:  
 
-### **F. Communication Alignment**
-- Cadence compliance  
-- Clarity  
-- Completeness  
+### **F. Template Alignment**
+- Template required:  
+- Template loaded: Yes / No  
+- Template fidelity score:  
+- Notes:  
 
----
+### **G. Persona Alignment**
+- Persona required:  
+- Persona loaded: Yes / No  
+- Persona accuracy score:  
+- Notes:  
 
-## 4. Alignment Score
-Provide the alignment score using the 0.0–1.0 scale:
-- **0.8–1.0:** Strong alignment  
-- **0.5–0.79:** Partial alignment  
-- **0.0–0.49:** Misalignment  
+### **H. Compliance Alignment**
+- Compliance rules triggered:  
+- Compliance status: Pass / Fail  
+- Compliance notes:  
 
----
-
-## 5. Priority Drift Detection
-Identify any signs of drift:
-- Work diverging from roadmap  
-- Execution misalignment  
-- Dependency issues  
-- Risk posture changes  
-- Communication cadence issues  
-
-Classify drift severity:
-- Low  
-- Medium  
-- High  
+### **I. Audit Alignment**
+- Audit logging active: Yes / No  
+- Traceability status:  
+- Reproducibility status:  
 
 ---
 
-## 6. Risks & Dependencies
-Identify:
-- Active risks  
-- Severity classification  
-- Dependencies  
-- Blockers  
-- Required mitigations  
+## 4. Alignment Scoring
+
+**Final Alignment Score (0.0–1.0):**  
+**Pass Threshold:** 0.70  
+**Fail Threshold:** < 0.70  
+
+**Pass / Fail Decision:**  
 
 ---
 
-## 7. Metrics Impact
-Update relevant metrics:
-- Alignment score  
-- Risk metrics  
-- Dependency metrics  
-- Cadence metrics  
+## 5. Required Actions
+
+### If Alignment Passes:
+- Proceed with structured output  
+- Update metrics  
+- Log audit data  
+
+### If Alignment Fails:
+- Do not proceed  
+- Trigger escalation workflow  
+- Provide alignment failure summary  
+- Provide recommended corrective actions  
 
 ---
 
-## 8. Recommended Actions
-Provide clear, actionable next steps to restore or strengthen alignment.
+## 6. Alignment Failure Summary (if applicable)
+
+- Failure category:  
+- Root cause:  
+- Impact:  
+- Required corrections:  
 
 ---
 
-## 9. Communication Summary
-Produce a concise summary suitable for stakeholders.
+## 7. Notes
 
----
-
-## 10. Compliance Notes
-Document any compliance‑relevant observations.
-
----
-
-## 11. Audit Log
-Include:
-- Timestamp  
-- Actor  
-- Inputs used  
-- Outputs generated  
-- Decision rationale  
-- Compliance notes  
+This template must be completed **before** any structured output is generated.  
+Failure to complete or failure to pass alignment results in **mandatory escalation**.

@@ -1,190 +1,39 @@
-# System Model: Drift Detection
+# System Model: Observability, Drift Detection & Recovery Protocols
 
-A structured model for detecting, classifying, and responding to AI agent drift within the AI‑Ops Framework.  
-Drift refers to gradual degradation in behavior, reasoning, structure, or compliance.
-
----
-
-## 1. Purpose
-
-To detect early signs of:
-
-- Workflow drift  
-- Template drift  
-- Persona drift  
-- Reasoning drift  
-- Alignment drift  
-- Compliance drift  
-- Risk‑detection drift  
-- Metric‑interpretation drift  
-
-This model ensures long‑term stability and prevents silent degradation.
+Authoritative telemetry boundaries, anomaly classification models, and deterministic recovery state machines designed to isolate runtime failures and prevent execution degradation.
 
 ---
 
-## 2. Types of Drift
+## 1. Automated Failure Vector Categorization
+The telemetry engine monitors and automatically intercepts runtime anomalies across six predefined vectors:
+- **Workflow Divergence:** Omitting steps, reordering execution matrices, or misrouting operational payloads.
+- **Schema De-serialization:** Emitting unstructured text patterns or bypassing definitions in `docs/templates/`.
+- **Boundary Inconsistency:** Exceeding local execution roles or violating styling rules from the persona library.
+- **Reasoning Degradation:** Generating logical contradictions, unverified assumptions, or data fabrications.
+- **Policy Oversight:** Failing to calculate risks or missing compliance mandates defined in `ai-ops-system-security-compliance.md`.
+- **Intent Deceleration:** Failing to flag strategic priority shifts or miscalculating drift variables.
 
-### **A. Workflow Drift**  
-- Steps skipped intermittently  
-- Steps reordered inconsistently  
-- Incorrect workflow selection  
+## 2. Severity Tiers & Automated Triggers
+### High Severity (Immediate Pipeline Intercept)
+- Direct bypass of designated Human-in-the-Loop (HITL) sign-off checkpoints or approval gates.
+- Data fabrications, unverified metric definitions, or explicit policy and access violations.
+- *Runtime Enforcement Action:* Instantly freeze the active execution state thread, dump core diagnostic logs, and execute the Tier 1 issue escalation workflow.
+### Medium Severity
+- Missing secondary layout elements, localized persona tone drift, or minor scoring variances.
+### Low Severity
+- Non-breaking typographic formatting variances or minor semantic density issues.
 
-### **B. Template Drift**  
-- Missing sections appearing sporadically  
-- Incorrect formatting  
-- Gradual loss of structure  
+## 3. The Deterministic Recovery State Machine
+Upon detecting an execution anomaly, the framework shifts into a box-fenced recovery sequence:
+1. **State Isolation:** Freeze the active session state context to eliminate cascading downstream corruption.
+2. **Root Cause Analysis:** Programmatically evaluate the fault signature against the active system engines.
+3. **Targeted Remediation Loop:** Execute automated self-correction steps: reload system files (`systems/ai-ops-system-*`), re-fetch authoritative schemas from the template directory, and re-compile input parameters.
+4. **Regression Validation:** Re-verify the updated markdown output payload against the quantitative quality weights defined in `docs/ai-ops-evaluation-rubric.md`.
+5. **Authorization to Resume:** Unlock execution pipelines only after achieving a verification score $\ge 0.80$.
 
-### **C. Persona Drift**  
-- Tone inconsistencies  
-- Missing persona behaviors  
-- Role confusion  
-
-### **D. Reasoning Drift**  
-- Shallow analysis  
-- Missing logic steps  
-- Contradictions  
-- Increasing hallucination risk  
-
-### **E. Alignment Drift**  
-- Incorrect alignment scoring  
-- Missed priority drift  
-- Misinterpreting roadmap context  
-
-### **F. Compliance Drift**  
-- Missing audit elements  
-- Inconsistent redaction  
-- Failure to flag violations  
-
-### **G. Metrics Drift**  
-- Incorrect metric updates  
-- Missing updates  
-- Misinterpreting scoring model  
-
----
-
-## 3. Drift Signals
-
-AI agents must monitor for:
-
-- Increased low‑severity failures  
-- Repeated medium‑severity failures  
-- Declining rubric scores  
-- Template inconsistencies  
-- Workflow inconsistencies  
-- Persona tone instability  
-- Missing risk classifications  
-- Missing alignment evaluations  
-- Missing metrics updates  
-- Increased corrective actions  
-
----
-
-## 4. Drift Detection Mechanisms
-
-Drift is detected through:
-
-### **A. Rubric Trends**  
-Declining scores across multiple evaluations.
-
-### **B. Test Suite Regression**  
-Failing previously passed tests.
-
-### **C. Sandbox Behavior**  
-Inconsistent persona or workflow behavior.
-
-### **D. Output Analysis**  
-Structural inconsistencies across outputs.
-
-### **E. Metrics Anomalies**  
-Unexpected changes in metric patterns.
-
-### **F. Compliance Checks**  
-Missing audit elements or redaction failures.
-
----
-
-## 5. Drift Classification
-
-### **Low Drift**  
-- Minor formatting inconsistencies  
-- Occasional tone deviation  
-
-### **Medium Drift**  
-- Repeated missing sections  
-- Incorrect alignment scoring  
-- Inconsistent workflow execution  
-
-### **High Drift**  
-- Frequent reasoning errors  
-- Missed risks  
-- Compliance inconsistencies  
-- Template degradation  
-- Workflow bypass  
-
-High drift requires immediate intervention.
-
----
-
-## 6. Drift Response Protocol
-
-### **Step 1 — Identify Drift**  
-Determine drift type and severity.
-
-### **Step 2 — Stabilize Behavior**  
-Reload:  
-- System models  
-- Workflows  
-- Templates  
-- Personas  
-
-### **Step 3 — Run Diagnostic Tests**  
-Use:  
-- Test Suite  
-- Sandbox scenarios  
-- Rubric evaluation  
-
-### **Step 4 — Apply Corrections**  
-Examples:  
-- Re‑align persona  
-- Re‑enforce template structure  
-- Re‑run workflow  
-- Re‑evaluate risks  
-- Re‑score alignment  
-
-### **Step 5 — Validate Recovery**  
-Ensure corrected outputs meet all requirements.
-
-### **Step 6 — Monitor for Recurrence**  
-Increase evaluation frequency for 30 days.
-
----
-
-## 7. Escalation Rules
-
-Escalate if:
-
-- Drift reaches high severity  
-- Drift persists after correction  
-- Drift affects compliance  
-- Drift impacts decision quality  
-
-Escalation triggers the Issue Escalation Workflow.
-
----
-
-## 8. Certification Impact
-
-Certification is **suspended** if:
-
-- High drift is detected  
-- Medium drift persists  
-- Drift affects compliance or risk detection  
-
-Agent must complete remediation and recertification.
-
----
-
-## 9. Summary
-
-The Drift Detection Model provides early‑warning detection for subtle degradation in AI agent behavior.  
-It ensures long‑term stability, consistency, and compliance across the AI‑Ops Framework.
+## 4. Lifecycle Lifecycle & Authorization Sanctions
+To preserve ecosystem reliability, production execution privileges are programmatically revoked under the following decay criteria:
+- Logging any independent High-Severity failure anomaly.
+- Logging three (3) cumulative Medium-Severity failures within a moving 30-day timeline.
+- Logging five (5) cumulative Low-Severity failures within a moving 30-day timeline.
+- Revocation automatically transitions the agent into the formal remediation track outlined in `docs/ai-ops-certification-pathway.md`.

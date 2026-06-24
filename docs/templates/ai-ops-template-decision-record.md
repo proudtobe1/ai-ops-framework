@@ -1,145 +1,152 @@
-# Template: Decision Record
+# AI Agent Decision Record Template
 
-A structured template used by AI agents to document decisions, tradeoffs, rationale, risks, alignment, and next steps within the AI‑Ops Framework.
-
----
-
-## 1. Summary
-Provide a concise overview of the decision and its outcome.
+A standardized, auditable record documenting decisions made by AI agents within the AI‑Ops Framework, including rationale, risks, dependencies, alignment, and compliance considerations.
 
 ---
 
-## 2. Context / Inputs
-List all inputs used to inform the decision, including:
-- Team updates  
-- Roadmap priorities  
-- Sprint goals  
-- Risks  
+## 1. Decision Summary
+
+**Decision Title:**  
+**Decision Type:** (Roadmap / Sprint / Risk / Dependency / Escalation / Architecture / Other)  
+**Decision Owner:**  
+**Timestamp:**  
+
+**Summary:**  
+(2–4 sentences describing the decision)
+
+---
+
+## 2. Context & Inputs
+
+- User request  
+- Relevant system models  
+- Relevant workflows  
+- Relevant templates  
 - Dependencies  
-- Metrics  
-- Stakeholder input  
+- Constraints  
 - Missing information  
 
 ---
 
-## 3. Problem Statement
-Describe the problem or decision being addressed.
-
----
-
-## 4. Options Considered
-List each option with a brief description.
+## 3. Options Considered
 
 ### **Option A**
-- Description  
-- Benefits  
-- Drawbacks  
+- Description:  
+- Benefits:  
+- Risks:  
+- Dependencies:  
 
 ### **Option B**
-- Description  
-- Benefits  
-- Drawbacks  
+- Description:  
+- Benefits:  
+- Risks:  
+- Dependencies:  
 
 ### **Option C** (if applicable)
-- Description  
-- Benefits  
-- Drawbacks  
+- Description:  
+- Benefits:  
+- Risks:  
+- Dependencies:  
 
 ---
 
-## 5. Tradeoff Analysis
-Evaluate each option using:
-- Risks  
-- Dependencies  
-- Alignment  
-- Metrics impact  
-- Execution complexity  
-- Long‑term implications  
+## 4. Decision Rationale
+
+- Primary justification  
+- Supporting evidence  
+- System models referenced  
+- Metrics referenced  
+- Tradeoffs considered  
+- Why alternatives were rejected  
 
 ---
 
-## 6. Decision
-State the selected option clearly.
+## 5. Risks
+
+- Identified risks  
+- Severity  
+- Mitigation plan  
+- Residual risk  
 
 ---
 
-## 7. Decision Rationale
-Explain why this option was chosen, referencing:
-- Alignment Engine  
-- Risk Model  
-- Metrics Framework  
-- Roadmap priorities  
-- Execution constraints  
+## 6. Dependencies
+
+- Upstream dependencies  
+- Downstream dependencies  
+- Blockers  
+- Required coordination  
 
 ---
 
-## 8. Alignment Evaluation
-Provide alignment scoring using the 0.0–1.0 scale:
-- **0.8–1.0:** Strong alignment  
-- **0.5–0.79:** Partial alignment  
-- **0.0–0.49:** Misalignment  
+## 7. Alignment Evaluation
 
-Include:
-- Strategic alignment  
-- Execution alignment  
+**Alignment Score (0.0–1.0):**  
+**Alignment Status:** Pass / Fail  
+
+- Roadmap alignment  
+- Sprint alignment  
 - Dependency alignment  
 - Risk alignment  
-- Metrics alignment  
-- Communication alignment  
+- Workflow alignment  
+- Template alignment  
+- Persona alignment  
+- Compliance alignment  
+- Audit alignment  
 
 ---
 
-## 9. Risks & Dependencies
-Identify:
-- Active risks  
-- Severity classification  
-- Dependencies  
-- Blockers  
-- Required mitigations  
+## 8. Metrics Impact
 
----
-
-## 10. Autonomous Agent Impact Assessment
-*Fill out this section if the proposed solution includes autonomous workflows, LLM-driven actions, or automated decision-making.*
-
-* **[ ] Yes  [ ] No** | Does this agent interact directly with external third parties (vendors, clients, public interfaces)?
-* **[ ] Yes  [ ] No** | Will this agent have access to, or programmatically apply, corporate credentials, digital signatures, or financial authorization tokens?
-* **[ ] Yes  [ ] No** | Does the core logic rely on keyword/string matching to verify security, compliance, or identity?
-* **[ ] Yes  [ ] No** | What is the highest financial liability threshold this agent could theoretically execute in a single transaction? Write **$0** if it has no transactional capability: `_________________`
-
-> **Governance Routing Note:** If you checked **"Yes"** to any of the questions above, or if the financial liability field exceeds **$0**, this template must be routed directly to the **Legal, Risk, and InfoSec Teams** for an architecture review before prototyping begins.
-
----
-
-## 11. Metrics Impact
-Update relevant metrics:
-- Alignment score  
+- Alignment metrics  
 - Risk metrics  
-- Dependency metrics  
-- Decision metrics  
+- Cadence metrics  
+- Audit metrics  
+- Operational metrics  
 
 ---
 
-## 12. Recommended Actions
-Provide clear, actionable next steps to implement the decision.
+## 9. Compliance Notes
+
+- Compliance rules triggered  
+- Redaction  
+- Classification  
+- Compliance status  
+- Escalation required: Yes / No  
 
 ---
 
-## 13. Communication Summary
-Produce a concise summary suitable for stakeholders.
+## 10. Audit Notes
+
+- Traceability  
+- Reproducibility  
+- Logging status  
+- Audit trail reference  
 
 ---
 
-## 14. Compliance Notes
-Document any compliance‑relevant observations.
+## 11. Final Decision
+
+**Decision:**  
+**Effective Date:**  
+**Next Review Date:**  
+
+**Required Actions:**  
+- Action 1  
+- Action 2  
+- Action 3  
 
 ---
 
-## 15. Audit Log
-Include:
-- Timestamp  
-- Actor  
-- Inputs used  
-- Options considered  
-- Decision rationale  
-- Compliance notes  
+## 12. Stakeholder Summary
+
+A concise summary suitable for cross‑team or leadership communication.
+
+---
+
+## 13. Attachments (if applicable)
+
+- Supporting documents  
+- Diagrams  
+- Logs  
+- Evidence  
