@@ -9,3 +9,5 @@ nav:
       - Operational Readiness: templates/ai-ops-template-operational-readiness-review.md
       - Status Update: templates/ai-ops-template-status-update.md
       - Decision Record: templates/ai-ops-template-decision-record.md
+  - Operational Records:
+      - W26 Status Update: status-updates/2026-W26-ops-review.md
