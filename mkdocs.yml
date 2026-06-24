@@ -2,5 +2,10 @@ site_name: AI-Ops Framework
 theme: readthedocs
 nav:
   - Home: index.md
+  - Project Master Log: PROJECT_MASTER_LOG.md
   - Integration Guide: ai-ops-agent-integration-guide.md
   - System Overview: ai-ops-system-overview.md
+  - Templates:
+      - Operational Readiness: templates/ai-ops-template-operational-readiness-review.md
+      - Status Update: templates/ai-ops-template-status-update.md
+      - Decision Record: templates/ai-ops-template-decision-record.md
