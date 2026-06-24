@@ -3,7 +3,4 @@ theme: readthedocs
 nav:
   - Home: index.md
   - Integration Guide: ai-ops-agent-integration-guide.md
-  - Migration Roadmap: ai-ops-framework-migration-roadmap.md
-  - Definitions: ai-ops-framework-definitions.md
-  - Deployment Guide: ai-ops-deployment-guide.md
-  - Testing Framework: ai-ops-testing-framework.md
+  - System Overview: ai-ops-system-overview.md
