@@ -2,8 +2,8 @@ site_name: AI-Ops Framework
 theme: readthedocs
 nav:
   - Home: index.md
-  - Integration Guide: docs/ai-ops-agent-integration-guide.md
-  - Migration Roadmap: docs/ai-ops-framework-migration-roadmap.md
-  - Definitions: docs/ai-ops-framework-definitions.md
-  - Deployment Guide: docs/ai-ops-deployment-guide.md
-  - Testing Framework: docs/ai-ops-testing-framework.md
+  - Integration Guide: ai-ops-agent-integration-guide.md
+  - Migration Roadmap: ai-ops-framework-migration-roadmap.md
+  - Definitions: ai-ops-framework-definitions.md
+  - Deployment Guide: ai-ops-deployment-guide.md
+  - Testing Framework: ai-ops-testing-framework.md
