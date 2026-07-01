@@ -1,6 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "AI-Ops Framework Manifest Schema",
+  "version": "1.2",
   "type": "object",
   "required": [
     "name",
@@ -19,14 +20,17 @@
       "const": "ai-ops-framework"
     },
     "version": {
-      "type": "string"
+      "type": "string",
+      "description": "Enforces strict Semantic Versioning (e.g., 1.0.4)",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 500
     },
     "license": {
       "type": "string",
-      "const": "MIT"
+      "enum": ["MIT", "Apache-2.0", "GPL-3.0"]
     },
     "model_format": {
       "type": "string",
@@ -45,46 +49,14 @@
         "root_files"
       ],
       "properties": {
-        "workflows": {
-          "type": "array",
-          "items": { "type": "string" },
-          "minItems": 1
-        },
-        "templates": {
-          "type": "array",
-          "items": { "type": "string" },
-          "minItems": 1
-        },
-        "systems": {
-          "type": "array",
-          "items": { "type": "string" },
-          "minItems": 1
-        },
-        "use_cases": {
-          "type": "array",
-          "items": { "type": "string" },
-          "minItems": 1
-        },
-        "starter_prompts": {
-          "type": "array",
-          "items": { "type": "string" },
-          "minItems": 1
-        },
-        "documentation": {
-          "type": "array",
-          "items": { "type": "string" },
-          "minItems": 1
-        },
-        "governance": {
-          "type": "array",
-          "items": { "type": "string" },
-          "minItems": 1
-        },
-        "root_files": {
-          "type": "array",
-          "items": { "type": "string" },
-          "minItems": 1
-        }
+        "workflows": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
+        "templates": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
+        "systems": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
+        "use_cases": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
+        "starter_prompts": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
+        "documentation": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
+        "governance": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
+        "root_files": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true }
       },
       "additionalProperties": false
     },
@@ -101,14 +73,14 @@
         "root"
       ],
       "properties": {
-        "workflows": { "type": "string" },
-        "templates": { "type": "string" },
-        "systems": { "type": "string" },
-        "use_cases": { "type": "string" },
-        "starter_prompts": { "type": "string" },
-        "documentation": { "type": "string" },
-        "governance": { "type": "string" },
-        "root": { "type": "string" }
+        "workflows": { "type": "string", "pattern": "^.*\\.json$" },
+        "templates": { "type": "string", "pattern": "^.*\\.json$" },
+        "systems": { "type": "string", "pattern": "^.*\\.json$" },
+        "use_cases": { "type": "string", "pattern": "^.*\\.json$" },
+        "starter_prompts": { "type": "string", "pattern": "^.*\\.json$" },
+        "documentation": { "type": "string", "pattern": "^.*\\.md$" },
+        "governance": { "type": "string", "pattern": "^.*\\.md$" },
+        "root": { "type": "string", "pattern": "^.*\\.json$" }
       },
       "additionalProperties": false
     },
@@ -121,7 +93,7 @@
         "option_a_required"
       ],
       "properties": {
-        "naming_conventions": { "type": "string" },
+        "naming_conventions": { "type": "string", "enum": ["kebab-case", "snake_case", "camelCase"] },
         "alphabetical_ordering": { "type": "boolean" },
         "no_deprecated_files": { "type": "boolean" },
         "option_a_required": { "type": "boolean" }
