@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft-07/schema#",
   "title": "AI-Ops Framework Manifest Schema",
   "version": "1.2",
   "type": "object",
@@ -49,14 +49,14 @@
         "root_files"
       ],
       "properties": {
-        "workflows": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
-        "templates": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
-        "systems": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
-        "use_cases": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
-        "starter_prompts": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
-        "documentation": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
-        "governance": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
-        "root_files": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true }
+        "workflows": { "type": "array", "items": { "type": "string", "pattern": "^[^\\s]+$" }, "minItems": 1, "uniqueItems": true },
+        "templates": { "type": "array", "items": { "type": "string", "pattern": "^[^\\s]+$" }, "minItems": 1, "uniqueItems": true },
+        "systems": { "type": "array", "items": { "type": "string", "pattern": "^[^\\s]+$" }, "minItems": 1, "uniqueItems": true },
+        "use_cases": { "type": "array", "items": { "type": "string", "pattern": "^[^\\s]+$" }, "minItems": 1, "uniqueItems": true },
+        "starter_prompts": { "type": "array", "items": { "type": "string", "pattern": "^[^\\s]+$" }, "minItems": 1, "uniqueItems": true },
+        "documentation": { "type": "array", "items": { "type": "string", "pattern": "^[^\\s]+$" }, "minItems": 1, "uniqueItems": true },
+        "governance": { "type": "array", "items": { "type": "string", "pattern": "^[^\\s]+$" }, "minItems": 1, "uniqueItems": true },
+        "root_files": { "type": "array", "items": { "type": "string", "pattern": "^[^\\s]+$" }, "minItems": 1, "uniqueItems": true }
       },
       "additionalProperties": false
     },
