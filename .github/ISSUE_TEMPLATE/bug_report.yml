@@ -1,54 +1,64 @@
-name: Bug Report
-description: Report a problem or unexpected behavior
-title: "[BUG] "
-labels: ["bug"]
+name: "🐛 Bug Report"
+description: "Report a pipeline failure, schema drift, or operational error."
+title: "[BUG]: <Short Description>"
+labels: ["bug", "triage"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for reporting a bug. Please fill out the details below.
-  - type: input
-    id: summary
-    attributes:
-      label: Summary
-      description: Brief description of the issue
-    validations:
-      required: true
+        ### 🚨 AI-Ops Framework Bug Report
+        Thank you for reporting an issue. Please ensure you have checked the `FAQ.md` and verified your payloads against the `schemas/` directory before submitting.
   - type: dropdown
     id: component
     attributes:
-      label: Affected Component
-      description: Select the specific area of the framework where the bug occurs.
+      label: "Affected Architectural Layer"
+      description: "Select the specific framework directory where the failure occurred."
       options:
-        - .github (Governance & Workflows)
-        - docs (Core Documentation)
-        - starter-prompts (AI Prompt Assets)
-        - systems (Operating Models & Schemas)
-        - templates (Communication Frameworks)
-        - use-cases (Reference Scenarios)
-        - workflows (Repeatable Processes)
+        - "systems/ (Core Operating Models & Engines)"
+        - "workflows/ (Operational Cadences)"
+        - "validators/ (Python Schema Enforcers)"
+        - "tests/ (CI/CD Pipeline Guardrails)"
+        - "starter-prompts/ (AI Execution Instructions)"
+        - "Root Configuration (Manifests, Linters, CI)"
     validations:
       required: true
   - type: textarea
-    id: steps
+    id: summary
     attributes:
-      label: Steps to Reproduce
-      description: List the steps to reproduce the issue
+      label: "Bug Summary"
+      description: "A clear and concise description of the failure."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: "Steps to Reproduce"
+      description: "Exact steps, scripts, or terminal commands to trigger the failure."
+      value: |
+        1. Executed script '...'
+        2. Loaded prompt '...'
+        3. Runner crashed with error '...'
     validations:
       required: true
   - type: textarea
     id: expected
     attributes:
-      label: Expected Behavior
+      label: "Expected Behavior"
+      description: "What did you expect the framework or AI agent to do instead?"
     validations:
       required: true
   - type: textarea
-    id: actual
+    id: logs
     attributes:
-      label: Actual Behavior
+      label: "LLM Payload / CI Execution Logs"
+      description: "Paste any relevant CI runner logs, Python tracebacks, or raw JSON payloads from the LLM here. This is critical for diagnosing drift."
+      render: shell
     validations:
       required: true
   - type: textarea
-    id: additional
+    id: context
     attributes:
-      label: Additional Context
+      label: "Additional Context"
+      description: "Add any other context (OS, Python/Node versions, specific LLM model used like GPT-4 or Claude 3.5)."
+    validations:
+      required: false
