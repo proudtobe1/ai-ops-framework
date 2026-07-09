@@ -13,23 +13,24 @@ function validateLLMOutput(filePath) {
         const rawData = fs.readFileSync(filePath, 'utf8');
         
         // 1. Attempt to parse the file as JSON
-        // If this fails, the LLM output contains hallucinated conversational fluff
         const json = JSON.parse(rawData);
 
         // 2. Validate the structure (Strict schema enforcement)
         if (typeof json.status === 'string' && typeof json.critical_errors === 'number') {
             console.log("✅ [PASS] Strict JSON Validation: Format is sound and strictly typed.");
             console.log("====================================================");
-            process.exit(0); // Send clean success code to master CI runner
+            // Script naturally completes here, allowing asynchronous stdout to flush cleanly 
+            // and exiting with a default code of 0.
         } else {
             console.error("❌ [FAIL] Strict JSON Validation: Missing mandatory fields or type mismatch.");
             console.log("====================================================");
-            process.exit(1); // Instantly fail the CI pipeline and block the build
+            process.exitCode = 1; // Gracefully flag the pipeline failure without truncating I/O
         }
     } catch (e) {
-        console.error("❌ [FAIL] Strict JSON Validation: Output is not valid JSON (Found fluff/broken text).");
+        // Expose the actual system error so we aren't flying blind in the CI runner
+        console.error(`❌ [FAIL] Strict JSON Validation Error: ${e.message}`);
         console.log("====================================================");
-        process.exit(1); // Instantly fail the CI pipeline
+        process.exitCode = 1;
     }
 }
 
