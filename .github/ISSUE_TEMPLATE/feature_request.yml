@@ -1,37 +1,55 @@
-name: Feature Request
-description: Suggest a new feature or improvement
-title: "[FEATURE] "
-labels: ["enhancement"]
+name: "💡 Feature Request"
+description: "Propose a new system, workflow, or framework enhancement."
+title: "[FEATURE]: <Short Description>"
+labels: ["enhancement", "triage"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for suggesting a feature. Please provide details below.
-  - type: input
+        ### 🚀 AI-Ops Framework Feature Proposal
+        Thank you for helping scale the framework. Before submitting, please review the `ROADMAP.md` to ensure this feature is not already planned, and verify that your proposal aligns with our core principle: **Clarity over complexity**.
+  - type: dropdown
+    id: component
+    attributes:
+      label: "Target Architectural Layer"
+      description: "Select the specific framework directory where this feature belongs."
+      options:
+        - "systems/ (Core Operating Models & Engines)"
+        - "workflows/ (Operational Cadences)"
+        - "templates/ (Standardized Docs & Reports)"
+        - "validators/ (Python Schema Enforcers)"
+        - "starter-prompts/ (AI Execution Instructions)"
+        - "docs/ (Reference & Architecture Docs)"
+    validations:
+      required: true
+  - type: textarea
     id: summary
     attributes:
-      label: Summary
-      description: Brief description of the feature
+      label: "Feature Summary"
+      description: "A clear and concise description of the proposed feature or system."
     validations:
       required: true
   - type: textarea
-    id: motivation
+    id: business_value
     attributes:
-      label: Motivation
-      description: Why is this feature important?
+      label: "Operational / Business Value"
+      description: "Why is this feature important? What operational bottleneck does it solve?"
     validations:
       required: true
   - type: textarea
-    id: proposal
+    id: implementation
     attributes:
-      label: Proposed Solution
+      label: "Proposed Implementation"
+      description: "How should this be structured? Include proposed file names (e.g., ai-ops-workflow-new.md) or schema updates."
     validations:
       required: true
-  - type: textarea
-    id: alternatives
+  - type: checkboxes
+    id: governance_alignment
     attributes:
-      label: Alternatives Considered
-  - type: textarea
-    id: additional
-    attributes:
-      label: Additional Context
+      label: "Governance & Alignment Check"
+      description: "Please confirm the following before submitting:"
+      options:
+        - label: "I have checked the `ROADMAP.md` and `FAQ.md` for duplicates."
+          required: true
+        - label: "This feature adheres to the core framework principles (Clarity, Repeatability, Scalability)."
+          required: true
