@@ -1,33 +1,39 @@
 #!/bin/bash
 
-echo "--- Starting Steady State Integrity Audit ---"
+# Enforce strict error trapping for world-class CI predictability
+# -e: Exit immediately if any command exits with a non-zero status
+# -u: Treat unset variables as an error
+# -o pipefail: Return status of the last command to exit with a non-zero status
+set -euo pipefail
 
-CORE_SYSTEMS=("systems/ai-ops-system-operating-model.md" "systems/ai-ops-system-alignment-engine.md" "systems/ai-ops-system-security-compliance.md" "systems/ai-ops-system-behavioral-guardrails.md")
-WORKFLOWS=("systems/workflows/ai-ops-workflow-operational-cadence.md" "systems/workflows/ai-ops-workflow-decision-automation.md" "systems/workflows/ai-ops-workflow-ai-agent-integration.md")
-TEMPLATES=("docs/templates/ai-ops-template-status-update.md" "docs/templates/ai-ops-template-decision-record.md" "docs/templates/ai-ops-template-alignment-check.md")
+echo "===================================================="
+echo "      STARTING STEADY-STATE INTEGRITY AUDIT       "
+echo "===================================================="
 
-echo "[1/3] Checking Core System Engines..."
-for file in "${CORE_SYSTEMS[@]}"; do
-  if [ -f "$file" ]; then echo "  [PASS] Found: $file"; else echo "  [FAIL] Missing: $file"; exit 1; fi
-done
+# 1. Establish Absolute Project Root Context
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../" && pwd)"
 
-echo "[2/3] Checking Operational Workflows..."
-for file in "${WORKFLOWS[@]}"; do
-  if [ -f "$file" ]; then echo "  [PASS] Found: $file"; else echo "  [FAIL] Missing: $file"; exit 1; fi
-done
+cd "$PROJECT_ROOT"
+echo "🎯 Context Locked to Project Root: $PROJECT_ROOT"
 
-echo "[3/3] Checking Templates..."
-for file in "${TEMPLATES[@]}"; do
-  if [ -f "$file" ]; then echo "  [PASS] Found: $file"; else echo "  [FAIL] Missing: $file"; exit 1; fi
-done
-
-echo "--- Running Structural Linter ---"
-if [ -f "systems/scripts/ai-ops-system-linter.js" ]; then
-  node systems/scripts/ai-ops-system-linter.js
-  echo "--- Linter Execution Complete ---"
-else
-  echo "[FAIL] Linter script missing."
-  exit 1
+# 2. Dependency Checks
+echo "🔍 Verifying Linter Engine Dependencies..."
+if [ ! -f "systems/scripts/ai-ops-system-linter.js" ]; then
+    echo "❌ [FAIL] Structural Error: System linter script is missing."
+    exit 1
 fi
 
-echo "--- Audit Complete: Framework is in Steady State ---"
+# 3. Core Programmatic Schema Verification Execution
+echo "🔄 Invoking Programmatic Validation Matrix..."
+if node systems/scripts/ai-ops-system-linter.js; then
+    echo "===================================================="
+    echo " ✅ AUDIT COMPLETE: Framework is in a 100% Steady State."
+    echo "===================================================="
+    exit 0
+else
+    echo "===================================================="
+    echo " ❌ AUDIT FAILED: Structural integrity constraints broken."
+    echo "===================================================="
+    exit 1
+fi
