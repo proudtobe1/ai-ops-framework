@@ -54,15 +54,60 @@
         "schemas"
       ],
       "properties": {
-        "workflows": { "type": "array", "items": { "type": "string", "pattern": "^[^\\s]+$" }, "minItems": 1, "uniqueItems": true },
-        "templates": { "type": "array", "items": { "type": "string", "pattern": "^[^\\s]+$" }, "minItems": 1, "uniqueItems": true },
-        "systems": { "type": "array", "items": { "type": "string", "pattern": "^[^\\s]+$" }, "minItems": 1, "uniqueItems": true },
-        "use_cases": { "type": "array", "items": { "type": "string", "pattern": "^[^\\s]+$" }, "minItems": 1, "uniqueItems": true },
-        "starter_prompts": { "type": "array", "items": { "type": "string", "pattern": "^[^\\s]+$" }, "minItems": 1, "uniqueItems": true },
-        "documentation": { "type": "array", "items": { "type": "string", "pattern": "^[^\\s]+$" }, "minItems": 1, "uniqueItems": true },
-        "governance": { "type": "array", "items": { "type": "string", "pattern": "^[^\\s]+$" }, "minItems": 1, "uniqueItems": true },
-        "root_files": { "type": "array", "items": { "type": "string", "pattern": "^[^\\s]+$" }, "minItems": 1, "uniqueItems": true },
-        "schemas": { "type": "array", "items": { "type": "string", "pattern": "^[^\\s]+$" }, "minItems": 1, "uniqueItems": true }
+        "workflows": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[^\\s]+$" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "templates": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[^\\s]+$" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "systems": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[^\\s]+$" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "use_cases": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[^\\s]+$" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "starter_prompts": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[^\\s]+$" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "documentation": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[^\\s]+$" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "governance": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[^\\s]+$" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "root_files": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[^\\s]+$" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "schemas": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[^\\s]+$" },
+          "minItems": 1,
+          "uniqueItems": true
+        }
       },
       "additionalProperties": false
     },
@@ -113,4 +158,17 @@
       },
       "additionalProperties": false
     },
-    "ai
+    "ai_agent_governance": {
+      "type": "object",
+      "required": [
+        "strict_mode"
+      ],
+      "properties": {
+        "strict_mode": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
