@@ -1,44 +1,39 @@
-# Operating Model Overview
+# System Model: Operating Model
 
-This document describes the core operating model used within the AI‑Ops Framework.  
-It defines how teams coordinate, make decisions, and execute work using AI‑enabled systems.
+This document describes the core operational constraints and execution rhythms used within the AI‑Ops Framework. It defines how autonomous agents coordinate, execute decisions, and validate inputs.
 
-## Purpose
+## 1. Purpose
 
-To provide a clear, repeatable structure for how an AI‑forward organization operates day‑to‑day.
+To provide a deterministic, repeatable structure for how AI‑forward systems operate day‑to‑day without drifting from root governance constraints.
 
-## Components of the Operating Model
+## 2. Core Components
 
-### 1. Governance
-Defines who owns decisions, how escalation works, and how accountability is maintained.
+The Operating Model is programmatically driven by the following synchronized layers:
 
-### 2. Cadence
-Establishes the rhythm of operations:
-- Weekly syncs  
-- Monthly reviews  
-- Quarterly planning  
+### 2.1 governance_layer
+Defines execution permissions, automation thresholds, and escalation pathways. Enforced by `systems/schemas/ai-ops-system-schema-manifest.json`.
 
-### 3. Workflows
-Outlines the standardized processes teams use to execute work consistently.
+### 2.2 cadence_layer
+Establishes the rhythm of operations (e.g., `weekly_cadence`, `sprint_cadence`). Enforced by `systems/ai-ops-system-communication-cadence.md`.
 
-### 4. Decision Systems
-Provides structured methods for making clear, fast, and aligned decisions.
+### 2.3 workflow_layer
+Outlines the standardized execution steps agents must follow to process tasks deterministically. 
 
-### 5. Technical Guardrails & Input Validation
-Establishes strict constraints on automated input ingestion to guarantee security and compliance. Simple string-matching, keyword scanning (e.g., `contains`, `matches`), or regex patterns are insufficient and unsafe for verifying the compliance, security, or legal validity of inbound documentation.
+### 2.4 decision_layer
+Provides structured methods for evaluating tradeoffs and generating decision logs. Enforced by `systems/ai-ops-system-reasoning-framework.md`.
 
-#### A. Verification Multi‑Factor (VMF) Architecture
-Any operational workflow leveraging AI to validate third‑party compliance documentation (e.g., SOC 2 reports, ISO certifications, Certificates of Insurance) must utilize a multi‑layered validation approach:
-- **Layer 1: Structural Parsing** — The agent must parse the document using structured entity extraction to verify issuer identity, active dates, and scope boundaries.  
-- **Layer 2: External Truth Cross‑Referencing** — The agent must cross‑check the extracted entities against an internal whitelist, API‑driven government registries, or authorized third‑party databases.  
-- **Layer 3: Confidence Scoring** — If the model's extraction confidence score drops below 95%, or if any metadata field is missing, the document must be flagged and routed to a human queue.  
+## 3. Technical Guardrails & Input Validation
 
-#### B. Anti‑Spoofing Protocol
-All inbound attachments from external sources processed by automated agents must pass an automated file integrity and virus scan prior to AI parsing. The AI agent must explicitly check for and flag common document anomalies, such as mismatched text layers, missing cryptographic seals, or text that contradicts the document's metadata.
+Establishes strict constraints on automated input ingestion to guarantee security and compliance. Simple string-matching or regex patterns are insufficient for verifying the compliance or legal validity of inbound payloads.
 
-### 6. Reporting
-Defines how information flows across teams and leadership.
+### 3.1 verification_mfa_architecture
+Any operational workflow leveraging AI to validate third‑party documentation must utilize a multi‑layered validation approach:
+- *Layer 1 (Structural Parsing):* Extract entities to verify issuer identity, active dates, and scope boundaries.
+- *Layer 2 (Truth Cross-Referencing):* Cross‑check extracted entities against authorized `long_term_context` registries defined in `systems/ai-ops-system-memory-context.md`.
+- *Layer 3 (Confidence Scoring):* If the extraction confidence score drops below `0.95`, or if metadata is missing, route the payload immediately to the `tier_1_critical` queue.
 
-## Notes
+### 3.2 anti_spoofing_protocol
+All inbound attachments from external sources processed by automated agents must pass an automated integrity scan prior to parsing. Agents must explicitly flag anomalies such as mismatched text layers, missing cryptographic seals, or metadata contradictions.
 
-This file will expand as the AI‑Ops Framework evolves.
+## 4. Reporting & Telemetry
+Defines how operational state data flows across system boundaries and triggers diagnostic evaluations mapped in `systems/ai-ops-system-drift-detection.md`.
