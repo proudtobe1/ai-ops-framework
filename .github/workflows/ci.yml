@@ -1,27 +1,27 @@
-name: AI-Ops Framework CI
+name: "AI-Ops Framework CI"
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ "main" ]
 
 jobs:
   lint-and-validate:
+    name: "Lint & Validate Structure"
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: "Checkout Repository"
         uses: actions/checkout@v4
 
-      - name: Setup Node.js 24 (Active LTS)
+      - name: "Set up Node.js Environment"
         uses: actions/setup-node@v4
         with:
-          node-version: '24'
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
+          node-version: "24"
+          cache: "npm"
+          cache-dependency-path: "**/package-lock.json"
 
-      - name: Install Dependencies
+      - name: "Install Pipeline Dependencies"
         run: |
           if [ -f package-lock.json ]; then
             npm ci
@@ -29,5 +29,5 @@ jobs:
             npm install
           fi
 
-      - name: Run Structural Integrity Linter
+      - name: "Execute Structural Integrity Linter"
         run: node scripts/lint-structure.js
