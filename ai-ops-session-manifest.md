@@ -1,30 +1,141 @@
-# AI-Ops Session Recovery Manifest
-- **Current Mode:** Comprehensive Evaluation & Optimization (Structural vulnerabilities, logical gaps, framework edge cases).
-- **Global Constraints:** Strict enforcement of architecture dependencies, zero-hallucination protocols, and structured schemas.
-SYSTEM BOOTSTRAP RESUME: 
-We are mid-refactor of the AI-Ops Framework repository. Our guiding design principle is "Clarity over complexity," with a strict focus on zero-redundancy architecture and single-source-of-truth directory registries.
-
-CURRENT PROGRESS STATE:
-- .github/ (and all subdirectories) are 100% AUDITED, VERIFIED, AND LOCKED.
-- Root level configurations and README.md are 100% VERIFIED AND LOCKED.
-- Phase 1 (Governance & Automation Layer) is complete.
-- We have just agreed to begin Phase 2, targeting the `systems/` directory next.
-
-PAST STATUS MATRIX FOR ARCHITECTURAL ALIGNMENT:
-| Directory Path / File | Structural Alignment Status | Operational Impact Baseline |
-| :--- | :--- | :--- |
-| `CODE_OF_CONDUCT.md` | **Verified & Locked** | Direct confidential routing to governance board is active. |
-| `CONTRIBUTING.md` | **Verified & Locked** | Maps intake requirements explicitly to all active framework folders. |
-| `PULL_REQUEST_TEMPLATE.md` | **Verified & Locked** | Enforces synchronous `ai-ops-manifest.json` and index updates. |
-| `PROJECT_GOVERNANCE.md` | **Verified & Locked** | Restricts architectural changes to human-in-the-loop validation. |
-| `README.md` | 🔒 **Verified & Locked** | Refactored to world-class, zero-redundancy architecture; duplication eliminated. |
-| `ISSUE_TEMPLATE/bug_report.yml` | 🔒 **Verified & Locked** | Enforces component drop-downs matched to directory registry; automated labeling live. |
-| `ISSUE_TEMPLATE/config.yml` | **Verified & Locked** | Disables unformatted issue generation; routes queries to Discussions. |
-| `ISSUE_TEMPLATE/feature_request.yml` | **Verified & Locked** | Validates structured enhancement intake parameters. |
-| `ISSUE_TEMPLATE/README.md` | 🔒 **Verified & Locked** | Streamlined to single registry layout; all file index duplication removed. |
-| `workflows/ci.yml` | 🔒 **Verified & Locked** | Multi-language syntax linter suite active; syncs with PR validation requirements. |
-| `workflows/docs-autobuild.yml` | 🔒 **Verified & Locked** | Complete MkDocs execution suite and Mermaid layout validation active. |
-| `workflows/README.md` | 🔒 **Verified & Locked** | Confirmed lean, 3-file physical footprint; legacy architecture successfully purged. |
-
-NEXT TASK:
-Acknowledge this baseline without repeating these instructions, adopt our established workspace tone, print the matrix back to confirm alignment, and ask me to provide the initial file inventory for the `systems/` folder.
+{
+  "name": "ai-ops-framework",
+  "version": "1.0.0",
+  "description": "A modular AI-enabled operational framework for workflows, decisions, systems, prompts, and documentation.",
+  "license": "MIT",
+  "model_format": "framework",
+  "modules": {
+    "documentation": [
+      "AI_OPS_MODEL_CARD.md",
+      "AI_OPS_MODULE_REGISTRY.md",
+      "CONTRIBUTING_DETAILED.md",
+      "EXAMPLES.md",
+      "FAQ.md",
+      "GLOSSARY.md",
+      "README.md",
+      "ROADMAP.md",
+      "ai-agent-behavior-rules.md",
+      "ai-agent-certification-pathway.md",
+      "ai-agent-evaluation-rubric.md",
+      "ai-agent-failure-modes-recovery.md",
+      "ai-agent-integration-guide.md",
+      "ai-agent-integration.md",
+      "ai-agent-output-contract.md",
+      "ai-agent-test-suite.md",
+      "ai-ops-architecture-deep-dive.md",
+      "ai-ops-contribution-governance-model.md",
+      "ai-ops-data-flow.md",
+      "ai-ops-docs-dependency-map.md",
+      "ai-ops-docs-expanded-diagrams.md",
+      "ai-ops-docs-llm-loading-guide.md",
+      "ai-ops-docs-operating-playbook.md",
+      "ai-ops-docs-overview.md",
+      "ai-ops-docs-visual-index.md",
+      "ai-ops-framework-extension-guide.md",
+      "ai-ops-maturity-model.md",
+      "ai-ops-system-overview.md",
+      "ai-ops-template-alignment-check.md",
+      "ai-ops-template-decision-record.md",
+      "index.md"
+    ],
+    "governance": [
+      "CODE_OF_CONDUCT.md",
+      "CONTRIBUTING.md",
+      "PROJECT_GOVERNANCE.md",
+      "PULL_REQUEST_TEMPLATE.md",
+      "README.md"
+    ],
+    "root_files": [
+      ".gitignore",
+      ".markdownlint.json",
+      "LICENSE",
+      "README.md",
+      "ai-ops-manifest.json",
+      "ai-ops-session-manifest.md",
+      "mkdocs.yml",
+      "validate_repo.sh"
+    ],
+    "schemas": [
+      "ai-ops-system-schema-manifest.json",
+      "ai-ops-system-schema-metric-update.json"
+    ],
+    "starter_prompts": [
+      "README.md",
+      "prompt-alignment-check.md",
+      "prompt-decision-tree.md",
+      "prompt-risk-review.md",
+      "prompt-weekly-summary.md"
+    ],
+    "systems": [
+      "README.md",
+      "ai-ops-architecture-operating-model.md",
+      "ai-ops-system-alignment-engine.md",
+      "ai-ops-system-behavioral-guardrails.md",
+      "ai-ops-system-communication-cadence.md",
+      "ai-ops-system-communication-engine.md",
+      "ai-ops-system-drift-detection.md",
+      "ai-ops-system-knowledge-model.md",
+      "ai-ops-system-linter.js",
+      "ai-ops-system-memory-context.md",
+      "ai-ops-system-operating-model.md",
+      "ai-ops-system-operational-metrics.md",
+      "ai-ops-system-overview.md",
+      "ai-ops-system-reasoning-framework.md",
+      "ai-ops-system-security-compliance.md"
+    ],
+    "templates": [
+      "README.md",
+      "ai-ops-template-alignment-check.md",
+      "ai-ops-template-change-request.md",
+      "ai-ops-template-decision-record.md",
+      "ai-ops-template-dependency-review.md",
+      "ai-ops-template-escalation-report.md",
+      "ai-ops-template-executive-brief.md",
+      "ai-ops-template-incident-report.md",
+      "ai-ops-template-operational-readiness-review.md",
+      "ai-ops-template-post-mortem.md",
+      "ai-ops-template-qa-review.md",
+      "ai-ops-template-rca.md",
+      "ai-ops-template-risk-review.md",
+      "ai-ops-template-runbook.md",
+      "ai-ops-template-service-level-review.md",
+      "ai-ops-template-slo-definition.md",
+      "ai-ops-template-status-update.md",
+      "ai-ops-template-weekly-report.md"
+    ],
+    "use_cases": [
+      "README.md",
+      "ai-ops-use-case-incident-review.md",
+      "ai-ops-use-case-roadmap-alignment.md",
+      "ai-ops-use-case-sprint-planning.md",
+      "ai-ops-use-case-weekly-ops-review.md"
+    ],
+    "workflows": [
+      "README.md",
+      "ai-ops-workflow-ai-agent-integration.md",
+      "ai-ops-workflow-decision-automation.md",
+      "ai-ops-workflow-operational-cadence.md"
+    ]
+  },
+  "entrypoints": {
+    "root": "./",
+    "documentation": "./docs",
+    "governance": "./.github",
+    "schemas": "./systems/schema",
+    "starter_prompts": "./docs/starter-prompts",
+    "systems": "./systems",
+    "templates": "./docs/templates",
+    "use_cases": "./docs/use-cases",
+    "workflows": "./systems/workflows"
+  },
+  "integrity_rules": {
+    "naming_conventions": "Files must match exact structural types: ai-ops-[type]-[name].md, prompt-[name].md, or script extensions like .js",
+    "alphabetical_ordering": true,
+    "no_deprecated_files": true,
+    "strict_manifest_sync": true
+  },
+  "ai_agent_governance": {
+    "alignment_required": true,
+    "drift_detection_enabled": true
+  }
+}
