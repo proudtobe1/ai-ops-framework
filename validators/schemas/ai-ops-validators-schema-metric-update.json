@@ -11,15 +11,36 @@
     "metric"
   ],
   "properties": {
-    "event_type": { "type": "string", "const": "metric_update" },
-    "timestamp": { "type": "string", "format": "date-time" },
-    "agent_id": { "type": "string" },
+    "event_type": {
+      "type": "string",
+      "const": "metric_update"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "agent_id": {
+      "type": "string"
+    },
     "context": {
       "type": "object",
-      "required": ["module", "session_id"],
+      "required": [
+        "module",
+        "session_id"
+      ],
       "properties": {
-        "module": { "type": "string", "enum": ["alignment", "risk", "compliance", "performance"] },
-        "session_id": { "type": "string" }
+        "module": {
+          "type": "string",
+          "enum": [
+            "alignment",
+            "risk",
+            "compliance",
+            "performance"
+          ]
+        },
+        "session_id": {
+          "type": "string"
+        }
       },
       "additionalProperties": false
     },
@@ -33,16 +54,43 @@
         "escalation_triggered"
       ],
       "properties": {
-        "alignment_score": { "type": "number", "minimum": 0, "maximum": 1 },
-        "drift_status": { "type": "boolean" },
-        "drift_dimension": { 
-          "type": "string", 
-          "enum": ["none", "dependency", "execution", "persona"] 
+        "alignment_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
         },
-        "compliance_violation_count": { "type": "integer", "minimum": 0 },
-        "risk_level": { "type": "string", "enum": ["none", "low", "medium", "high", "critical"] },
-        "escalation_triggered": { "type": "boolean" },
-        "remediation_action": { "type": "string" }
+        "drift_status": {
+          "type": "boolean"
+        },
+        "drift_dimension": {
+          "type": "string",
+          "enum": [
+            "none",
+            "dependency",
+            "execution",
+            "persona"
+          ]
+        },
+        "compliance_violation_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "risk_level": {
+          "type": "string",
+          "enum": [
+            "none",
+            "low_severity",
+            "medium_severity",
+            "high_severity",
+            "tier_1_critical"
+          ]
+        },
+        "escalation_triggered": {
+          "type": "boolean"
+        },
+        "remediation_action": {
+          "type": "string"
+        }
       },
       "additionalProperties": false
     }
