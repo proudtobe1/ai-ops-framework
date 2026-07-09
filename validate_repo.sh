@@ -31,10 +31,10 @@ echo "✅ All core registries present."
 
 # 3. Execute Granular Steady-State Audit
 echo "🔍 [3/3] Executing Granular Steady-State Checks..."
-if [ -f "scripts/verify-steady-state.sh" ]; then
-  bash scripts/verify-steady-state.sh
+if [ -f "systems/scripts/verify-steady-state.sh" ]; then
+  bash systems/scripts/verify-steady-state.sh
 else
-  echo "⚠️ WARNING: 'scripts/verify-steady-state.sh' not found. Skipping granular script audit."
+  echo "⚠️ WARNING: 'systems/scripts/verify-steady-state.sh' not found. Skipping granular script audit."
 fi
 
 echo "🏁 --- Validation Complete: Repo is World-Class ---"
