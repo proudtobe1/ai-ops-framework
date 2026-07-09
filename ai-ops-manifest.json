@@ -12,6 +12,7 @@
       "EXAMPLES.md",
       "FAQ.md",
       "GLOSSARY.md",
+      "README.md",
       "ROADMAP.md",
       "ai-agent-behavior-rules.md",
       "ai-agent-certification-pathway.md",
@@ -41,7 +42,8 @@
       "CODE_OF_CONDUCT.md",
       "CONTRIBUTING.md",
       "PROJECT_GOVERNANCE.md",
-      "PULL_REQUEST_TEMPLATE.md"
+      "PULL_REQUEST_TEMPLATE.md",
+      "README.md"
     ],
     "root_files": [
       ".markdownlint.json",
@@ -55,12 +57,14 @@
       "ai-ops-system-schema-metric-update.json"
     ],
     "starter_prompts": [
+      "README.md",
       "prompt-alignment-check.md",
       "prompt-decision-tree.md",
       "prompt-risk-review.md",
       "prompt-weekly-summary.md"
     ],
     "systems": [
+      "README.md",
       "ai-ops-architecture-operating-model.md",
       "ai-ops-system-alignment-engine.md",
       "ai-ops-system-behavioral-guardrails.md",
@@ -77,6 +81,7 @@
       "ai-ops-system-security-compliance.md"
     ],
     "templates": [
+      "README.md",
       "ai-ops-template-alignment-check.md",
       "ai-ops-template-change-request.md",
       "ai-ops-template-decision-record.md",
@@ -96,12 +101,14 @@
       "ai-ops-template-weekly-report.md"
     ],
     "use_cases": [
+      "README.md",
       "ai-ops-use-case-incident-review.md",
       "ai-ops-use-case-roadmap-alignment.md",
       "ai-ops-use-case-sprint-planning.md",
       "ai-ops-use-case-weekly-ops-review.md"
     ],
     "workflows": [
+      "README.md",
       "ai-ops-workflow-ai-agent-integration.md",
       "ai-ops-workflow-decision-automation.md",
       "ai-ops-workflow-operational-cadence.md"
@@ -112,11 +119,11 @@
     "documentation": "./docs",
     "governance": "./.github",
     "schemas": "./systems/schema",
-    "starter_prompts": "./starter-prompts",
+    "starter_prompts": "./docs/starter-prompts",
     "systems": "./systems",
-    "templates": "./templates",
-    "use_cases": "./use-cases",
-    "workflows": "./workflows"
+    "templates": "./docs/templates",
+    "use_cases": "./docs/use-cases",
+    "workflows": "./systems/workflows"
   },
   "integrity_rules": {
     "naming_conventions": "Files must match exact structural types: ai-ops-[type]-[name].md, prompt-[name].md, or script extensions like .js",
