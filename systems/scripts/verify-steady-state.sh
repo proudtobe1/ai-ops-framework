@@ -10,10 +10,9 @@ echo "===================================================="
 echo "       STARTING STEADY-STATE INTEGRITY AUDIT        "
 echo "===================================================="
 
-# 1. Establish Absolute Project Root Context
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(cd "${SCRIPT_DIR}/../../" && pwd)"
-cd "${PROJECT_ROOT}"
+# 1. Establish Absolute Project Root Context (POSIX Safe)
+cd "$(dirname "$0")/../../"
+PROJECT_ROOT="$(pwd)"
 
 echo "🎯 Context Locked to Project Root: ${PROJECT_ROOT}"
 
@@ -26,14 +25,11 @@ fi
 
 # 3. Core Programmatic Schema Verification Execution
 echo "🔄 Invoking Programmatic Validation Matrix..."
-if node systems/scripts/ai-ops-system-linter.js; then
-    echo "===================================================="
-    echo "✅ AUDIT COMPLETE: Framework is in a 100% Steady State."
-    echo "===================================================="
-    exit 0
-else
-    echo "===================================================="
-    echo "❌ AUDIT FAILED: Structural integrity constraints broken."
-    echo "===================================================="
-    exit 1
-fi
+
+# Because 'set -e' is active, if the linter fails, the script will instantly 
+# terminate here with a non-zero exit code.
+node systems/scripts/ai-ops-system-linter.js
+
+echo "===================================================="
+echo "✅ AUDIT COMPLETE: Framework is in a 100% Steady State."
+echo "===================================================="
