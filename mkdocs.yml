@@ -1,14 +1,51 @@
-site_name: AI-Ops Framework
+site_name: "AI-Ops Framework"
+site_description: "A modular AI-enabled operational framework for workflows, decisions, systems, prompts, and documentation."
+site_author: "Mary Jane & Company, LLC"
+
 theme:
   name: material
-nav:
-  - Home: index.md
-  - Project Master Log: PROJECT_MASTER_LOG.md
-  - Integration Guide: ai-ops-agent-integration-guide.md
-  - System Overview: ai-ops-system-overview.md
-  - Templates:
-      - Operational Readiness: templates/ai-ops-template-operational-readiness-review.md
-      - Status Update: templates/ai-ops-template-status-update.md
-      - Decision Record: templates/ai-ops-template-decision-record.md
-  - Operational Records:
-      - W26 Status Update: status-updates/2026-W26-ops-review.md
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: slate
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: slate
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+plugins:
+  - search
+  - awesome-pages
+  - mermaid2
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid
