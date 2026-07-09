@@ -2,147 +2,112 @@
 
 A governance‑grade model for secure, compliant, and responsible AI‑Ops operations.
 
----
-
 ## 1. Purpose
 
 To define how data is handled, how access is controlled, and how AI‑assisted workflows maintain compliance across teams and systems.
 
----
-
 ## 2. Security Principles
 
-### Least Privilege  
+### 2.1 least_privilege
 Access is granted only to what is required for the task.
 
-### Data Minimization  
+### 2.2 data_minimization
 Only essential data is collected, stored, or processed.
 
-### Transparency  
+### 2.3 transparency
 All data flows and decisions must be documented and visible.
 
-### Auditability  
+### 2.4 auditability
 Actions must be traceable and reviewable.
 
-### Consistency  
-Security rules must apply uniformly across workflows, templates, and systems.
-
----
+### 2.5 consistency
+Security rules must apply uniformly across workflows, templates (`docs/templates/`), and systems.
 
 ## 3. Compliance Principles
 
-### Policy Alignment  
+### 3.1 policy_alignment
 All operations must align with organizational policies and legal requirements.
 
-### Data Classification  
+### 3.2 data_classification
 Information must be categorized by sensitivity:
-- Public  
-- Internal  
-- Confidential  
-- Restricted  
+- Public
+- Internal
+- Confidential
+- Restricted
 
-### Retention Rules  
-Data must be retained or deleted according to policy.
+### 3.3 retention_rules
+Data must be retained or deleted according to policy defined in `systems/ai-ops-system-memory-context.md`.
 
-### AI Usage Controls  
-AI systems must follow:
-- Approved workflows  
-- Approved templates  
-- Approved system models  
-
----
+### 3.4 ai_usage_controls
+AI systems must follow constraints explicitly defined in `systems/ai-ops-system-behavioral-guardrails.md`.
 
 ## 4. Data Handling Rules
 
-### Allowed Data  
-- Operational updates  
-- Project information  
-- Non‑sensitive metrics  
-- Process documentation  
+### 4.1 allowed_data
+- Operational updates
+- Project information
+- Non‑sensitive metrics
+- Process documentation
 
-### Restricted Data  
-- Personal identifiable information (PII)  
-- Financial data  
-- Legal documents  
-- Sensitive customer information  
+### 4.2 restricted_data
+- Personal identifiable information (PII)
+- Financial data
+- Legal documents
+- Sensitive customer information
 
-### Prohibited Data  
-- Credentials  
-- Secrets  
-- Authentication tokens  
-- Unencrypted sensitive data  
-
----
+### 4.3 prohibited_data
+- Credentials
+- Secrets
+- Authentication tokens
+- Unencrypted sensitive data
 
 ## 5. Access Control Patterns
 
-### Role‑Based Access  
-Roles include:
-- Maintainer  
-- Contributor  
-- Reviewer  
-- Reader  
+### 5.1 role_based_access
+Roles include: Maintainer, Contributor, Reviewer, Reader.
 
-### Workflow‑Level Access  
+### 5.2 workflow_level_access
 Certain workflows may require elevated permissions.
 
-### System‑Level Access  
+### 5.3 system_level_access
 System models may be restricted to maintain governance integrity.
-
----
 
 ## 6. AI‑Assisted Compliance Checks
 
-AI systems can assist by:
-
-### 1. Detecting  
-Flagging sensitive data in updates or documents.
-
-### 2. Validating  
-Ensuring templates and workflows follow compliance rules.
-
-### 3. Classifying  
-Automatically tagging data by sensitivity.
-
-### 4. Auditing  
-Generating summaries of access, changes, and risks.
-
----
+AI systems can assist by executing the following programmatic tasks:
+- `detecting:` Flagging sensitive data in updates or documents.
+- `validating:` Ensuring templates and workflows follow compliance rules.
+- `classifying:` Automatically tagging data by sensitivity.
+- `auditing:` Generating summaries of access, changes, and risks.
 
 ## 7. Risk Classification Model
 
-### Low Risk  
+### 7.1 low_severity
 Minor operational issues, low sensitivity.
 
-### Medium Risk  
+### 7.2 medium_severity
 Cross‑team dependencies, moderate sensitivity.
 
-### High Risk  
+### 7.3 high_severity
 Priority drift, emerging blockers, sensitive data exposure.
 
-### Critical Risk  
-Security incidents, compliance violations, data breaches.
-
----
+### 7.4 tier_1_critical
+Security incidents, compliance violations, data breaches. Instantly triggers system freeze and human escalation.
 
 ## 8. Usage
 
-This system model is used for:
-
-- Security reviews  
-- Compliance audits  
-- Workflow validation  
-- AI‑assisted risk detection  
-- Governance enforcement  
-
----
+This system model integrates across the execution pipeline and is used for:
+- Security reviews
+- Compliance audits
+- Workflow validation
+- AI‑assisted risk detection
+- Governance enforcement
 
 ## 9. Summary
 
 The Security & Compliance Model provides:
-
-- Clear data handling rules  
-- Strong access control patterns  
-- AI‑assisted compliance checks  
-- Risk classification  
-- Enterprise‑grade governance  
+- Clear data handling rules
+- Strong access control patterns
+- AI‑assisted compliance checks
+- Strict risk classification tokens
+- Enterprise‑grade governance
