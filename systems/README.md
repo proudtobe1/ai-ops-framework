@@ -1,75 +1,62 @@
-# systems Directory — System‑Level Models, Engines & Governance
+# systems Directory — System-Level Models, Engines & Governance
 
 ## Overview
-The `systems` directory contains all system‑level models, engines, guardrails, and governance documents that define how the AI‑Ops system functions at a macro level.  
-These files describe the system’s architecture, reasoning, communication, alignment, security, metrics, and operational behavior.
 
-This directory represents the *system‑wide layer* of the AI‑Ops Framework — distinct from agent‑level models — and defines the rules, engines, and structures that govern the entire platform.
+The `systems` directory contains all system-level models, engines, guardrails, and governance documents that define how the AI-Ops system functions at a macro level. These files describe the system's architecture, reasoning, communication, alignment, security, metrics, and operational behavior.
 
-All contents are categorized automatically based on filename semantics.  
-A complete alphabetical index is included at the bottom.
+This directory represents the *system-wide layer* of the AI-Ops Framework — distinct from agent-level models — and defines the rules, engines, and structures that govern the entire platform.
+
+All contents are categorized automatically based on filename semantics. A complete alphabetical index is included at the bottom.
 
 ---
 
-# CATEGORIZED DIRECTORY
+## CATEGORIZED DIRECTORY
 
-## 1. System Overview & Operating Models
-High‑level descriptions of the system’s purpose, structure, and operational behavior.
+### 1. System Overview & Operating Models
+High-level descriptions of the system's purpose, structure, and operational behavior.
+* `ai-ops-architecture-operating-model.md`
+* `ai-ops-system-operating-model.md`
+* `ai-ops-system-overview.md`
 
-ai-ops-architecture-operating-model.md  
-ai-ops-system-operating-model.md  
-ai-ops-system-overview.md  
-
-## 2. System Engines
+### 2. System Engines
 Core engines that drive alignment, communication, and reasoning across the system.
+* `ai-ops-system-alignment-engine.md`
+* `ai-ops-system-communication-engine.md`
+* `ai-ops-system-reasoning-framework.md`
 
-ai-ops-system-alignment-engine.md  
-ai-ops-system-communication-engine.md  
-ai-ops-system-reasoning-framework.md  
+### 3. Behavioral Guardrails & Communication Standards
+Documents defining system-wide behavioral rules, communication cadence, and interaction patterns.
+* `ai-ops-system-behavioral-guardrails.md`
+* `ai-ops-system-communication-cadence.md`
 
-## 3. Behavioral Guardrails & Communication Standards
-Documents defining system‑wide behavioral rules, communication cadence, and interaction patterns.
+### 4. Knowledge, Memory & Context Models
+System-level models governing knowledge structures, memory handling, and contextual awareness.
+* `ai-ops-system-knowledge-model.md`
+* `ai-ops-system-memory-context.md`
 
-ai-ops-system-behavioral-guardrails.md  
-ai-ops-system-communication-cadence.md  
-
-## 4. Knowledge, Memory & Context Models
-System‑level models governing knowledge structures, memory handling, and contextual awareness.
-
-ai-ops-system-knowledge-model.md  
-ai-ops-system-memory-context.md  
-
-## 5. Drift Detection, Metrics & Observability
+### 5. Drift Detection, Metrics & Observability
 Documents defining system drift detection, operational metrics, and performance monitoring.
+* `ai-ops-system-drift-detection.md`
+* `ai-ops-system-operational-metrics.md`
 
-ai-ops-system-drift-detection.md  
-ai-ops-system-operational-metrics.md  
-
-## 6. Security & Compliance
-System‑level security, compliance, and governance requirements.
-
-ai-ops-system-security-compliance.md  
+### 6. Security & Compliance
+System-level security, compliance, and governance requirements.
+* `ai-ops-system-security-compliance.md`
 
 ---
 
-# A–Z INDEX OF ALL FILES
+## A–Z INDEX OF ALL FILES
 
-ai-ops-architecture-operating-model.md  
-ai-ops-system-alignment-engine.md  
-ai-ops-system-behavioral-guardrails.md  
-ai-ops-system-communication-cadence.md  
-ai-ops-system-communication-engine.md  
-ai-ops-system-drift-detection.md  
-ai-ops-system-knowledge-model.md  
-ai-ops-system-memory-context.md  
-ai-ops-system-operating-model.md  
-ai-ops-system-operational-metrics.md  
-ai-ops-system-overview.md  
-ai-ops-system-reasoning-framework.md  
-ai-ops-system-security-compliance.md  
-
----
-
-# Summary
-The `systems` directory centralizes all system‑level models, engines, guardrails, and governance structures that define how the AI‑Ops platform operates as a whole.  
-These documents provide the architectural, behavioral, and operational foundation for the entire system.
+* `ai-ops-architecture-operating-model.md`
+* `ai-ops-system-alignment-engine.md`
+* `ai-ops-system-behavioral-guardrails.md`
+* `ai-ops-system-communication-cadence.md`
+* `ai-ops-system-communication-engine.md`
+* `ai-ops-system-drift-detection.md`
+* `ai-ops-system-knowledge-model.md`
+* `ai-ops-system-memory-context.md`
+* `ai-ops-system-operating-model.md`
+* `ai-ops-system-operational-metrics.md`
+* `ai-ops-system-overview.md`
+* `ai-ops-system-reasoning-framework.md`
+* `ai-ops-system-security-compliance.md`
