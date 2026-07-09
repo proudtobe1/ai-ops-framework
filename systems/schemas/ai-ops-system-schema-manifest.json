@@ -21,7 +21,6 @@
     },
     "version": {
       "type": "string",
-      "description": "Enforces strict Semantic Versioning (e.g., 1.0.4)",
       "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
     },
     "description": {
@@ -30,11 +29,7 @@
     },
     "license": {
       "type": "string",
-      "enum": [
-        "MIT",
-        "Apache-2.0",
-        "GPL-3.0"
-      ]
+      "enum": ["MIT", "Apache-2.0", "GPL-3.0"]
     },
     "model_format": {
       "type": "string",
@@ -54,60 +49,15 @@
         "schemas"
       ],
       "properties": {
-        "workflows": {
-          "type": "array",
-          "items": { "type": "string", "pattern": "^[^\\s]+$" },
-          "minItems": 1,
-          "uniqueItems": true
-        },
-        "templates": {
-          "type": "array",
-          "items": { "type": "string", "pattern": "^[^\\s]+$" },
-          "minItems": 1,
-          "uniqueItems": true
-        },
-        "systems": {
-          "type": "array",
-          "items": { "type": "string", "pattern": "^[^\\s]+$" },
-          "minItems": 1,
-          "uniqueItems": true
-        },
-        "use_cases": {
-          "type": "array",
-          "items": { "type": "string", "pattern": "^[^\\s]+$" },
-          "minItems": 1,
-          "uniqueItems": true
-        },
-        "starter_prompts": {
-          "type": "array",
-          "items": { "type": "string", "pattern": "^[^\\s]+$" },
-          "minItems": 1,
-          "uniqueItems": true
-        },
-        "documentation": {
-          "type": "array",
-          "items": { "type": "string", "pattern": "^[^\\s]+$" },
-          "minItems": 1,
-          "uniqueItems": true
-        },
-        "governance": {
-          "type": "array",
-          "items": { "type": "string", "pattern": "^[^\\s]+$" },
-          "minItems": 1,
-          "uniqueItems": true
-        },
-        "root_files": {
-          "type": "array",
-          "items": { "type": "string", "pattern": "^[^\\s]+$" },
-          "minItems": 1,
-          "uniqueItems": true
-        },
-        "schemas": {
-          "type": "array",
-          "items": { "type": "string", "pattern": "^[^\\s]+$" },
-          "minItems": 1,
-          "uniqueItems": true
-        }
+        "workflows": { "type": "array", "items": { "type": "string", "pattern": "^.*\\.(md|json)$" } },
+        "templates": { "type": "array", "items": { "type": "string", "pattern": "^.*\\.md$" } },
+        "systems": { "type": "array", "items": { "type": "string", "pattern": "^.*\\.(md|js)$" } },
+        "use_cases": { "type": "array", "items": { "type": "string", "pattern": "^.*\\.md$" } },
+        "starter_prompts": { "type": "array", "items": { "type": "string", "pattern": "^.*\\.md$" } },
+        "documentation": { "type": "array", "items": { "type": "string", "pattern": "^.*\\.md$" } },
+        "governance": { "type": "array", "items": { "type": "string", "pattern": "^.*\\.md$" } },
+        "root_files": { "type": "array", "items": { "type": "string", "pattern": "^[^\\s]+$" } },
+        "schemas": { "type": "array", "items": { "type": "string", "pattern": "^.*\\.json$" } }
       },
       "additionalProperties": false
     },
@@ -121,17 +71,19 @@
         "starter_prompts",
         "documentation",
         "governance",
+        "schemas",
         "root"
       ],
       "properties": {
-        "workflows": { "type": "string", "pattern": "^.*\\.json$" },
-        "templates": { "type": "string", "pattern": "^.*\\.md$" },
-        "systems": { "type": "string", "pattern": "^.*\\.md$" },
-        "use_cases": { "type": "string", "pattern": "^.*\\.json$" },
-        "starter_prompts": { "type": "string", "pattern": "^.*\\.md$" },
-        "documentation": { "type": "string", "pattern": "^.*\\.md$" },
-        "governance": { "type": "string", "pattern": "^.*\\.md$" },
-        "root": { "type": "string", "pattern": "^.*\\.json$" }
+        "workflows": { "type": "string", "pattern": "^\\./.*$" },
+        "templates": { "type": "string", "pattern": "^\\./.*$" },
+        "systems": { "type": "string", "pattern": "^\\./.*$" },
+        "use_cases": { "type": "string", "pattern": "^\\./.*$" },
+        "starter_prompts": { "type": "string", "pattern": "^\\./.*$" },
+        "documentation": { "type": "string", "pattern": "^\\./.*$" },
+        "governance": { "type": "string", "pattern": "^\\./.*$" },
+        "schemas": { "type": "string", "pattern": "^\\./.*$" },
+        "root": { "type": "string", "pattern": "^\\./.*$" }
       },
       "additionalProperties": false
     },
@@ -143,30 +95,17 @@
         "no_deprecated_files"
       ],
       "properties": {
-        "naming_conventions": {
-          "type": "string",
-          "enum": [
-            "snake_case"
-          ]
-        },
-        "alphabetical_ordering": {
-          "type": "boolean"
-        },
-        "no_deprecated_files": {
-          "type": "boolean"
-        }
+        "naming_conventions": { "type": "string", "enum": ["snake_case"] },
+        "alphabetical_ordering": { "type": "boolean" },
+        "no_deprecated_files": { "type": "boolean" }
       },
       "additionalProperties": false
     },
     "ai_agent_governance": {
       "type": "object",
-      "required": [
-        "strict_mode"
-      ],
+      "required": ["strict_mode"],
       "properties": {
-        "strict_mode": {
-          "type": "boolean"
-        }
+        "strict_mode": { "type": "boolean" }
       },
       "additionalProperties": false
     }

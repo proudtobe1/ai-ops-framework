@@ -61,13 +61,13 @@ try {
             }
         }
         
-        // 6. Enforce Entrypoint File Extensions
-        const entrypointPattern = schema.properties.entrypoints.properties[section]?.pattern;
-        if (entrypointPattern) {
-            const regex = new RegExp(entrypointPattern);
+        // 6. Enforce Module File Extensions (The True Fix)
+        const moduleItemPattern = schema.properties.modules.properties[section]?.items?.pattern;
+        if (moduleItemPattern) {
+            const regex = new RegExp(moduleItemPattern);
             for (const filePath of fileArray) {
                 if (!regex.test(filePath)) {
-                    throw new Error(`File Extension Violation: "${filePath}" in module "${section}" does not match required pattern ${entrypointPattern}`);
+                    throw new Error(`File Extension Violation: "${filePath}" in module "${section}" does not match required pattern ${moduleItemPattern}`);
                 }
             }
         }

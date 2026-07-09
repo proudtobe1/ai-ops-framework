@@ -102,4 +102,35 @@
     ],
     "use_cases": [
       "docs/use-cases/README.md",
-      "docs/use-cases/ai-ops-use-case-
+      "docs/use-cases/ai-ops-use-case-incident-review.md",
+      "docs/use-cases/ai-ops-use-case-roadmap-alignment.md",
+      "docs/use-cases/ai-ops-use-case-sprint-planning.md",
+      "docs/use-cases/ai-ops-use-case-weekly-ops-review.md"
+    ],
+    "workflows": [
+      "systems/workflows/README.md",
+      "systems/workflows/ai-ops-workflow-ai-agent-integration.md",
+      "systems/workflows/ai-ops-workflow-decision-automation.md",
+      "systems/workflows/ai-ops-workflow-operational-cadence.md"
+    ]
+  },
+  "entrypoints": {
+    "root": "./",
+    "documentation": "./docs",
+    "governance": "./.github",
+    "schemas": "./systems/schemas",
+    "starter_prompts": "./docs/starter-prompts",
+    "systems": "./systems",
+    "templates": "./docs/templates",
+    "use_cases": "./docs/use-cases",
+    "workflows": "./systems/workflows"
+  },
+  "integrity_rules": {
+    "naming_conventions": "snake_case",
+    "alphabetical_ordering": true,
+    "no_deprecated_files": true
+  },
+  "ai_agent_governance": {
+    "strict_mode": true
+  }
+}
