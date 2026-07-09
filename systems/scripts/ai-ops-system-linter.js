@@ -39,7 +39,7 @@ try {
     const modulesSchema = schema.properties.modules;
     for (const section of modulesSchema.required) {
         const fileArray = manifest.modules[section];
-        
+
         if (!Array.isArray(fileArray)) {
             throw new Error(`Section "modules.${section}" must be an array.`);
         }
@@ -60,11 +60,21 @@ try {
                 throw new Error(`Broken Path Reference: File does not exist at "${filePath}"`);
             }
         }
+        
+        // 6. Enforce Entrypoint File Extensions
+        const entrypointPattern = schema.properties.entrypoints.properties[section]?.pattern;
+        if (entrypointPattern) {
+            const regex = new RegExp(entrypointPattern);
+            for (const filePath of fileArray) {
+                if (!regex.test(filePath)) {
+                    throw new Error(`File Extension Violation: "${filePath}" in module "${section}" does not match required pattern ${entrypointPattern}`);
+                }
+            }
+        }
     }
 
     console.log("✅ 100% World-Class Verification: Manifest matches schema metrics perfectly.");
     process.exit(0);
-
 } catch (e) {
     console.error(`❌ Comprehensive Validation Failure: ${e.message}`);
     process.exit(1);
