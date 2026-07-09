@@ -1,20 +1,24 @@
-name: build-docs
-on: [push, pull_request]
+name: "Build Documentation"
+
+on:
+  push:
+  pull_request:
+
 jobs:
   build:
+    name: "MkDocs Validation"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Diagnostic Audit
-        run: |
-          echo "Current working directory: $(pwd)"
-          echo "Files in root:"
-          ls -F
-      - name: Set up Python
+      - name: "Checkout Repository"
+        uses: actions/checkout@v4
+
+      - name: "Set up Python Environment"
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
-      - name: Install MkDocs
+          python-version: "3.x"
+
+      - name: "Install MkDocs Dependencies"
         run: pip install mkdocs
-      - name: Validate documentation build
+
+      - name: "Execute Strict Build Validation"
         run: mkdocs build --strict
