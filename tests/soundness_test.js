@@ -1,16 +1,24 @@
 const fs = require('fs');
+const path = require('path');
 
-// This simulates the LLM's task
-const rawData = fs.readFileSync('tests/sample_metrics.txt', 'utf8');
+// Establish Absolute Context
+const metricsPath = path.join(__dirname, 'sample_metrics.txt');
+const rawData = fs.readFileSync(metricsPath, 'utf8');
 
-// This is the "Soundness" check: Did the LLM detect the critical error?
 function runSoundnessTest() {
-    if (rawData.includes("Critical_Errors: 3") && rawData.includes("DEGRADED")) {
-        console.log("[PASS] Soundness Test: LLM correctly identified critical status.");
-        return true;
+    console.log("====================================================");
+    console.log("       STARTING LOGIC SOUNDNESS TEST                ");
+    console.log("====================================================");
+
+    // Validate against the strict snake_case tokens locked in our framework schema
+    if (rawData.includes("critical_errors: 3") && rawData.includes("degraded")) {
+        console.log("✅ [PASS] Soundness Test: LLM correctly identified critical status tokens.");
+        console.log("====================================================");
+        process.exit(0); // Send clean success code to master CI runner
     } else {
-        console.log("[FAIL] Soundness Test: LLM failed to identify critical status.");
-        return false;
+        console.error("❌ [FAIL] Soundness Test: LLM failed to identify critical status tokens.");
+        console.log("====================================================");
+        process.exit(1); // Instantly fail the CI pipeline and block the build
     }
 }
 
