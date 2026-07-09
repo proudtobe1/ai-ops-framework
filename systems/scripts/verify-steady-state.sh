@@ -7,15 +7,15 @@
 set -euo pipefail
 
 echo "===================================================="
-echo "      STARTING STEADY-STATE INTEGRITY AUDIT       "
+echo "       STARTING STEADY-STATE INTEGRITY AUDIT        "
 echo "===================================================="
 
 # 1. Establish Absolute Project Root Context
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../" && pwd)"
+PROJECT_ROOT="$(cd "${SCRIPT_DIR}/../../" && pwd)"
+cd "${PROJECT_ROOT}"
 
-cd "$PROJECT_ROOT"
-echo "🎯 Context Locked to Project Root: $PROJECT_ROOT"
+echo "🎯 Context Locked to Project Root: ${PROJECT_ROOT}"
 
 # 2. Dependency Checks
 echo "🔍 Verifying Linter Engine Dependencies..."
@@ -28,12 +28,12 @@ fi
 echo "🔄 Invoking Programmatic Validation Matrix..."
 if node systems/scripts/ai-ops-system-linter.js; then
     echo "===================================================="
-    echo " ✅ AUDIT COMPLETE: Framework is in a 100% Steady State."
+    echo "✅ AUDIT COMPLETE: Framework is in a 100% Steady State."
     echo "===================================================="
     exit 0
 else
     echo "===================================================="
-    echo " ❌ AUDIT FAILED: Structural integrity constraints broken."
+    echo "❌ AUDIT FAILED: Structural integrity constraints broken."
     echo "===================================================="
     exit 1
 fi
