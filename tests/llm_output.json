@@ -1,1 +1,4 @@
-{"status": "DEGRADED", "critical_errors": 3}
+{
+  "status": "degraded",
+  "critical_errors": 3
+}
