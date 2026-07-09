@@ -1,96 +1,82 @@
-# AI‑Ops Framework — Operational Workflows
-## System Domain: Integration Engine
-
----
-
 # Workflow: AI Agent Integration
 
 A workflow defining the required steps an AI agent must follow to correctly load, interpret, and operate within the AI‑Ops Framework.
 
----
-
 ## 1. Purpose
 
 To ensure AI agents:
-- Load all required system components
-- Follow the correct initialization sequence
-- Apply workflows, templates, personas, and metrics
-- Produce structured, aligned, compliant outputs
-- Maintain consistency across all tasks
-
----
+- Load all required system components.
+- Follow the correct initialization sequence.
+- Apply workflows, templates, personas, and metrics.
+- Produce structured, aligned, compliant outputs.
+- Maintain consistency across all tasks.
 
 ## 2. Trigger
 
 This workflow is triggered when:
-- An AI agent begins a structured task
-- A user requests a workflow‑driven output
-- A system process requires AI‑assisted execution
-
----
+- An AI agent begins a structured task.
+- A user requests a workflow‑driven output.
+- A system process requires AI‑assisted execution.
 
 ## 3. Preconditions
 
 AI agents must:
-- Have access to system models
-- Have access to workflows and templates
-- Be able to load personas
-- Be able to update metrics
+- Have programmatic access to the `systems/` directory models.
+- Have access to workflows and the `docs/templates/` registry.
+- Be able to load persona configurations.
+- Be able to update quantitative state metrics.
 
----
+## 4. Execution Sequence
 
-## 4. Workflow Steps
+Agents must execute the following sequence synchronously, without skipping or reordering steps:
 
-### Step 1 — Load System Models
-AI agent loads Operating Model, Decision Model, Metrics Model, and Security & Compliance Model.
+### 4.1 step_1_load_system_models
+AI agent loads core governance dependencies into the active context window:
+- `systems/ai-ops-system-operating-model.md`
+- `systems/ai-ops-system-reasoning-framework.md`
+- `systems/ai-ops-system-operational-metrics.md`
+- `systems/ai-ops-system-security-compliance.md`
 
-### Step 2 — Load Required Workflows
-AI agent loads the workflow relevant to the task.
+### 4.2 step_2_load_required_workflows
+AI agent loads the specific procedural workflow relevant to the assigned task.
 
-### Step 3 — Load Templates
-AI agent loads the template required for the output.
+### 4.3 step_3_load_templates
+AI agent fetches the required output structure from the `docs/templates/` directory to prevent layout drift.
 
-### Step 4 — Load Persona (Optional)
-If the task requires a role‑specific tone or behavior, the agent loads the appropriate persona.
+### 4.4 step_4_load_persona
+If the task requires a specific role constraint, the agent loads the appropriate persona profile to govern tone and boundary permissions.
 
-### Step 5 — Interpret Input
-AI agent analyzes priorities, risks, dependencies, alignment, and missing information.
+### 4.5 step_5_interpret_input
+AI agent analyzes the payload for priorities, risks, dependencies, alignment, and missing context.
 
-### Step 6 — Execute Workflow
-AI agent follows workflow steps in order, without skipping or reordering.
+### 4.6 step_6_execute_workflow
+AI agent processes the active task payload through the loaded procedural workflow.
 
-### Step 7 — Generate Structured Output
-AI agent uses the correct template to produce a status update, decision record, alignment check, risk review, or communication summary.
+### 4.7 step_7_generate_structured_output
+AI agent serializes the response strictly into the loaded markdown template.
 
-### Step 8 — Update Metrics
-AI agent updates relevant metrics based on the output.
+### 4.8 step_8_update_metrics
+AI agent logs state changes to `velocity_metrics`, `clarity_metrics`, `alignment_metrics`, and `risk_exposure`.
 
-### Step 9 — Validate Alignment
-AI agent checks for priority drift, misalignment, missing dependencies, and risks requiring escalation.
+### 4.9 step_9_validate_alignment
+AI agent cross-references the output against `systems/ai-ops-system-drift-detection.md` to flag priority decay, misalignment, or new dependencies.
 
-### Step 10 — Produce Communication Summary
-AI agent generates a concise summary for stakeholders.
-
----
+### 4.10 step_10_produce_communication_summary
+AI agent condenses the execution result into a summary formatted according to `systems/ai-ops-system-communication-engine.md`.
 
 ## 5. Outputs
 
-- Structured, template‑aligned output
-- Updated metrics
-- Alignment evaluation
-- Risk and dependency analysis
-- Communication summary
-
----
+- Structured, template‑aligned markdown output.
+- Updated telemetry and metrics.
+- Alignment evaluation log.
+- Risk and dependency state analysis.
+- Communication summary payload.
 
 ## 6. Escalation Path
 
-If the agent detects high‑severity risks, compliance violations, critical misalignment, or missing decision records:
-
-Action Required: Trigger the formal [ai-ops-template-escalation-report.md](../../templates/ai-ops-template-escalation-report.md) workflow process immediately.
-
----
+If the agent detects `high_severity` risks, compliance violations, critical misalignment, or a breaker state:
+- *Action Required:* Instantly freeze autonomous execution and trigger the `docs/templates/ai-ops-template-escalation-report.md` hand-off protocol.
 
 ## 7. Summary
 
-This workflow ensures AI agents operate consistently, predictably, and in full alignment with the AI‑Ops Framework. It defines the required initialization sequence and execution path for all structured tasks.
+This workflow ensures AI agents operate consistently, predictably, and in full programmatic alignment with the AI‑Ops Framework. It defines the required initialization sequence and execution invariants for all structured tasks.
