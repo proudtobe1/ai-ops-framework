@@ -4,7 +4,13 @@
   "MD004": false,
   "MD007": false,
   "MD033": {
-    "allowed_elements": ["div", "span", "p", "br", "img"]
+    "allowed_elements": [
+      "div",
+      "span",
+      "p",
+      "br",
+      "img"
+    ]
   },
   "MD041": true,
   "MD047": true,
