@@ -30,7 +30,11 @@
     },
     "license": {
       "type": "string",
-      "enum": ["MIT", "Apache-2.0", "GPL-3.0"]
+      "enum": [
+        "MIT",
+        "Apache-2.0",
+        "GPL-3.0"
+      ]
     },
     "model_format": {
       "type": "string",
@@ -76,10 +80,10 @@
       ],
       "properties": {
         "workflows": { "type": "string", "pattern": "^.*\\.json$" },
-        "templates": { "type": "string", "pattern": "^.*\\.json$" },
-        "systems": { "type": "string", "pattern": "^.*\\.json$" },
+        "templates": { "type": "string", "pattern": "^.*\\.md$" },
+        "systems": { "type": "string", "pattern": "^.*\\.md$" },
         "use_cases": { "type": "string", "pattern": "^.*\\.json$" },
-        "starter_prompts": { "type": "string", "pattern": "^.*\\.json$" },
+        "starter_prompts": { "type": "string", "pattern": "^.*\\.md$" },
         "documentation": { "type": "string", "pattern": "^.*\\.md$" },
         "governance": { "type": "string", "pattern": "^.*\\.md$" },
         "root": { "type": "string", "pattern": "^.*\\.json$" }
@@ -91,33 +95,22 @@
       "required": [
         "naming_conventions",
         "alphabetical_ordering",
-        "no_deprecated_files",
-        "option_a_required"
+        "no_deprecated_files"
       ],
       "properties": {
-        "naming_conventions": { "type": "string", "enum": ["kebab-case", "snake_case", "camelCase"] },
-        "alphabetical_ordering": { "type": "boolean" },
-        "no_deprecated_files": { "type": "boolean" },
-        "option_a_required": { "type": "boolean" }
+        "naming_conventions": {
+          "type": "string",
+          "enum": [
+            "snake_case"
+          ]
+        },
+        "alphabetical_ordering": {
+          "type": "boolean"
+        },
+        "no_deprecated_files": {
+          "type": "boolean"
+        }
       },
       "additionalProperties": false
     },
-    "ai_agent_governance": {
-      "type": "object",
-      "required": [
-        "alignment_required",
-        "drift_detection_enabled",
-        "audit_logging",
-        "human_in_the_loop_required"
-      ],
-      "properties": {
-        "alignment_required": { "type": "boolean" },
-        "drift_detection_enabled": { "type": "boolean" },
-        "audit_logging": { "type": "boolean" },
-        "human_in_the_loop_required": { "type": "boolean" }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}
+    "ai
