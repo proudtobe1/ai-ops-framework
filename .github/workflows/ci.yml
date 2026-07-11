@@ -1,10 +1,11 @@
+---
 name: "AI-Ops Framework CI"
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   lint-and-validate:
@@ -30,4 +31,4 @@ jobs:
           fi
 
       - name: "Execute Structural Integrity Linter"
-        run: node scripts/lint-structure.js
+        run: bash systems/scripts/verify-steady-state.sh
