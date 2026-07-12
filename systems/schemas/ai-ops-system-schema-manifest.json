@@ -51,7 +51,7 @@
       "properties": {
         "workflows": { "type": "array", "items": { "type": "string", "pattern": "^.*\\.(md|json)$" } },
         "templates": { "type": "array", "items": { "type": "string", "pattern": "^.*\\.md$" } },
-        "systems": { "type": "array", "items": { "type": "string", "pattern": "^.*\\.(md|js)$" } },
+        "systems": { "type": "array", "items": { "type": "string", "pattern": "^.*\\.(md|js|sh|py)$" } },
         "use_cases": { "type": "array", "items": { "type": "string", "pattern": "^.*\\.md$" } },
         "starter_prompts": { "type": "array", "items": { "type": "string", "pattern": "^.*\\.md$" } },
         "documentation": { "type": "array", "items": { "type": "string", "pattern": "^.*\\.md$" } },
