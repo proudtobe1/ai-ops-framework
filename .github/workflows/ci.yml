@@ -1,12 +1,10 @@
 ---
 name: "AI-Ops Framework CI"
-
 on:
   push:
     branches: ["main"]
   pull_request:
     branches: ["main"]
-
 jobs:
   lint-and-validate:
     name: "Lint & Validate Structure"
@@ -14,14 +12,12 @@ jobs:
     steps:
       - name: "Checkout Repository"
         uses: actions/checkout@v4
-
       - name: "Set up Node.js Environment"
         uses: actions/setup-node@v4
         with:
           node-version: "24"
           cache: "npm"
           cache-dependency-path: "**/package-lock.json"
-
       - name: "Install Pipeline Dependencies"
         run: |
           if [ -f package-lock.json ]; then
@@ -29,6 +25,33 @@ jobs:
           else
             npm install
           fi
-
       - name: "Execute Structural Integrity Linter"
         run: bash systems/scripts/verify-steady-state.sh
+  test-python:
+    name: "Python Test Suite"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout Repository"
+        uses: actions/checkout@v4
+      - name: "Set up Python 3.11"
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: "Install Python Dependencies"
+        run: pip install pytest pydantic jsonschema numpy
+      - name: "Run Python Tests"
+        run: pytest tests/ -v
+  test-js:
+    name: "JavaScript Test Suite"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout Repository"
+        uses: actions/checkout@v4
+      - name: "Set up Node.js Environment"
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: "Run Adversary Detection Test"
+        run: node tests/drift_adversary_test.js
+      - name: "Run Soundness Test"
+        run: node tests/soundness_test.js
