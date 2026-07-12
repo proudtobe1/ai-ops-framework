@@ -6,13 +6,13 @@ Welcome to the central documentation registry for the AI‑Ops Framework. This e
 
 ## 🏗️ Architectural Core Sections
 
-### 1. [System Engine Models](../systems/)
+### 1. [System Engine Models](https://github.com/proudtobe1/ai-ops-framework/blob/main/systems/)
 The authoritative operational, security, and behavioral rules that govern runtime execution logic.
 * **Operating Model:** Standardized operational execution parameters.
 * **Alignment Engine:** Dynamic verification of strategic corporate priorities.
 * **Drift Detection:** Proactive telemetry auditing to prevent intent decay.
 
-### 2. [Operational Workflows](../systems/workflows/)
+### 2. [Operational Workflows](https://github.com/proudtobe1/ai-ops-framework/blob/main/systems/workflows/)
 Deterministic execution paths and Human-in-the-Loop (HITL) escalation gates.
 * **Agent Integration:** Standardized bootstrap protocol for onboarding new models.
 * **Decision Automation:** Gate-driven risk tiering and sign-off matrices.
