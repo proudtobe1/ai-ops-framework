@@ -1,27 +1,21 @@
----
-name: Build Docs
-
+name: "Build Docs"
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    branches: ["main"]
 
 jobs:
-  build:
-    name: MkDocs Validation
+  build-docs:
+    name: "Build MkDocs Site"
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
+      - name: "Checkout Repository"
+        uses: actions/checkout@v7
+      - name: "Set up Python Environment"
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
-
-      - name: Install MkDocs and plugins
-        run: pip install mkdocs mkdocs-material mkdocs-awesome-pages-plugin mkdocs-mermaid2-plugin
-
-      - name: Build documentation
+          python-version: "3.11"
+      - name: "Install MkDocs and Plugins"
+        run: |
+          pip install mkdocs mkdocs-material mkdocs-awesome-pages-plugin mkdocs-mermaid2-plugin
+      - name: "Build Documentation Site"
         run: mkdocs build --strict
