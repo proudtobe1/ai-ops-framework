@@ -6,23 +6,11 @@
   "model_format": "framework",
   "modules": {
     "documentation": [
-      "docs/AI_OPS_MODEL_CARD.md",
-      "docs/AI_OPS_MODULE_REGISTRY.md",
-      "docs/CONTRIBUTING_DETAILED.md",
-      "docs/EXAMPLES.md",
-      "docs/FAQ.md",
-      "docs/GLOSSARY.md",
+      "docs/PROJECT_MASTER_LOG.md",
       "docs/README.md",
-      "docs/ROADMAP.md",
-      "docs/ai-agent-behavior-rules.md",
-      "docs/ai-agent-certification-pathway.md",
-      "docs/ai-agent-evaluation-rubric.md",
-      "docs/ai-agent-failure-modes-recovery.md",
-      "docs/ai-agent-integration-guide.md",
-      "docs/ai-agent-integration.md",
-      "docs/ai-agent-output-contract.md",
-      "docs/ai-agent-test-suite.md",
+      "docs/ai-ops-agent-integration-guide.md",
       "docs/ai-ops-architecture-deep-dive.md",
+      "docs/ai-ops-certification-pathway.md",
       "docs/ai-ops-contribution-governance-model.md",
       "docs/ai-ops-data-flow.md",
       "docs/ai-ops-docs-dependency-map.md",
@@ -31,11 +19,12 @@
       "docs/ai-ops-docs-operating-playbook.md",
       "docs/ai-ops-docs-overview.md",
       "docs/ai-ops-docs-visual-index.md",
+      "docs/ai-ops-evaluation-rubric.md",
       "docs/ai-ops-framework-extension-guide.md",
       "docs/ai-ops-maturity-model.md",
+      "docs/ai-ops-model-card.md",
+      "docs/ai-ops-module-registry.md",
       "docs/ai-ops-system-overview.md",
-      "docs/ai-ops-template-alignment-check.md",
-      "docs/ai-ops-template-decision-record.md",
       "docs/index.md"
     ],
     "governance": [
@@ -46,22 +35,18 @@
       ".github/README.md"
     ],
     "root_files": [
+      ".gitignore",
       ".markdownlint.json",
+      ".yamllint.yml",
       "LICENSE",
       "README.md",
       "ai-ops-manifest.json",
+      "ai-ops-session-manifest.md",
       "mkdocs.yml"
     ],
     "schemas": [
       "systems/schemas/ai-ops-system-schema-manifest.json",
       "validators/schemas/ai-ops-validators-schema-metric-update.json"
-    ],
-    "starter_prompts": [
-      "docs/starter-prompts/README.md",
-      "docs/starter-prompts/prompt-alignment-check.md",
-      "docs/starter-prompts/prompt-decision-tree.md",
-      "docs/starter-prompts/prompt-risk-review.md",
-      "docs/starter-prompts/prompt-weekly-summary.md"
     ],
     "systems": [
       "systems/README.md",
@@ -72,13 +57,14 @@
       "systems/ai-ops-system-communication-engine.md",
       "systems/ai-ops-system-drift-detection.md",
       "systems/ai-ops-system-knowledge-model.md",
-      "systems/scripts/ai-ops-system-linter.js",
       "systems/ai-ops-system-memory-context.md",
       "systems/ai-ops-system-operating-model.md",
       "systems/ai-ops-system-operational-metrics.md",
       "systems/ai-ops-system-overview.md",
       "systems/ai-ops-system-reasoning-framework.md",
-      "systems/ai-ops-system-security-compliance.md"
+      "systems/ai-ops-system-security-compliance.md",
+      "systems/scripts/ai-ops-system-linter.js",
+      "systems/scripts/verify-steady-state.sh"
     ],
     "templates": [
       "docs/templates/README.md",
@@ -100,13 +86,6 @@
       "docs/templates/ai-ops-template-status-update.md",
       "docs/templates/ai-ops-template-weekly-report.md"
     ],
-    "use_cases": [
-      "docs/use-cases/README.md",
-      "docs/use-cases/ai-ops-use-case-incident-review.md",
-      "docs/use-cases/ai-ops-use-case-roadmap-alignment.md",
-      "docs/use-cases/ai-ops-use-case-sprint-planning.md",
-      "docs/use-cases/ai-ops-use-case-weekly-ops-review.md"
-    ],
     "workflows": [
       "systems/workflows/README.md",
       "systems/workflows/ai-ops-workflow-ai-agent-integration.md",
@@ -119,14 +98,12 @@
     "documentation": "./docs",
     "governance": "./.github",
     "schemas": "./systems/schemas",
-    "starter_prompts": "./docs/starter-prompts",
     "systems": "./systems",
     "templates": "./docs/templates",
-    "use_cases": "./docs/use-cases",
     "workflows": "./systems/workflows"
   },
   "integrity_rules": {
-    "naming_conventions": "snake_case",
+    "naming_conventions": "kebab-case",
     "alphabetical_ordering": true,
     "no_deprecated_files": true
   },
