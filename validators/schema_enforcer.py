@@ -1,17 +1,28 @@
 import json
-import jsonschema
 from pathlib import Path
-from typing import Dict, Any, Optional, Tuple
+from typing import Any, Dict, Optional, Tuple, Type
+
+import jsonschema
 from pydantic import BaseModel, ValidationError
+
 
 class SchemaEnforcer:
     """
-    Validates, parses, and logs structural alignment of LLM outputs 
-    against strict Pydantic schemas to prevent upstream application drift.
+    Dual-gate output validator for AI-Ops pipeline artifacts.
+
+    Gate 1 — JSON Schema (Draft-07): enforces field presence, formats,
+              enum constraints, and additionalProperties rules.
+    Gate 2 — Pydantic:              enforces Python-side type coercion
+              and structural model correctness.
+
+    Usage:
+        ok, model, meta = SchemaEnforcer.validate_output(raw, MyModel)
     """
 
     _DEFAULT_JSON_SCHEMA: Path = (
-        Path(__file__).parent / "schemas" / "ai-ops-validators-schema-metric-update.json"
+        Path(__file__).parent
+        / "schemas"
+        / "ai-ops-validators-schema-metric-update.json"
     )
 
     @classmethod
@@ -27,7 +38,7 @@ class SchemaEnforcer:
     @staticmethod
     def clean_llm_json(raw_output: str) -> str:
         """
-        Strips common LLM formatting artifacts like markdown block wrappers 
+        Strips common LLM formatting artifacts like markdown block wrappers
         (e.g., ```json ... ```) to isolate the raw JSON payload.
         """
         cleaned = raw_output.strip()
@@ -44,55 +55,51 @@ class SchemaEnforcer:
     def validate_output(
         cls,
         raw_output: str,
-        target_schema: type[BaseModel],
-        json_schema_path: Optional[Path] = None
+        target_schema: Type[BaseModel],
+        json_schema_path: Optional[Path] = None,
     ) -> Tuple[bool, Optional[BaseModel], Dict[str, Any]]:
         """
         Dual-gate validation: JSON Schema (Draft-07) then Pydantic structural schema.
 
         Gate 1 - jsonschema: enforces field presence, formats, enum constraints,
-                  and additionalProperties rules defined in the JSON Schema file.
+                 and additionalProperties rules defined in the JSON Schema file.
         Gate 2 - Pydantic:   enforces Python-side type coercion and model structure.
 
         Returns:
-            Tuple containing:
-            - is_valid (bool)
-            - parsed_object (Optional[BaseModel]): Validated Pydantic instance if successful.
-            - error_metadata (Dict[str, Any]): Structural delta or drift logging data.
-        """
-        cleaned_json = cls.clean_llm_json(raw_output)
-        error_metadata = {
-            "raw_length": len(raw_output),
-            "parse_error": None,
-            "json_schema_errors": [],
-            "validation_errors": []
-        }
+            (True,  model_instance, {})           on full pass
+            (False, None,           error_metadata) on any failure
 
-        # Step 1: Validate baseline JSON compliance
+        error_metadata keys:
+            'json_parse_error'   — raw string was not valid JSON
+            'schema_error'       — failed JSON Schema (Draft-07) validation
+            'pydantic_error'     — failed Pydantic model validation
+        """
+        error_metadata: Dict[str, Any] = {}
+
+        # --- Stage 1: Parse raw JSON ---
         try:
-            parsed_dict = json.loads(cleaned_json)
-        except json.JSONDecodeError as je:
-            error_metadata["parse_error"] = f"Invalid JSON syntax: {str(je)}"
+            cleaned = cls.clean_llm_json(raw_output)
+            parsed = json.loads(cleaned)
+        except json.JSONDecodeError as exc:
+            error_metadata["json_parse_error"] = str(exc)
             return False, None, error_metadata
 
-        # Step 2: JSON Schema (Draft-07) gate - structural and semantic constraints
+        # --- Stage 2: JSON Schema (Draft-07) validation ---
         try:
             json_schema = cls._load_json_schema(json_schema_path)
-            jsonschema.validate(instance=parsed_dict, schema=json_schema)
-        except jsonschema.ValidationError as jve:
-            error_metadata["json_schema_errors"] = [jve.message]
+            jsonschema.validate(instance=parsed, schema=json_schema)
+        except jsonschema.ValidationError as exc:
+            error_metadata["schema_error"] = exc.message
             return False, None, error_metadata
-        except jsonschema.SchemaError as jse:
-            error_metadata["json_schema_errors"] = [f"Schema load error: {jse.message}"]
-            return False, None, error_metadata
-        except OSError as oe:
-            error_metadata["json_schema_errors"] = [f"Schema file unavailable: {str(oe)}"]
+        except jsonschema.SchemaError as exc:
+            error_metadata["schema_error"] = f"Malformed schema: {exc.message}"
             return False, None, error_metadata
 
-        # Step 3: Enforce the Pydantic structural schema
+        # --- Stage 3: Pydantic structural validation ---
         try:
-            validated_obj = target_schema.model_validate(parsed_dict)
-            return True, validated_obj, error_metadata
-        except ValidationError as ve:
-            error_metadata["validation_errors"] = ve.errors()
+            model_instance = target_schema.model_validate(parsed)
+        except ValidationError as exc:
+            error_metadata["pydantic_error"] = exc.errors()
             return False, None, error_metadata
+
+        return True, model_instance, {}
