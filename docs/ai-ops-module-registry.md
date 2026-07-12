@@ -5,16 +5,16 @@ A complete index of all workflows, templates, systems, use‑cases, prompts, and
 ---
 
 ## 1. Core System Models (`systems/`)
-- [ai-ops-system-operating-model.md](../systems/ai-ops-system-operating-model.md)
-- [ai-ops-system-alignment-engine.md](../systems/ai-ops-system-alignment-engine.md)
-- [ai-ops-system-security-compliance.md](../systems/ai-ops-system-security-compliance.md)
-- [ai-ops-system-behavioral-guardrails.md](../systems/ai-ops-system-behavioral-guardrails.md)
-- [ai-ops-system-drift-detection.md](../systems/ai-ops-system-drift-detection.md)
+- [ai-ops-system-operating-model.md](https://github.com/proudtobe1/ai-ops-framework/blob/main/systems/ai-ops-system-operating-model.md)
+- [ai-ops-system-alignment-engine.md](https://github.com/proudtobe1/ai-ops-framework/blob/main/systems/ai-ops-system-alignment-engine.md)
+- [ai-ops-system-security-compliance.md](https://github.com/proudtobe1/ai-ops-framework/blob/main/systems/ai-ops-system-security-compliance.md)
+- [ai-ops-system-behavioral-guardrails.md](https://github.com/proudtobe1/ai-ops-framework/blob/main/systems/ai-ops-system-behavioral-guardrails.md)
+- [ai-ops-system-drift-detection.md](https://github.com/proudtobe1/ai-ops-framework/blob/main/systems/ai-ops-system-drift-detection.md)
 
 ## 2. Operational Workflows (`systems/workflows/`)
-- [ai-ops-workflow-ai-agent-integration.md](../systems/workflows/ai-ops-workflow-ai-agent-integration.md)
-- [ai-ops-workflow-decision-automation.md](../systems/workflows/ai-ops-workflow-decision-automation.md)
-- [ai-ops-workflow-operational-cadence.md](../systems/workflows/ai-ops-workflow-operational-cadence.md)
+- [ai-ops-workflow-ai-agent-integration.md](https://github.com/proudtobe1/ai-ops-framework/blob/main/systems/workflows/ai-ops-workflow-ai-agent-integration.md)
+- [ai-ops-workflow-decision-automation.md](https://github.com/proudtobe1/ai-ops-framework/blob/main/systems/workflows/ai-ops-workflow-decision-automation.md)
+- [ai-ops-workflow-operational-cadence.md](https://github.com/proudtobe1/ai-ops-framework/blob/main/systems/workflows/ai-ops-workflow-operational-cadence.md)
 
 ## 3. Core Documentation Engine (`docs/`)
 - [ai-ops-model-card.md](./ai-ops-model-card.md)
