@@ -1,7 +1,7 @@
+'use strict';
 const { execSync } = require('child_process');
 const path = require('path');
 
-// 1. Establish Absolute Context (Bulletproof Pathing)
 const PROJECT_ROOT = path.resolve(__dirname, '../');
 
 console.log("====================================================");
@@ -11,8 +11,18 @@ console.log("====================================================");
 // 2. Define the Test Execution Roster
 // This scales to automatically incorporate our hardened tests.
 const testRoster = [
-    { name: "Steady-State Schema Audit", command: "bash systems/scripts/verify-steady-state.sh" },
-    { name: "Adversarial Drift Test", command: "node tests/drift_adversary_test.js" }
+    {
+        name: "Steady-State Schema Audit",
+        command: "bash systems/scripts/verify-steady-state.sh"
+    },
+    {
+        name: "Adversarial Drift Test",
+        command: "node tests/drift_adversary_test.js"
+    },
+    {
+        name: "Soundness Test",
+        command: "node tests/soundness_test.js"
+    }
 ];
 
 let failureCount = 0;
