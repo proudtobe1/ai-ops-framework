@@ -57,12 +57,51 @@ cd ai-ops-framework
 
 Review the practical examples in `EXAMPLES.md` to see how to load these configurations, workflows, and templates directly into your LLM or automation layer to generate your first structured operational output.
 
-## 🧪 Running Local Tests & CI Validation
+## 📦 Installation & Integration
 
-To execute the Python validation test suite locally with strict floating-point precision handling:
+The `ai-ops-framework` provides both **Python** validation engines (vector drift, judge calibration, seed stability) and **JavaScript/Node.js** tooling (manifest linters and runtime schema checkers).
+
+---
+
+### 🐍 Python Validation Engine (`pip`)
+
+Install the Python vector validation modules directly into your project or virtual environment using `pip`:
 
 ```bash
-PYTHONPATH=. pytest tests/ -v
+pip install git+[https://github.com/proudtobe1/ai-ops-framework.git](https://github.com/proudtobe1/ai-ops-framework.git)
+```
+
+#### Dependencies & Local Test Runner
+If running or testing the framework locally:
+
+```bash
+# Install core dependencies
+python3 -m pip install pytest jsonschema pydantic numpy
+
+# Run full vector validation test suite
+PYTHONPATH=. python3 -m pytest tests/ -v
+```
+
+---
+
+### 🟨 JavaScript / Node.js Tooling (`npm`)
+
+Install the JS schema linter and runtime test utilities directly from GitHub into your Node project:
+
+```bash
+npm install git+[https://github.com/proudtobe1/ai-ops-framework.git](https://github.com/proudtobe1/ai-ops-framework.git)
+```
+
+#### Run Local Linters & Runtime Verification
+
+```bash
+# Run the programmatic system manifest linter
+bash systems/scripts/verify-steady-state.sh
+
+# Run Node runtime test suite
+node tests/strict_json_test.js
+node tests/drift_adversary_test.js
+node tests/soundness_test.js
 ```
 
 ## 🛠️ How to Use This Repository
