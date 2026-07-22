@@ -37,14 +37,14 @@ def test_verify_judge_reliability_passes_within_tolerance():
     baseline = [0.80, 0.75]
     judge = [0.82, 0.73] 
     
-    # Variations are 0.02 and 0.02, MAE is 0.02, well within 0.10 tolerance
+    # Variations are 0.02 and 0.02, MAE is ~0.02, well within 0.10 tolerance
     error, is_drifted, metadata = JudgeCalibrationEngine.verify_judge_reliability(
         judge_scores=judge,
         baseline_scores=baseline,
         error_tolerance=0.10
     )
     
-    assert error == 0.02
+    assert error == pytest.approx(0.02, rel=1e-5)
     assert is_drifted is False
 
 def test_calculate_calibration_error_raises_value_error_on_mismatch():
