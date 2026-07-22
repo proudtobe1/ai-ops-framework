@@ -1,112 +1,50 @@
 {
-    "name": "ai-ops-framework",
-    "version": "1.0.0",
-    "description": "A modular AI-enabled operational framework for workflows, decisions, systems, prompts, and documentation.",
-    "license": "MIT",
-    "model_format": "framework",
-    "modules": {
-          "documentation": [
-                  "docs/PROJECT_MASTER_LOG.md",
-                  "docs/ai-ops-agent-integration-guide.md",
-                  "docs/ai-ops-architecture-deep-dive.md",
-                  "docs/ai-ops-certification-pathway.md",
-                  "docs/ai-ops-contribution-governance-model.md",
-                  "docs/ai-ops-data-flow.md",
-                  "docs/ai-ops-docs-dependency-map.md",
-                  "docs/ai-ops-docs-expanded-diagrams.md",
-                  "docs/ai-ops-docs-llm-loading-guide.md",
-                  "docs/ai-ops-docs-operating-playbook.md",
-                  "docs/ai-ops-docs-overview.md",
-                  "docs/ai-ops-docs-visual-index.md",
-                  "docs/ai-ops-evaluation-rubric.md",
-                  "docs/ai-ops-framework-extension-guide.md",
-                  "docs/ai-ops-maturity-model.md",
-                  "docs/ai-ops-model-card.md",
-                  "docs/ai-ops-module-registry.md",
-                  "docs/ai-ops-system-overview.md",
-                  "docs/index.md"
-          ],
-          "governance": [
-                  ".github/CODE_OF_CONDUCT.md",
-                  ".github/CONTRIBUTING.md",
-                  ".github/PROJECT_GOVERNANCE.md",
-                  ".github/PULL_REQUEST_TEMPLATE.md",
-                  ".github/README.md"
-          ],
-          "root_files": [
-                  ".gitignore",
-                  ".markdownlint.json",
-                  ".yamllint.yml",
-                  "LICENSE",
-                  "README.md",
-                  "ai-ops-manifest.json",
-                  "ai-ops-session-manifest.md",
-                  "mkdocs.yml"
-          ],
-          "schemas": [
-                  "systems/schemas/ai-ops-system-schema-manifest.json",
-                  "validators/schemas/ai-ops-validators-schema-metric-update.json"
-          ],
-          "systems": [
-                  "systems/README.md",
-                  "systems/ai-ops-architecture-operating-model.md",
-                  "systems/ai-ops-system-alignment-engine.md",
-                  "systems/ai-ops-system-behavioral-guardrails.md",
-                  "systems/ai-ops-system-communication-cadence.md",
-                  "systems/ai-ops-system-communication-engine.md",
-                  "systems/ai-ops-system-drift-detection.md",
-                  "systems/ai-ops-system-knowledge-model.md",
-                  "systems/ai-ops-system-memory-context.md",
-                  "systems/ai-ops-system-operating-model.md",
-                  "systems/ai-ops-system-operational-metrics.md",
-                  "systems/ai-ops-system-overview.md",
-                  "systems/ai-ops-system-reasoning-framework.md",
-                  "systems/ai-ops-system-security-compliance.md",
-                  "systems/scripts/ai-ops-system-linter.js",
-                  "systems/scripts/verify-steady-state.sh"
-          ],
-          "templates": [
-                  "docs/templates/README.md",
-                  "docs/templates/ai-ops-template-alignment-check.md",
-                  "docs/templates/ai-ops-template-change-request.md",
-                  "docs/templates/ai-ops-template-decision-record.md",
-                  "docs/templates/ai-ops-template-dependency-review.md",
-                  "docs/templates/ai-ops-template-escalation-report.md",
-                  "docs/templates/ai-ops-template-executive-brief.md",
-                  "docs/templates/ai-ops-template-incident-report.md",
-                  "docs/templates/ai-ops-template-operational-readiness-review.md",
-                  "docs/templates/ai-ops-template-post-mortem.md",
-                  "docs/templates/ai-ops-template-qa-review.md",
-                  "docs/templates/ai-ops-template-rca.md",
-                  "docs/templates/ai-ops-template-risk-review.md",
-                  "docs/templates/ai-ops-template-runbook.md",
-                  "docs/templates/ai-ops-template-service-level-review.md",
-                  "docs/templates/ai-ops-template-slo-definition.md",
-                  "docs/templates/ai-ops-template-status-update.md",
-                  "docs/templates/ai-ops-template-weekly-report.md"
-          ],
-          "workflows": [
-                  "systems/workflows/README.md",
-                  "systems/workflows/ai-ops-workflow-ai-agent-integration.md",
-                  "systems/workflows/ai-ops-workflow-decision-automation.md",
-                  "systems/workflows/ai-ops-workflow-operational-cadence.md"
-          ]
+  "manifest_version": "1.2.0",
+  "framework_name": "AI-Ops Framework",
+  "description": "Machine-readable operational manifest and system registration registry.",
+  "validation_vectors": [
+    {
+      "vector_id": 1,
+      "name": "provenance_logging",
+      "module": "validators/provenance_logger.py",
+      "test": "tests/test_provenance_logger.py",
+      "status": "active"
     },
-    "entrypoints": {
-          "root": "./",
-          "documentation": "./docs",
-          "governance": "./.github",
-          "schemas": "./systems/schemas",
-          "systems": "./systems",
-          "templates": "./docs/templates",
-          "workflows": "./systems/workflows"
+    {
+      "vector_id": 2,
+      "name": "schema_enforcement",
+      "module": "validators/schema_enforcer.py",
+      "test": "tests/test_schema_enforcer.py",
+      "status": "active"
     },
-    "integrity_rules": {
-          "naming_conventions": "kebab-case",
-          "alphabetical_ordering": true,
-          "no_deprecated_files": true
+    {
+      "vector_id": 3,
+      "name": "judge_calibration",
+      "module": "validators/judge_calibration.py",
+      "test": "tests/test_judge_calibration.py",
+      "status": "active"
     },
-    "ai_agent_governance": {
-          "strict_mode": true
+    {
+      "vector_id": 4,
+      "name": "seed_stability",
+      "module": "validators/seed_stability.py",
+      "test": "tests/test_seed_stability.py",
+      "status": "active"
+    },
+    {
+      "vector_id": 5,
+      "name": "vector_drift",
+      "module": "validators/vector_drift.py",
+      "test": "tests/test_vector_drift.py",
+      "status": "active"
     }
+  ],
+  "test_suites": {
+    "python": "pytest tests/ -v",
+    "javascript": [
+      "node tests/drift_adversary_test.js",
+      "node tests/soundness_test.js"
+    ]
+  },
+  "linter_script": "systems/scripts/verify-steady-state.sh"
 }
