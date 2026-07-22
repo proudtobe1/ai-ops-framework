@@ -1,50 +1,61 @@
-name: "AI-Ops Framework CI"
+name: AI-Ops Framework CI
+
 on:
   push:
-    branches: ["main"]
+    branches: [main]
   pull_request:
-    branches: ["main"]
+    branches: [main]
 
 jobs:
   lint-and-validate:
-    name: "Lint & Validate Structure"
+    name: Lint and Validate Structure
     runs-on: ubuntu-latest
     steps:
-      - name: "Checkout Repository"
+      - name: Checkout Repository
         uses: actions/checkout@v7
-      - name: "Set up Node.js Environment"
+
+      - name: Set up Node.js Environment
         uses: actions/setup-node@v6
         with:
-          node-version: "24"
-      - name: "Execute Structural Integrity Linter"
+          node-version: 24
+
+      - name: Execute Structural Integrity Linter
         run: bash systems/scripts/verify-steady-state.sh
 
   test-python:
-    name: "Python Test Suite"
+    name: Python Test Suite
     runs-on: ubuntu-latest
     steps:
-      - name: "Checkout Repository"
+      - name: Checkout Repository
         uses: actions/checkout@v7
-      - name: "Set up Python Environment"
+
+      - name: Set up Python Environment
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
-      - name: "Install Python Dependencies"
+          python-version: 3.11
+
+      - name: Install Python Dependencies
         run: pip install pytest jsonschema pydantic numpy
-      - name: "Run Python Tests"
+
+      - name: Run Python Tests
+        env:
+          PYTHONPATH: .
         run: pytest tests/ -v
 
   test-js:
-    name: "JavaScript Test Suite"
+    name: JavaScript Test Suite
     runs-on: ubuntu-latest
     steps:
-      - name: "Checkout Repository"
+      - name: Checkout Repository
         uses: actions/checkout@v7
-      - name: "Set up Node.js Environment"
+
+      - name: Set up Node.js Environment
         uses: actions/setup-node@v6
         with:
-          node-version: "24"
-      - name: "Run Drift Adversary Tests"
+          node-version: 24
+
+      - name: Run Drift Adversary Tests
         run: node tests/drift_adversary_test.js
-      - name: "Run Soundness Tests"
+
+      - name: Run Soundness Tests
         run: node tests/soundness_test.js
