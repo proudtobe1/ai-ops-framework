@@ -1,8 +1,51 @@
 {
   "name": "ai-ops-framework",
-  "manifest_version": "1.2.0",
-  "framework_name": "AI-Ops Framework",
+  "version": "1.2.0",
   "description": "Machine-readable operational manifest and system registration registry.",
+  "license": "MIT",
+  "model_format": "framework",
+  "modules": {
+    "workflows": [
+      "workflows/ai-ops-workflow-sample.md"
+    ],
+    "templates": [
+      "templates/ai-ops-template-sample.md"
+    ],
+    "systems": [
+      "systems/ai-ops-system-sample.md"
+    ],
+    "documentation": [
+      "docs/index.md"
+    ],
+    "governance": [
+      "PROJECT_GOVERNANCE.md"
+    ],
+    "root_files": [
+      "README.md",
+      "LICENSE",
+      "mkdocs.yml"
+    ],
+    "schemas": [
+      "systems/schemas/ai-ops-system-schema-manifest.json"
+    ]
+  },
+  "entrypoints": {
+    "workflows": "workflows/",
+    "templates": "templates/",
+    "systems": "systems/",
+    "documentation": "docs/",
+    "governance": "PROJECT_GOVERNANCE.md",
+    "schemas": "systems/schemas/",
+    "root": "README.md"
+  },
+  "integrity_rules": {
+    "naming_conventions": "kebab-case",
+    "alphabetical_ordering": true,
+    "no_deprecated_files": true
+  },
+  "ai_agent_governance": {
+    "strict_mode": true
+  },
   "validation_vectors": [
     {
       "vector_id": 1,
@@ -39,13 +82,5 @@
       "test": "tests/test_vector_drift.py",
       "status": "active"
     }
-  ],
-  "test_suites": {
-    "python": "pytest tests/ -v",
-    "javascript": [
-      "node tests/drift_adversary_test.js",
-      "node tests/soundness_test.js"
-    ]
-  },
-  "linter_script": "systems/scripts/verify-steady-state.sh"
+  ]
 }
