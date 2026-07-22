@@ -1,0 +1,14 @@
+{
+  "name": "@proudtobe1/ai-ops-framework",
+  "version": "1.2.0",
+  "description": "AI-Ops operational workflows, decision systems, and runtime governance tooling",
+  "main": "systems/scripts/ai-ops-system-linter.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/proudtobe1/ai-ops-framework.git"
+  },
+  "license": "MIT"
+}
